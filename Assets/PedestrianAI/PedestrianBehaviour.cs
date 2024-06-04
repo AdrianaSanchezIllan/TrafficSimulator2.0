@@ -67,6 +67,7 @@ public class PedestrianBehaviour : MonoBehaviour
     {
         return inTrafficLight;
     }
+
     #region FSM States
 
     // Estado de deambulación
@@ -164,11 +165,10 @@ public class PedestrianBehaviour : MonoBehaviour
         }
     }
 
-    public Status EnterInterestZone(InterestZone zone)
+    public Status EnterInterestZone()
     {
-        currentZone = zone;
-        currentLocation = zone.GetAvailableLocation();
-
+        currentLocation = currentZone.GetAvailableLocation();
+        Debug.Log("current location" + currentLocation);
         return currentLocation != null ? Status.Success : Status.Failure;
     }
 
@@ -176,9 +176,11 @@ public class PedestrianBehaviour : MonoBehaviour
     {
         if (currentLocation != null)
         {
+            Debug.Log(currentLocation);
             MoveTo(currentLocation.position);
             if (isPathComplete())
             {
+                Debug.Log("he llegado a la silla");
                 return Status.Success;
             }
             return Status.Running;
@@ -191,37 +193,35 @@ public class PedestrianBehaviour : MonoBehaviour
     {
         if (currentZone != null)
         {
-            PerformAction(currentZone.interestAction);
-            StartCoroutine(PerformInterestAction(currentZone));
+            StartCoroutine(PerformInterestAction());
             return Status.Running;
         }
         return Status.Failure;
     }
 
-    private IEnumerator PerformInterestAction(InterestZone zone)
+    private IEnumerator PerformInterestAction()
     {
         while (agent.remainingDistance > agent.stoppingDistance)
         {
             yield return null;
         }
-
+        PerformAction(currentZone.interestAction);
         agent.isStopped = true;
-        PerformAction(zone.interestAction);
 
         if (currentActionIndicator != null)
         {
             Destroy(currentActionIndicator);
         }
 
-        if (zone.actionIndicatorPrefab != null)
+        if (currentZone.actionIndicatorPrefab != null)
         {
-            currentActionIndicator = Instantiate(zone.actionIndicatorPrefab, transform);
+            currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
             // Ajustar la posición de la imagen por encima del personaje
             currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
         }
 
         // Simular duración de la acción
-        yield return new WaitForSeconds(5.0f); // Por ejemplo, 5 segundos para tomar café
+        yield return new WaitForSeconds(10.0f); // Por ejemplo,10 segundos para tomar café
 
         if (currentActionIndicator != null)
         {
@@ -229,7 +229,7 @@ public class PedestrianBehaviour : MonoBehaviour
         }
 
         agent.isStopped = false;
-        zone.VacateLocation(currentLocation); // Liberar la ubicación
+        currentZone.VacateLocation(currentLocation); // Liberar la ubicación
         currentLocation = null;
         isActionCompleted = true;
         StartRoaming(); // Retomar el roaming después de completar la acción
@@ -295,10 +295,36 @@ public class PedestrianBehaviour : MonoBehaviour
         return currentZone != null;
     }
 
+    public bool HasCompletedAction()
+    {
+        return isActionCompleted;
+    }
+
+
     public bool isPathComplete()
     {
         return (!agent.pathPending &&
                 agent.remainingDistance <= agent.stoppingDistance &&
                 (!agent.hasPath || agent.velocity.sqrMagnitude == 0f));
+    }
+
+    public Status PathStatus()
+    {
+        if (!agent.pathPending &&
+            agent.remainingDistance <= agent.stoppingDistance &&
+            (!agent.hasPath || agent.velocity.sqrMagnitude == 0f))
+        {
+            return Status.Success;
+        }
+        return Status.Running;
+    }
+
+    public Status ActionHasBeenCompleted()
+    {
+        if(isActionCompleted)
+        {
+            return Status.Success;
+        }
+        return Status.Running;
     }
 }

@@ -956,6 +956,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7156330664774647248}
+  - component: {fileID: 8028581575622862200}
+  - component: {fileID: 3674346055670018314}
   - component: {fileID: 3868671272202102698}
   - component: {fileID: -4513969838509426261}
   - component: {fileID: 5898017177226930641}
@@ -986,6 +988,56 @@ Transform:
   - {fileID: 8138390746945589929}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8028581575622862200
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501788059647666026}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.45
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.82, z: 0}
+--- !u!54 &3674346055670018314
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501788059647666026}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &3868671272202102698
 Animator:
   serializedVersion: 5
@@ -1116,7 +1168,7 @@ MonoBehaviour:
         - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
         childIds:
         - 9858c6dc-3195-4d8a-89d8-eb68b3ab52bc
-      - name: 
+      - name: ActionsInterestZone
         id: 9858c6dc-3195-4d8a-89d8-eb68b3ab52bc
         position: {x: 579, y: 703}
         node:
@@ -1139,7 +1191,7 @@ MonoBehaviour:
         references:
         - fieldName: Perception
           value:
-            rid: -2
+            rid: 8944971398790512640
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         - fieldName: Action
@@ -1190,7 +1242,7 @@ MonoBehaviour:
         - 164b3982-f338-4e94-b7f6-2138c66343a2
         childIds:
         - 077bb90f-cc48-4b22-86fb-dd4af9c57f0e
-      - name: 
+      - name: acciones
         id: 077bb90f-cc48-4b22-86fb-dd4af9c57f0e
         position: {x: 745, y: 855}
         node:
@@ -1239,7 +1291,7 @@ MonoBehaviour:
         references:
         - fieldName: Action
           value:
-            rid: 8944971379418333243
+            rid: 8944971398790512641
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -1247,13 +1299,13 @@ MonoBehaviour:
         childIds: []
       - name: DrinkCoffee
         id: a413f32a-1098-4807-9807-8556bb119a9b
-        position: {x: 1247, y: 1033}
+        position: {x: 1269, y: 1049}
         node:
           rid: 8944971379418333244
         references:
         - fieldName: Action
           value:
-            rid: 8944971379418333246
+            rid: 8944971398790512642
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -1314,7 +1366,7 @@ MonoBehaviour:
     - rid: 8944971379418333232
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
-        StatusFlags: 6
+        StatusFlags: -1
     - rid: 8944971379418333233
       type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
@@ -1357,21 +1409,63 @@ MonoBehaviour:
     - rid: 8944971379418333242
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333243
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: MoveToLocation
     - rid: 8944971379418333244
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333246
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971398790512640
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: PedestrianBehaviour
+          methodName: HasCompletedAction
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971398790512641
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: PedestrianBehaviour
+          methodName: MoveToLocation
+        update:
+          componentName: PedestrianBehaviour
+          methodName: PathStatus
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971398790512642
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
           componentName: PedestrianBehaviour
           methodName: PerformActionBT
+        update:
+          componentName: PedestrianBehaviour
+          methodName: ActionHasBeenCompleted
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
 --- !u!1 &7524111919617231996
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,10 +25,10 @@ public class InterestZone : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        PedestrianBehaviour roamMovement = other.GetComponent<PedestrianBehaviour>();
-        if (roamMovement != null)
+        PedestrianBehaviour pedestrianBehaviour = other.GetComponent<PedestrianBehaviour>();
+        if (pedestrianBehaviour != null)
         {
-            roamMovement.currentZone = null;
+            pedestrianBehaviour.currentZone = null;
             //roamMovement.EnterInterestZone(this);
         }
     }
