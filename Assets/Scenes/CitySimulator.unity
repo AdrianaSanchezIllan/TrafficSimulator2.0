@@ -4755,7 +4755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 1800328398}
 --- !u!1 &321600195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 9bff4c4ffbc29a041a638ec3743c588d, type: 3}
@@ -6989,7 +6989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 1147061346}
 --- !u!1001 &433112524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10483,7 +10483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 2021926312}
 --- !u!1001 &660495003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12636,7 +12636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 1147061346}
 --- !u!4 &817631651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 31bbda51eeab02f44a8e92a7da2f5ff8, type: 3}
@@ -16085,7 +16085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 2021926312}
 --- !u!1001 &1008334823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17303,7 +17303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 0}
+  intersection: {fileID: 1800328398}
 --- !u!1001 &1086050306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17711,7 +17711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 0}
+  intersection: {fileID: 1923635380}
 --- !u!1 &1116512804
 GameObject:
   m_ObjectHideFlags: 0
@@ -21198,7 +21198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 0}
+  intersection: {fileID: 2021926312}
 --- !u!1 &1275475203
 GameObject:
   m_ObjectHideFlags: 0
@@ -22127,7 +22127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interestAction: Coffee
   actionIndicatorPrefab: {fileID: 144272569386911166, guid: 9b844abb93ee3224b900818b0ec309b9, type: 3}
-  inInterestZone: 0
 --- !u!1 &1334809670
 GameObject:
   m_ObjectHideFlags: 0
@@ -23311,7 +23310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 278981552}
 --- !u!4 &1412979289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8b680e0f7699a254c84ed6737b7eb53d, type: 3}
@@ -25630,7 +25629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 278981552}
 --- !u!1 &1568174750
 GameObject:
   m_ObjectHideFlags: 0
@@ -25990,7 +25989,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interestAction: Coffee
   actionIndicatorPrefab: {fileID: 144272569386911166, guid: 9b844abb93ee3224b900818b0ec309b9, type: 3}
-  inInterestZone: 0
 --- !u!65 &1584495707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26431,7 +26429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 0}
+  intersection: {fileID: 1147061346}
 --- !u!1001 &1602701406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27857,7 +27855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 1923635380}
 --- !u!1 &1673737451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -30350,7 +30348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 0}
+  intersection: {fileID: 2021926312}
 --- !u!65 &1807668943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31397,7 +31395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 0}
+  intersection: {fileID: 278981552}
 --- !u!1 &1882405229
 GameObject:
   m_ObjectHideFlags: 0
@@ -32268,7 +32266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 0}
+  intersection: {fileID: 1923635380}
 --- !u!1 &1933828093
 GameObject:
   m_ObjectHideFlags: 0
@@ -35003,7 +35001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 0}
+  intersection: {fileID: 1800328398}
 --- !u!1001 &2089834902
 PrefabInstance:
   m_ObjectHideFlags: 0
