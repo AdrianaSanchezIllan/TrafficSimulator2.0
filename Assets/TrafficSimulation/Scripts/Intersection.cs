@@ -47,9 +47,9 @@ namespace TrafficSimulation{
             else if(currentRedLightsGroup == 2) currentRedLightsGroup = 1;            
             
             //Wait few seconds after light transition before making the other car move (= orange light)
-            Invoke("MoveVehiclesQueue", orangeLightDuration);
+            //Invoke("MoveVehiclesQueue", orangeLightDuration);
         }
-
+        
         void OnTriggerEnter(Collider _other) {
             //Check if vehicle is already in the list if yes abort
             //Also abort if we just started the scene (if vehicles inside colliders at start)

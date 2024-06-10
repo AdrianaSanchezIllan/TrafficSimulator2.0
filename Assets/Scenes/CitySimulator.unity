@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &21524164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -642,7 +643,7 @@ GameObject:
   - component: {fileID: 56356149}
   m_Layer: 0
   m_Name: Intersection-3
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -917,6 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &64010786
 Transform:
   m_ObjectHideFlags: 0
@@ -1615,6 +1617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &133784748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1882,6 +1885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &168052833
 Transform:
   m_ObjectHideFlags: 0
@@ -2072,7 +2076,7 @@ GameObject:
   - component: {fileID: 175473570}
   m_Layer: 0
   m_Name: Intersection-6
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2217,6 +2221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &189660082
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2446,7 @@ GameObject:
   - component: {fileID: 198311809}
   m_Layer: 0
   m_Name: Intersection-0
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2517,6 +2522,82 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[3].id
+      value: 478715f0-f775-4e59-afd7-564f109fd65a
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[3].name
+      value: carsFSM
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[3].graph
+      value: 2352687872836370432
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: managedReferences[2352687872836370432]
+      value: BehaviourAPI.StateMachines BehaviourAPI.StateMachines.StackFSMs.StackFSM
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[0].position.x
+      value: 638.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[0].position.y
+      value: -228
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[1].position.x
+      value: 348
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[1].position.y
+      value: -139.20001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[2].position.x
+      value: 476.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[2].position.y
+      value: 233.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[3].position.x
+      value: 740.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[3].position.y
+      value: 25.599998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[4].position.x
+      value: 934.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[4].position.y
+      value: -356
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[6].position.x
+      value: 1057.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[0].nodes.Array.data[6].position.y
+      value: 18.399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[1].nodes.Array.data[3].position.x
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: data.graphs.Array.data[1].nodes.Array.data[3].position.y
+      value: 420.80002
+      objectReference: {fileID: 0}
     - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.4
@@ -2572,9 +2653,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6584613354768528393, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1640027612}
-    - targetCorrespondingSourceObject: {fileID: 6584613354768528393, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1640027616}
   m_SourcePrefab: {fileID: 100100000, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
 --- !u!1001 &202170826
 PrefabInstance:
@@ -3639,6 +3717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &253689095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,6 +4023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &270055178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4080,7 +4160,7 @@ GameObject:
   - component: {fileID: 278981552}
   m_Layer: 0
   m_Name: Intersection-7
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4574,6 +4654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &316271480
 Transform:
   m_ObjectHideFlags: 0
@@ -4669,6 +4750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &319413471
 Transform:
   m_ObjectHideFlags: 0
@@ -4791,6 +4873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &322969150
 Transform:
   m_ObjectHideFlags: 0
@@ -5412,6 +5495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &354585252
 Transform:
   m_ObjectHideFlags: 0
@@ -5457,6 +5541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &354834589
 Transform:
   m_ObjectHideFlags: 0
@@ -5517,6 +5602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &357855691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5753,6 +5839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &363581414
 Transform:
   m_ObjectHideFlags: 0
@@ -6113,6 +6200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &380213309
 Transform:
   m_ObjectHideFlags: 0
@@ -7797,6 +7885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &471195183
 Transform:
   m_ObjectHideFlags: 0
@@ -7981,13 +8070,14 @@ GameObject:
   - component: {fileID: 498139335}
   - component: {fileID: 498139333}
   - component: {fileID: 4355280043616258936}
+  - component: {fileID: 4355280043616258937}
   m_Layer: 9
   m_Name: Car Long
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &498139331
 Transform:
   m_ObjectHideFlags: 0
@@ -9247,11 +9337,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   m_PrefabInstance: {fileID: 1644489788}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &581491098 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5556656506850165741, guid: 1a2afbcf572de5242acc0ac27cd0d300, type: 3}
-  m_PrefabInstance: {fileID: 3622901704500969697}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &593967377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9883,6 +9968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &630497737
 GameObject:
   m_ObjectHideFlags: 0
@@ -9948,13 +10034,14 @@ GameObject:
   - component: {fileID: 630856249}
   - component: {fileID: 630856248}
   - component: {fileID: 3461393065406497520}
+  - component: {fileID: 3461393065406497521}
   m_Layer: 9
   m_Name: Car Van
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &630856245
 Transform:
   m_ObjectHideFlags: 0
@@ -10814,6 +10901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &702160422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 9bff4c4ffbc29a041a638ec3743c588d, type: 3}
@@ -10854,6 +10942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &706564030
 Transform:
   m_ObjectHideFlags: 0
@@ -11076,6 +11165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &723142265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b14aef9a05449784da6735de9ec90b24, type: 3}
@@ -11890,6 +11980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &766746090
 GameObject:
   m_ObjectHideFlags: 0
@@ -12213,6 +12304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &792386794
 Transform:
   m_ObjectHideFlags: 0
@@ -12392,6 +12484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &800988334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 31bbda51eeab02f44a8e92a7da2f5ff8, type: 3}
@@ -12565,6 +12658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!33 &815380877
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13050,6 +13144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &842771137
 Transform:
   m_ObjectHideFlags: 0
@@ -13172,6 +13267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &854812502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
@@ -13837,6 +13933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &895439731
 Transform:
   m_ObjectHideFlags: 0
@@ -14725,6 +14822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &920729957
 GameObject:
   m_ObjectHideFlags: 0
@@ -14770,6 +14868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &921592078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14877,6 +14976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &931189935
 GameObject:
   m_ObjectHideFlags: 0
@@ -15010,6 +15110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &936394089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15340,6 +15441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &959585390
 GameObject:
   m_ObjectHideFlags: 0
@@ -15385,6 +15487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &960374691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15811,6 +15914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &989166578
 Transform:
   m_ObjectHideFlags: 0
@@ -16178,6 +16282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1010298806
 Transform:
   m_ObjectHideFlags: 0
@@ -16511,6 +16616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1037468231
 GameObject:
   m_ObjectHideFlags: 0
@@ -16667,7 +16773,7 @@ MonoBehaviour:
   pedestrianPrefabs:
   - {fileID: 6584613354768528393, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
   - {fileID: 7501788059647666026, guid: bcc8c8f342f71a7439ac0579aa86f030, type: 3}
-  numberOfPedestrians: 200
+  numberOfPedestrians: 5
   spawnRadius: 100
 --- !u!4 &1044269653
 Transform:
@@ -17580,6 +17686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1111831830
 Transform:
   m_ObjectHideFlags: 0
@@ -17972,7 +18079,7 @@ GameObject:
   - component: {fileID: 1127928448}
   m_Layer: 0
   m_Name: Intersection-2
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18496,7 +18603,7 @@ GameObject:
   - component: {fileID: 1147061346}
   m_Layer: 0
   m_Name: Intersection-4
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18993,6 +19100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &1170510461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19152,6 +19260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1182472911
 GameObject:
   m_ObjectHideFlags: 0
@@ -19344,6 +19453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1188028108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -21229,6 +21339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1275475205
 Transform:
   m_ObjectHideFlags: 0
@@ -21294,6 +21405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1291649448
 GameObject:
   m_ObjectHideFlags: 0
@@ -21717,6 +21829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1316916700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b14aef9a05449784da6735de9ec90b24, type: 3}
@@ -23194,6 +23307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1411291729
 GameObject:
   m_ObjectHideFlags: 0
@@ -23839,6 +23953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1453734301
 Transform:
   m_ObjectHideFlags: 0
@@ -24054,6 +24169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &1493277371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24262,6 +24378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1494326745
 Transform:
   m_ObjectHideFlags: 0
@@ -24583,6 +24700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1516081869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -24736,6 +24854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1526589131
 Transform:
   m_ObjectHideFlags: 0
@@ -24781,6 +24900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1527569216
 Transform:
   m_ObjectHideFlags: 0
@@ -26120,6 +26240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &1587093281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26517,6 +26638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1604083285
 Transform:
   m_ObjectHideFlags: 0
@@ -26738,6 +26860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1614332266
 Transform:
   m_ObjectHideFlags: 0
@@ -26798,6 +26921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1631763020
 GameObject:
   m_ObjectHideFlags: 0
@@ -26943,22 +27067,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1640027616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640027610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bced25bcae7e954dadcff4608399881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  range: 100
-  centrePoint: {fileID: 581491098}
-  currentZone: {fileID: 0}
 --- !u!1001 &1644489788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27416,6 +27524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &1658408054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27534,6 +27643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1663973332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -28078,6 +28188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1695153033
 Transform:
   m_ObjectHideFlags: 0
@@ -28857,7 +28968,7 @@ GameObject:
   - component: {fileID: 1750770668}
   m_Layer: 0
   m_Name: Intersection-9
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29151,6 +29262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1764785784
 Transform:
   m_ObjectHideFlags: 0
@@ -29545,6 +29657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1776085591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7461923201326877413, guid: fe8814239ba75e74a9eaed53bbe7cb6f, type: 3}
@@ -29689,6 +29802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &1782061881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30166,7 +30280,7 @@ GameObject:
   - component: {fileID: 1800328398}
   m_Layer: 0
   m_Name: Intersection-8
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30485,6 +30599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1826728823
 Transform:
   m_ObjectHideFlags: 0
@@ -31148,6 +31263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1865475067
 Transform:
   m_ObjectHideFlags: 0
@@ -31213,6 +31329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &1867869992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31426,6 +31543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1882405231
 Transform:
   m_ObjectHideFlags: 0
@@ -31893,6 +32011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1921169985
 GameObject:
   m_ObjectHideFlags: 0
@@ -31938,6 +32057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1922518871 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -31975,7 +32095,7 @@ GameObject:
   - component: {fileID: 1923635380}
   m_Layer: 0
   m_Name: Intersection-5
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32596,6 +32716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1948156455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b74c48c2e73e17c418c9394124b75daf, type: 3}
@@ -33138,6 +33259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &1982109092
 GameObject:
   m_ObjectHideFlags: 0
@@ -33168,6 +33290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &1982109094
 Transform:
   m_ObjectHideFlags: 0
@@ -33352,6 +33475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &2001884794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33908,7 +34032,7 @@ GameObject:
   - component: {fileID: 2021926312}
   m_Layer: 0
   m_Name: Intersection-1
-  m_TagString: Untagged
+  m_TagString: Intersection
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34019,6 +34143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1001 &2022784247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34200,6 +34325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &2029036028
 Transform:
   m_ObjectHideFlags: 0
@@ -34435,6 +34561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &2041083118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2d5fb229ae2945742b900a405a5e7a0b, type: 3}
@@ -34620,6 +34747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &2083284749
 Transform:
   m_ObjectHideFlags: 0
@@ -35245,6 +35373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!1 &2092598080
 GameObject:
   m_ObjectHideFlags: 0
@@ -35275,6 +35404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
+  belongsIntersection: 0
 --- !u!4 &2092598082
 Transform:
   m_ObjectHideFlags: 0
@@ -36569,13 +36699,14 @@ GameObject:
   - component: {fileID: 1809614698698968898}
   - component: {fileID: 1809614698698968902}
   - component: {fileID: 2696559847015335163}
+  - component: {fileID: 2696559847015335164}
   m_Layer: 9
   m_Name: Car Long (7)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1809614698698968898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36869,13 +37000,14 @@ GameObject:
   - component: {fileID: 1809614698871672312}
   - component: {fileID: 1809614698871672304}
   - component: {fileID: 2696559847171360333}
+  - component: {fileID: 2696559847171360334}
   m_Layer: 9
   m_Name: Car Long (12)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1809614698871672312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37193,13 +37325,15 @@ GameObject:
   - component: {fileID: 1809614699010143666}
   - component: {fileID: 1809614699010143671}
   - component: {fileID: 2696559847309737482}
+  - component: {fileID: 2696559847309737483}
+  - component: {fileID: 2696559847309737484}
   m_Layer: 9
   m_Name: Car Long (9)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1809614699010143665
 Transform:
   m_ObjectHideFlags: 0
@@ -37596,13 +37730,14 @@ GameObject:
   - component: {fileID: 1809614699083679990}
   - component: {fileID: 1809614699083679987}
   - component: {fileID: 2696559847261602638}
+  - component: {fileID: 2696559847261602639}
   m_Layer: 9
   m_Name: Car Long (2)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1809614699083679989
 Transform:
   m_ObjectHideFlags: 0
@@ -37992,13 +38127,14 @@ GameObject:
   - component: {fileID: 1809614699214763294}
   - component: {fileID: 1809614699214763292}
   - component: {fileID: 2696559847396884129}
+  - component: {fileID: 2696559847396884130}
   m_Layer: 9
   m_Name: Car Long (11)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1809614699214763292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39026,13 +39162,14 @@ GameObject:
   - component: {fileID: 1809614699528808696}
   - component: {fileID: 1809614699528808689}
   - component: {fileID: 2696559845675639628}
+  - component: {fileID: 2696559845675639629}
   m_Layer: 9
   m_Name: Car Long (4)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1809614699528808695
 Transform:
   m_ObjectHideFlags: 0
@@ -39545,13 +39682,14 @@ GameObject:
   - component: {fileID: 1809614699637939882}
   - component: {fileID: 1809614699637939886}
   - component: {fileID: 2696559845801710867}
+  - component: {fileID: 2696559845801710868}
   m_Layer: 9
   m_Name: Car Long (5)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1809614699637939882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39948,13 +40086,14 @@ GameObject:
   - component: {fileID: 1809614699701416254}
   - component: {fileID: 1809614699701416250}
   - component: {fileID: 2696559845736086151}
+  - component: {fileID: 2696559845736086152}
   m_Layer: 9
   m_Name: Car Long (1)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1809614699701416254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40585,13 +40724,14 @@ GameObject:
   - component: {fileID: 1809614699890338070}
   - component: {fileID: 1809614699890338066}
   - component: {fileID: 2696559845923922607}
+  - component: {fileID: 2696559845923922608}
   m_Layer: 9
   m_Name: Car Long (6)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1809614699890338070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40895,13 +41035,14 @@ GameObject:
   - component: {fileID: 1809614700007742490}
   - component: {fileID: 1809614700007742494}
   - component: {fileID: 2696559846041327523}
+  - component: {fileID: 2696559846041327524}
   m_Layer: 9
   m_Name: Car Long (10)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1809614700007742490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41269,8 +41410,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1809614700256750961}
   - component: {fileID: 1809614700256750966}
+  - component: {fileID: 2696559846287320780}
   - component: {fileID: 1809614700256750962}
-  - component: {fileID: 1809614700256750967}
+  - component: {fileID: 2696559846287320779}
   - component: {fileID: 2696559846287320778}
   m_Layer: 9
   m_Name: Car Long (3)
@@ -41349,27 +41491,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &1809614700256750967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809614700256750960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cde2d72bdb21e8542bfb0a4516cc158b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trafficSystem: {fileID: 1938862188}
-  waypointThresh: 2.5
-  raycastAnchor: {fileID: 1809614698445178165}
-  raycastLength: 3
-  raySpacing: 3
-  raysNumber: 8
-  emergencyBrakeThresh: 5
-  slowDownThresh: 8
-  vehicleStatus: 0
 --- !u!146 &1809614700287250328
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -41472,13 +41593,14 @@ GameObject:
   - component: {fileID: 1809614700294587658}
   - component: {fileID: 1809614700294587662}
   - component: {fileID: 2696559846325161651}
+  - component: {fileID: 2696559846325161652}
   m_Layer: 9
   m_Name: Car Long (8)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1809614700294587658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42158,7 +42280,7 @@ GameObject:
   - component: {fileID: 1809614700522698236}
   m_Layer: 9
   m_Name: Car Long
-  m_TagString: Untagged
+  m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42342,6 +42464,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559845675639629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614699528808694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559845736086151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42363,6 +42500,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559845736086152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614699701416253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559845801710867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42384,6 +42536,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559845801710868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614699637939881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559845923922607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42405,6 +42572,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559845923922608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614699890338069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559846041327523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42426,6 +42608,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559846041327524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614700007742489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559846287320778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42447,6 +42644,186 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559846287320779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614700256750960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 1938862188}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
+--- !u!114 &2696559846287320780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614700256750960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: carsFSM
+      id: 0fd8091e-e505-4a88-8c6f-fb0c63696724
+      graph:
+        rid: 2352687894773628951
+      nodes:
+      - name: GO
+        id: 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
+        position: {x: 544, y: -21.600002}
+        node:
+          rid: 2352687894773628952
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687894773628955
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
+        childIds:
+        - 8bcc29b8-8666-49cd-9849-15c46663e507
+      - name: CHOOSE_DIRECTION
+        id: 9b6e9778-8c01-497a-a74d-923fad2ec8ec
+        position: {x: -39.2, y: -29.600002}
+        node:
+          rid: 2352687918901624832
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687918901624833
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 8bcc29b8-8666-49cd-9849-15c46663e507
+        childIds:
+        - 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
+      - name: directionChosen
+        id: 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
+        position: {x: 274.4, y: -40}
+        node:
+          rid: 2352687918901624834
+        references:
+        - fieldName: Perception
+          value:
+            rid: 2352687941662801920
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 9b6e9778-8c01-497a-a74d-923fad2ec8ec
+        childIds:
+        - 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
+      - name: intersectionZone
+        id: 8bcc29b8-8666-49cd-9849-15c46663e507
+        position: {x: 258.4, y: 168.79999}
+        node:
+          rid: 2352687918901624838
+        references:
+        - fieldName: Perception
+          value:
+            rid: 2352687918901624844
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
+        childIds:
+        - 9b6e9778-8c01-497a-a74d-923fad2ec8ec
+    pushPerceptions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2352687894773628951
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628952
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628955
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController
+          methodName: ToMove
+    - rid: 2352687918901624832
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687918901624833
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController
+          methodName: SetDirection
+    - rid: 2352687918901624834
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 2352687918901624838
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 2352687918901624844
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: NewCarsController
+          methodName: IsInWaypoint
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 2352687941662801920
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: NewCarsController
+          methodName: DirectionChosen
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
 --- !u!65 &2696559846325161651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42468,6 +42845,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559846325161652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614700294587657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559847015335163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42489,6 +42881,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559847015335164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614698698968897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559847171360333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42510,6 +42917,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559847171360334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614698871672311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559847261602638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42531,6 +42953,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559847261602639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614699083679988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &2696559847309737482
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42552,6 +42989,216 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559847309737483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614699010143664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
+--- !u!114 &2696559847309737484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614699010143664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7033c32493b38240a6a2c47736ac9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeOnLoop: 0
+  interruptOptions: 0
+  _eventHandler:
+    debugStatusChanges: 0
+    identifier: 
+  data:
+    graphs:
+    - name: carsFSM
+      id: e3c4a33c-6242-4669-8c20-f3c9b9b26222
+      graph:
+        rid: 2352687872836370433
+      nodes:
+      - name: NewTarget
+        id: a6c4359f-50bf-42c7-b914-4627c0ad6c80
+        position: {x: 252.8, y: 168}
+        node:
+          rid: 2352687894773628928
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687894773628935
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 9608f228-8ba1-4330-870e-030a458dbc52
+        childIds:
+        - 83ace012-b7ce-49e1-9497-14fd04280f22
+      - name: Driving
+        id: f464d254-5ec7-4a94-9c95-b65dcf1f262a
+        position: {x: 804.8, y: 406.40002}
+        node:
+          rid: 2352687894773628929
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds: []
+      - name: GoalAchieved
+        id: 5b413902-fbc2-4dae-a098-53a7b1291e66
+        position: {x: 820, y: -148}
+        node:
+          rid: 2352687894773628930
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - 9608f228-8ba1-4330-870e-030a458dbc52
+      - name: AssignTarget
+        id: 9608f228-8ba1-4330-870e-030a458dbc52
+        position: {x: 538.4, y: 8}
+        node:
+          rid: 2352687894773628931
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 5b413902-fbc2-4dae-a098-53a7b1291e66
+        childIds:
+        - a6c4359f-50bf-42c7-b914-4627c0ad6c80
+      - name: FSM Level 2
+        id: 83ace012-b7ce-49e1-9497-14fd04280f22
+        position: {x: 411.2, y: 353.59998}
+        node:
+          rid: 2352687894773628934
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a6c4359f-50bf-42c7-b914-4627c0ad6c80
+        childIds: []
+    - name: CarsFSM_level2
+      id: 5414e061-8e21-4c6c-9558-c86fcd62696f
+      graph:
+        rid: 2352687894773628936
+      nodes:
+      - name: GO
+        id: 04b8ee0f-4fec-4b42-923b-8b0baf8676ce
+        position: {x: 526.8841, y: 242.28201}
+        node:
+          rid: 2352687894773628937
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds: []
+      - name: SLOW_DOWN
+        id: 6f254230-40f0-4f98-aecd-2dd6d8a9d2ac
+        position: {x: 969.6, y: 448}
+        node:
+          rid: 2352687894773628938
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds: []
+      - name: STOP
+        id: 95ae917e-86b6-4a50-8db0-2452776cfab9
+        position: {x: 543.2, y: 680}
+        node:
+          rid: 2352687894773628939
+        references:
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds: []
+    pushPerceptions:
+    - name: newpushPerception
+      targetNodeIds: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2352687872836370433
+      type: {class: StackFSM, ns: BehaviourAPI.StateMachines.StackFSMs, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628928
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628929
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628930
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628931
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 0
+    - rid: 2352687894773628934
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 0
+    - rid: 2352687894773628935
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 0
+        InterruptOptions: 2
+        subgraphId: 
+    - rid: 2352687894773628936
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628937
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628938
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687894773628939
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
 --- !u!65 &2696559847396884129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42573,6 +43220,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &2696559847396884130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614699214763291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!33 &3312457258491202679
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42710,13 +43372,14 @@ GameObject:
   - component: {fileID: 3312457258496467157}
   - component: {fileID: 3312457258494443485}
   - component: {fileID: 837477948}
+  - component: {fileID: 3312457258497517858}
   m_Layer: 9
   m_Name: Car Coupe (7)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457258494443485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42935,6 +43598,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &3312457258497517858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457258494443483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!146 &3312457258505063567
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -43474,13 +44152,14 @@ GameObject:
   - component: {fileID: 3312457258523599535}
   - component: {fileID: 3312457258517380514}
   - component: {fileID: 809821254}
+  - component: {fileID: 3312457258523599536}
   m_Layer: 9
   m_Name: Car Coupe (2)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457258517380514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43609,6 +44288,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 0.8, z: 2.2}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &3312457258523599536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457258517380513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!54 &3312457258725849635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43851,13 +44545,14 @@ GameObject:
   - component: {fileID: 3312457258728993751}
   - component: {fileID: 3312457258731154650}
   - component: {fileID: 59176254}
+  - component: {fileID: 3312457258731154651}
   m_Layer: 9
   m_Name: Car Coupe (1)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457258731154650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43883,6 +44578,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100006, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &3312457258731154651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457258731154649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1 &3312457258731187513
 GameObject:
   m_ObjectHideFlags: 0
@@ -44377,13 +45087,14 @@ GameObject:
   - component: {fileID: 3312457258787555063}
   - component: {fileID: 3312457258789722618}
   - component: {fileID: 30}
+  - component: {fileID: 3312457258789995852}
   m_Layer: 9
   m_Name: Car Coupe
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457258789722618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44571,6 +45282,21 @@ Transform:
   - {fileID: 1415785273}
   m_Father: {fileID: 1404632577}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3312457258789995852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457258789722617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!4 &3312457258789997547
 Transform:
   m_ObjectHideFlags: 0
@@ -44727,13 +45453,14 @@ GameObject:
   - component: {fileID: 3312457258917019383}
   - component: {fileID: 3312457258910654970}
   - component: {fileID: 148633630}
+  - component: {fileID: 3312457258917019384}
   m_Layer: 9
   m_Name: Car Coupe (8)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457258910654970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45007,6 +45734,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 0.8, z: 2.2}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &3312457258917019384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457258910654969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!146 &3312457258924082851
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -45445,13 +46187,14 @@ GameObject:
   - component: {fileID: 3312457259134417289}
   - component: {fileID: 3312457259132380808}
   - component: {fileID: 468500320}
+  - component: {fileID: 3312457259135463550}
   m_Layer: 9
   m_Name: Car Coupe (9)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457259132380808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45525,6 +46268,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &3312457259135463550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457259132380807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!146 &3312457259142714835
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -45727,13 +46485,14 @@ GameObject:
   - component: {fileID: 3312457259202343453}
   - component: {fileID: 3312457259195985173}
   - component: {fileID: 534328564}
+  - component: {fileID: 3312457259202343454}
   m_Layer: 9
   m_Name: Car Coupe (11)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457259195985173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46043,6 +46802,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 0.8, z: 2.2}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &3312457259202343454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457259195985171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!146 &3312457259209411145
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -46492,13 +47266,14 @@ GameObject:
   - component: {fileID: 3312457259291871198}
   - component: {fileID: 3312457259289712849}
   - component: {fileID: 1651753271}
+  - component: {fileID: 3312457259295018539}
   m_Layer: 9
   m_Name: Car Coupe (10)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457259289712849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46717,6 +47492,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &3312457259295018539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457259289712848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!54 &3312457259329993314
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46923,13 +47713,14 @@ GameObject:
   - component: {fileID: 3312457259333137302}
   - component: {fileID: 3312457259335167129}
   - component: {fileID: 1736799615}
+  - component: {fileID: 3312457259335167130}
   m_Layer: 9
   m_Name: Car Coupe (4)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457259335167129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46955,6 +47746,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &3312457259335167130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457259335167128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1 &3312457259335194984
 GameObject:
   m_ObjectHideFlags: 0
@@ -47429,13 +48235,14 @@ GameObject:
   - component: {fileID: 3312457259605592372}
   - component: {fileID: 3312457259599369787}
   - component: {fileID: 2009518045}
+  - component: {fileID: 3312457259605592373}
   m_Layer: 9
   m_Name: Car Coupe (5)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457259599369787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47597,6 +48404,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 0.8, z: 2.2}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &3312457259605592373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457259599369786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!146 &3312457259611101506
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -47878,13 +48700,14 @@ GameObject:
   - component: {fileID: 3312457259790718230}
   - component: {fileID: 3312457259784358425}
   - component: {fileID: 2093945855}
+  - component: {fileID: 3312457259790718231}
   m_Layer: 9
   m_Name: Car Coupe (3)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457259784358425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48115,6 +48938,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 0.8, z: 2.2}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &3312457259790718231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457259784358424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!146 &3312457259795170656
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -48317,13 +49155,14 @@ GameObject:
   - component: {fileID: 3312457260175358056}
   - component: {fileID: 3312457260169127783}
   - component: {fileID: 1440235137}
+  - component: {fileID: 3312457260175358057}
   m_Layer: 9
   m_Name: Car Coupe (6)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457260169127783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48633,6 +49472,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1, y: 0.8, z: 2.2}
   m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &3312457260175358057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457260169127782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!146 &3312457260182421564
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -49046,13 +49900,14 @@ GameObject:
   - component: {fileID: 3312457260282876883}
   - component: {fileID: 3312457260280712414}
   - component: {fileID: 1600214330}
+  - component: {fileID: 3312457260283927080}
   m_Layer: 9
   m_Name: Car Coupe (12)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3312457260280712414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49307,6 +50162,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &3312457260283927080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312457260280712413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &3461393065406497520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49328,6 +50198,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.96, y: 0.85, z: 2.13}
   m_Center: {x: 0, y: 0.55, z: -0.07}
+--- !u!114 &3461393065406497521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630856244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1001 &3622901704500969697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49406,6 +50291,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
+--- !u!114 &4355280043616258937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498139330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!65 &5963189199545565908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49790,13 +50690,14 @@ GameObject:
   - component: {fileID: 7118174903863567020}
   - component: {fileID: 7118174903863567012}
   - component: {fileID: 5963189201434802796}
+  - component: {fileID: 7118174903863567021}
   m_Layer: 9
   m_Name: Car Van (3)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7118174903863567017
 Transform:
   m_ObjectHideFlags: 0
@@ -49867,6 +50768,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &7118174903863567021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174903863567016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1 &7118174903866799080
 GameObject:
   m_ObjectHideFlags: 0
@@ -50208,13 +51124,14 @@ GameObject:
   - component: {fileID: 7118174904046597060}
   - component: {fileID: 7118174904046597069}
   - component: {fileID: 5963189201214647045}
+  - component: {fileID: 7118174904046597070}
   m_Layer: 9
   m_Name: Car Van (8)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &7118174904046597059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50288,6 +51205,21 @@ MonoBehaviour:
   emergencyBrakeThresh: 5
   slowDownThresh: 8
   vehicleStatus: 0
+--- !u!114 &7118174904046597070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174904046597057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!4 &7118174904075766904
 Transform:
   m_ObjectHideFlags: 0
@@ -50570,13 +51502,14 @@ GameObject:
   - component: {fileID: 7118174904155028316}
   - component: {fileID: 7118174904155028308}
   - component: {fileID: 5963189201122272156}
+  - component: {fileID: 7118174904155028317}
   m_Layer: 9
   m_Name: Car Van (5)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7118174904155028313
 Transform:
   m_ObjectHideFlags: 0
@@ -50647,6 +51580,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &7118174904155028317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174904155028312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!33 &7118174904163921971
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -51398,13 +52346,14 @@ GameObject:
   - component: {fileID: 7118174904444216192}
   - component: {fileID: 7118174904444216177}
   - component: {fileID: 5963189200804871097}
+  - component: {fileID: 7118174904444216193}
   m_Layer: 9
   m_Name: Car Van (11)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &7118174904444216191
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51457,6 +52406,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &7118174904444216193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174904444216189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1 &7118174904547533652
 GameObject:
   m_ObjectHideFlags: 0
@@ -51678,13 +52642,14 @@ GameObject:
   - component: {fileID: 7118174904589624896}
   - component: {fileID: 7118174904589624883}
   - component: {fileID: 5963189200684465915}
+  - component: {fileID: 7118174904589624897}
   m_Layer: 9
   m_Name: Car Van (4)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7118174904589624896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51710,6 +52675,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &7118174904589624897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174904589624895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1 &7118174904616931237
 GameObject:
   m_ObjectHideFlags: 0
@@ -52598,13 +53578,14 @@ GameObject:
   - component: {fileID: 7118174904947323260}
   - component: {fileID: 7118174904947323255}
   - component: {fileID: 5963189200301337023}
+  - component: {fileID: 7118174904947323261}
   m_Layer: 9
   m_Name: Car Van (9)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7118174904947323260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52630,6 +53611,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &7118174904947323261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174904947323259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1 &7118174904948216864
 GameObject:
   m_ObjectHideFlags: 0
@@ -52914,13 +53910,14 @@ GameObject:
   - component: {fileID: 7118174905013495480}
   - component: {fileID: 7118174905013495482}
   - component: {fileID: 5963189200235396722}
+  - component: {fileID: 7118174905013495483}
   m_Layer: 9
   m_Name: Car Van (6)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7118174905013495479
 Transform:
   m_ObjectHideFlags: 0
@@ -52985,6 +53982,21 @@ MonoBehaviour:
   emergencyBrakeThresh: 5
   slowDownThresh: 8
   vehicleStatus: 0
+--- !u!114 &7118174905013495483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174905013495478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!4 &7118174905018962002
 Transform:
   m_ObjectHideFlags: 0
@@ -53223,13 +54235,14 @@ GameObject:
   - component: {fileID: 7118174905106877724}
   - component: {fileID: 7118174905106877719}
   - component: {fileID: 5963189200192460255}
+  - component: {fileID: 7118174905106877725}
   m_Layer: 9
   m_Name: Car Van (1)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7118174905106877724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53255,6 +54268,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &7118174905106877725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174905106877723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!146 &7118174905117749584
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -53864,13 +54892,14 @@ GameObject:
   - component: {fileID: 7118174905255592684}
   - component: {fileID: 7118174905255592677}
   - component: {fileID: 5963189200005634605}
+  - component: {fileID: 7118174905255592685}
   m_Layer: 9
   m_Name: Car Van (7)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &7118174905255592683
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53923,6 +54952,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &7118174905255592685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174905255592681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1 &7118174905280664961
 GameObject:
   m_ObjectHideFlags: 0
@@ -54550,13 +55594,14 @@ GameObject:
   - component: {fileID: 7118174905503660512}
   - component: {fileID: 7118174905503660498}
   - component: {fileID: 5963189199786025242}
+  - component: {fileID: 7118174905503660513}
   m_Layer: 9
   m_Name: Car Van (10)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7118174905503660511
 Transform:
   m_ObjectHideFlags: 0
@@ -54600,6 +55645,21 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+--- !u!114 &7118174905503660513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174905503660510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!1 &7118174905516628690
 GameObject:
   m_ObjectHideFlags: 0
@@ -55029,13 +56089,14 @@ GameObject:
   - component: {fileID: 7118174905732438548}
   - component: {fileID: 7118174905732438556}
   - component: {fileID: 5963189199545565908}
+  - component: {fileID: 7118174905732438557}
   m_Layer: 9
   m_Name: Car Van (2)
   m_TagString: AutonomousVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7118174905732438545
 Transform:
   m_ObjectHideFlags: 0
@@ -55127,6 +56188,21 @@ MonoBehaviour:
   emergencyBrakeThresh: 5
   slowDownThresh: 8
   vehicleStatus: 0
+--- !u!114 &7118174905732438557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7118174905732438544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 0}
+  carSensorRadius: {fileID: 0}
+  waypointThresh: 6
 --- !u!33 &7118174905736899397
 MeshFilter:
   m_ObjectHideFlags: 0

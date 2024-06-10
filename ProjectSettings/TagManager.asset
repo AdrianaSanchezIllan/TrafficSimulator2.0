@@ -9,6 +9,7 @@ TagManager:
   - CoffeeShop
   - Park
   - Pedestrian
+  - Intersection
   layers:
   - Default
   - TransparentFX

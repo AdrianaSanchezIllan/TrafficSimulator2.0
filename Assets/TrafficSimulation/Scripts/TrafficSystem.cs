@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TrafficSimulation {
     public class TrafficSystem : MonoBehaviour {
-        public bool hideGuizmos = false;
+        public bool hideGuizmos = true;
         public float segDetectThresh = 0.1f;
         public ArrowDraw arrowDrawType = ArrowDraw.ByLength;
         public int arrowCount = 1;

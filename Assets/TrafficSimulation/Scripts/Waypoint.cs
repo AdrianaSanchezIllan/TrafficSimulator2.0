@@ -7,6 +7,8 @@ namespace TrafficSimulation {
     public class Waypoint : MonoBehaviour {
         [HideInInspector] public Segment segment;
 
+        public bool belongsIntersection = false;
+
         public void Refresh(int _newId, Segment _newSegment) {
             segment = _newSegment;
             name = "Waypoint-" + _newId;
@@ -28,5 +30,12 @@ namespace TrafficSimulation {
         public Vector3 GetVisualPos() {
             return transform.position + new Vector3(0, 0.5f, 0);
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Intersection")) belongsIntersection = true;
+        }
+
+
     }
 }
