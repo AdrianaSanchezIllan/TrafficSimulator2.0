@@ -42685,7 +42685,7 @@ MonoBehaviour:
       nodes:
       - name: GO
         id: 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
-        position: {x: 544, y: -21.600002}
+        position: {x: 786.4, y: 67.200005}
         node:
           rid: 2352687894773628952
         references:
@@ -42700,7 +42700,7 @@ MonoBehaviour:
         - 8bcc29b8-8666-49cd-9849-15c46663e507
       - name: CHOOSE_DIRECTION
         id: 9b6e9778-8c01-497a-a74d-923fad2ec8ec
-        position: {x: -39.2, y: -29.600002}
+        position: {x: -143.2, y: 51.199997}
         node:
           rid: 2352687918901624832
         references:
@@ -42713,9 +42713,9 @@ MonoBehaviour:
         - 8bcc29b8-8666-49cd-9849-15c46663e507
         childIds:
         - 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
-      - name: directionChosen
+      - name: checkDirection
         id: 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
-        position: {x: 274.4, y: -40}
+        position: {x: 328.8, y: -136.8}
         node:
           rid: 2352687918901624834
         references:
@@ -42735,7 +42735,7 @@ MonoBehaviour:
         - 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
       - name: intersectionZone
         id: 8bcc29b8-8666-49cd-9849-15c46663e507
-        position: {x: 258.4, y: 168.79999}
+        position: {x: 320.8, y: 187.20001}
         node:
           rid: 2352687918901624838
         references:
@@ -42783,11 +42783,11 @@ MonoBehaviour:
     - rid: 2352687918901624834
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
-        StatusFlags: 2
+        StatusFlags: -1
     - rid: 2352687918901624838
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
-        StatusFlags: 2
+        StatusFlags: -1
     - rid: 2352687918901624844
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:

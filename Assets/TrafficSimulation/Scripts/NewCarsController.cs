@@ -47,6 +47,10 @@ namespace TrafficSimulation.Scripts
             if (trafficSystem == null)
                 return;
             initMaxSpeed = wheelDrive.maxSpeed;
+
+            nextWaypoint.waypoint = -1;
+
+            SetInitWaypoint();
         }
 
         // Update is called once per frame
@@ -78,6 +82,14 @@ namespace TrafficSimulation.Scripts
                 float steering = 0;
                 wheelDrive.maxSpeed = initMaxSpeed;
 
+                //¿Hay q rotar?
+                if(nextWaypoint.waypoint != -1)
+                {
+                    Transform waypoint = trafficSystem.segments[nextWaypoint.segment].waypoints[nextWaypoint.waypoint].transform;
+                    this.gameObject.transform.LookAt(waypoint);
+                }
+                
+
                 wheelDrive.Move(acc, steering, brake);
 
                 if(isInInterestZone)
@@ -96,31 +108,6 @@ namespace TrafficSimulation.Scripts
             {
                 Debug.Log("Entrando en interseccion "+other.GetComponent<Intersection>().id);
                 isInInterestZone = true;
-
-                //Find current target
-                foreach (Segment segment in trafficSystem.segments)
-                {
-                    if (segment.IsOnSegment(this.transform.position))
-                    {
-                        waypointIntersection.segment = segment.id;
-
-                        //Find nearest waypoint to start within the segment
-                        float minDist = float.MaxValue;
-                        for (int j = 0; j < trafficSystem.segments[waypointIntersection.segment].waypoints.Count; j++)
-                        {
-                            float d = Vector3.Distance(this.transform.position, trafficSystem.segments[waypointIntersection.segment].waypoints[j].transform.position);
-
-                            //Only take in front points
-                            Vector3 lSpace = this.transform.InverseTransformPoint(trafficSystem.segments[waypointIntersection.segment].waypoints[j].transform.position);
-                            if (d < minDist && lSpace.z > 0)
-                            {
-                                minDist = d;
-                                waypointIntersection.waypoint = j;
-                            }
-                        }
-                        break;
-                    }
-                }
             }
         }
 
@@ -138,7 +125,7 @@ namespace TrafficSimulation.Scripts
         {
             GameObject waypoint = trafficSystem.segments[waypointIntersection.segment].waypoints[waypointIntersection.waypoint].gameObject;
             Debug.Log("Distance: "+Vector3.Distance(this.gameObject.transform.position, waypoint.transform.position));
-            if (Vector3.Distance(this.gameObject.transform.position,waypoint.transform.position) < 0.1f)
+            if (Vector3.Distance(this.gameObject.transform.position,waypoint.transform.position) < 1f)
             {
                 Debug.Log("STOP");
                 wheelDrive.maxSpeed = Mathf.Min(wheelDrive.maxSpeed / 2f, 5f);
@@ -161,6 +148,7 @@ namespace TrafficSimulation.Scripts
                 nextWaypoint.segment = GetNextSegmentId();
             }
             Debug.Log("Nueva direccion: Segmento " + nextWaypoint.segment + ", Waypoint " + nextWaypoint.waypoint);
+
         }
         int GetNextSegmentId()
         {
@@ -172,12 +160,43 @@ namespace TrafficSimulation.Scripts
 
         public bool DirectionChosen()
         {
-            if(waypointIntersection.waypoint != nextWaypoint.waypoint)
+            bool aux = false;
+            if (waypointIntersection.segment != nextWaypoint.segment || waypointIntersection.waypoint != nextWaypoint.waypoint)
             {
+                Debug.Log("Confirmando nuevo punto elegido");
+                aux = true;
                 waypointIntersection = nextWaypoint;
-                return true;
+                return aux;
             }
-            return false;
+            return aux;
+        }
+
+        private void SetInitWaypoint()
+        {
+            //Find current target
+            foreach (Segment segment in trafficSystem.segments)
+            {
+                if (segment.IsOnSegment(this.transform.position))
+                {
+                    waypointIntersection.segment = segment.id;
+
+                    //Find nearest waypoint to start within the segment
+                    float minDist = float.MaxValue;
+                    for (int j = 0; j < trafficSystem.segments[waypointIntersection.segment].waypoints.Count; j++)
+                    {
+                        float d = Vector3.Distance(this.transform.position, trafficSystem.segments[waypointIntersection.segment].waypoints[j].transform.position);
+
+                        //Only take in front points
+                        Vector3 lSpace = this.transform.InverseTransformPoint(trafficSystem.segments[waypointIntersection.segment].waypoints[j].transform.position);
+                        if (d < minDist && lSpace.z > 0)
+                        {
+                            minDist = d;
+                            waypointIntersection.waypoint = j;
+                        }
+                    }
+                    break;
+                }
+            }
         }
 
 
