@@ -58,7 +58,9 @@ namespace TrafficSimulation{
         [Tooltip("The vehicle's drive type: rear-wheels drive, front-wheels drive or all-wheels drive.")]
         public DriveType driveType;
 
-        private WheelCollider[] wheels;
+        public WheelCollider[] wheels;
+
+        //ADDED BY ME
         private float currentSteering = 0f;
 
         void OnEnable(){
@@ -87,7 +89,7 @@ namespace TrafficSimulation{
         {
 
             float nSteering = Mathf.Lerp(currentSteering, _steering, Time.deltaTime * steeringLerp);
-            currentSteering = nSteering;
+            //currentSteering = nSteering;
 
             Rigidbody rb = this.GetComponent<Rigidbody>();
 

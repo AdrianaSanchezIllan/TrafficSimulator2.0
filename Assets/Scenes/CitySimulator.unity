@@ -2544,11 +2544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
       propertyPath: data.graphs.Array.data[0].nodes.Array.data[0].position.x
-      value: 638.4
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
       propertyPath: data.graphs.Array.data[0].nodes.Array.data[0].position.y
-      value: -228
+      value: -199.20001
       objectReference: {fileID: 0}
     - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
       propertyPath: data.graphs.Array.data[0].nodes.Array.data[1].position.x
@@ -6214,7 +6214,7 @@ Transform:
   m_GameObject: {fileID: 380213307}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.551502, y: 0.00000011920929, z: 12.469999}
+  m_LocalPosition: {x: 22.75, y: 0.00000011920929, z: 12.469999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8173,6 +8173,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1001 &505590247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10137,6 +10138,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1001 &630876255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13947,7 +13949,7 @@ Transform:
   m_GameObject: {fileID: 895439729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.124535, y: 0, z: -0.18515778}
+  m_LocalPosition: {x: 28.4, y: 0, z: -0.18515778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36704,6 +36706,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &1809614698698968902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37005,6 +37008,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!146 &1809614698925278776
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -37349,6 +37353,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!54 &1809614699010143670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37753,6 +37758,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!146 &1809614699096926100
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -38180,6 +38186,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!4 &1809614699269928028
 Transform:
   m_ObjectHideFlags: 0
@@ -39185,6 +39192,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &1809614699540498968
 GameObject:
   m_ObjectHideFlags: 0
@@ -39687,6 +39695,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &1809614699637939886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40091,6 +40100,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!4 &1809614699714387548
 Transform:
   m_ObjectHideFlags: 0
@@ -40729,6 +40739,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &1809614699921102800
 GameObject:
   m_ObjectHideFlags: 0
@@ -41040,6 +41051,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &1809614700007742494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41383,8 +41395,9 @@ GameObject:
   - component: {fileID: 1809614700256750961}
   - component: {fileID: 1809614700256750966}
   - component: {fileID: 2696559846287320780}
+  - component: {fileID: 2696559846287320782}
   - component: {fileID: 1809614700256750962}
-  - component: {fileID: 2696559846287320779}
+  - component: {fileID: 2696559846287320781}
   - component: {fileID: 2696559846287320778}
   m_Layer: 9
   m_Name: Car Long (3)
@@ -41418,7 +41431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1809614700256750960}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5021f9004f348d74abb4f0ae3ed02375, type: 3}
   m_Name: 
@@ -41436,6 +41449,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!54 &1809614700256750966
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41598,6 +41612,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &1809614700294587662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42616,21 +42631,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88, y: 0.78, z: 2.11}
   m_Center: {x: 0, y: 0.51, z: -0.03}
---- !u!114 &2696559846287320779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809614700256750960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c61c8b1db8cf30d4ca61b57aacdd5d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trafficSystem: {fileID: 1938862188}
-  carSensorRadius: {fileID: 0}
-  waypointThresh: 6
 --- !u!114 &2696559846287320780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42650,6 +42650,116 @@ MonoBehaviour:
     identifier: 
   data:
     graphs:
+    - name: FSMCars
+      id: 6276e9e2-070c-4143-ae4e-049c72776915
+      graph:
+        rid: 2352687984149004288
+      nodes:
+      - name: GO
+        id: 1fb651fe-63c7-4f88-b0c8-bd7adc14fec4
+        position: {x: 400, y: 136}
+        node:
+          rid: 2352687984149004289
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687984149004290
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 28f1f438-ceb4-4090-b117-c7e98b76f904
+        childIds:
+        - 5f472b13-078d-4228-be00-b724f8ce4d31
+        - c9126e76-a45d-4040-a076-56c73489bf16
+      - name: IntersectionZone
+        id: 5f472b13-078d-4228-be00-b724f8ce4d31
+        position: {x: 100.8, y: 123.200005}
+        node:
+          rid: 2352687989254520834
+        references:
+        - fieldName: Perception
+          value:
+            rid: 2352687989254520835
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 1fb651fe-63c7-4f88-b0c8-bd7adc14fec4
+        childIds:
+        - 20f300ee-bd0b-4991-9aab-4ace326a05b5
+      - name: CHOOSE_DIRECTION
+        id: 20f300ee-bd0b-4991-9aab-4ace326a05b5
+        position: {x: 100.8, y: -158.4}
+        node:
+          rid: 2352687989254520836
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687989254520837
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 5f472b13-078d-4228-be00-b724f8ce4d31
+        childIds:
+        - 28f1f438-ceb4-4090-b117-c7e98b76f904
+      - name: DirectionChosen
+        id: 28f1f438-ceb4-4090-b117-c7e98b76f904
+        position: {x: 408, y: -80.8}
+        node:
+          rid: 2352687989254520838
+        references:
+        - fieldName: Perception
+          value:
+            rid: 2352687989254520839
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 20f300ee-bd0b-4991-9aab-4ace326a05b5
+        childIds:
+        - 1fb651fe-63c7-4f88-b0c8-bd7adc14fec4
+      - name: TURN
+        id: 536e532d-2630-4756-8fbe-481b70f906ba
+        position: {x: 1008, y: 144}
+        node:
+          rid: 2352687994123583488
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687994123583491
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - c9126e76-a45d-4040-a076-56c73489bf16
+        childIds: []
+      - name: CheckDirection
+        id: c9126e76-a45d-4040-a076-56c73489bf16
+        position: {x: 709.6, y: 131.20001}
+        node:
+          rid: 2352687994123583489
+        references:
+        - fieldName: Perception
+          value:
+            rid: 2352687994123583490
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 1fb651fe-63c7-4f88-b0c8-bd7adc14fec4
+        childIds:
+        - 536e532d-2630-4756-8fbe-481b70f906ba
     - name: carsFSM
       id: 0fd8091e-e505-4a88-8c6f-fb0c63696724
       graph:
@@ -42657,17 +42767,17 @@ MonoBehaviour:
       nodes:
       - name: GO
         id: 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
-        position: {x: 786.4, y: 67.200005}
+        position: {x: 772.8, y: 219.20001}
         node:
           rid: 2352687894773628952
         references:
         - fieldName: Action
           value:
-            rid: 2352687894773628955
+            rid: 2352687948324405282
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
+        - cd7617a4-a542-491b-ba9f-d079bf899e39
         childIds:
         - 8bcc29b8-8666-49cd-9849-15c46663e507
       - name: CHOOSE_DIRECTION
@@ -42687,7 +42797,7 @@ MonoBehaviour:
         - 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
       - name: checkDirection
         id: 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
-        position: {x: 328.8, y: -136.8}
+        position: {x: 376.8, y: -237.6}
         node:
           rid: 2352687918901624834
         references:
@@ -42704,10 +42814,10 @@ MonoBehaviour:
         parentIds:
         - 9b6e9778-8c01-497a-a74d-923fad2ec8ec
         childIds:
-        - 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
+        - d8e06334-0bc3-41af-be9b-ccd7dc42c8af
       - name: intersectionZone
         id: 8bcc29b8-8666-49cd-9849-15c46663e507
-        position: {x: 320.8, y: 187.20001}
+        position: {x: 360.8, y: 206.4}
         node:
           rid: 2352687918901624838
         references:
@@ -42725,6 +42835,114 @@ MonoBehaviour:
         - 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
         childIds:
         - 9b6e9778-8c01-497a-a74d-923fad2ec8ec
+      - name: TURN
+        id: d8e06334-0bc3-41af-be9b-ccd7dc42c8af
+        position: {x: 788.8, y: -191.20001}
+        node:
+          rid: 2352687966468177920
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687966468177921
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
+        childIds:
+        - cd7617a4-a542-491b-ba9f-d079bf899e39
+      - name: gogogo
+        id: cd7617a4-a542-491b-ba9f-d079bf899e39
+        position: {x: 780.8, y: 12}
+        node:
+          rid: 2352687966468177922
+        references:
+        - fieldName: Perception
+          value:
+            rid: 2352687966468177923
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d8e06334-0bc3-41af-be9b-ccd7dc42c8af
+        childIds:
+        - 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
+    - name: carStates
+      id: 2085f9c8-179d-4df8-95f0-30a1be4f4d80
+      graph:
+        rid: 2352687948324405253
+      nodes:
+      - name: GO
+        id: e37a72a5-5139-448f-acb6-a8d4ac5c0b5a
+        position: {x: 891.2, y: 149.6}
+        node:
+          rid: 2352687948324405254
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687948324405255
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds: []
+        childIds:
+        - a1417218-e32f-48db-b7fd-1f62a9f73971
+      - name: enteringInInterestZone
+        id: a1417218-e32f-48db-b7fd-1f62a9f73971
+        position: {x: 673.6, y: 414.4}
+        node:
+          rid: 2352687948324405256
+        references:
+        - fieldName: Perception
+          value:
+            rid: 2352687948324405257
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - e37a72a5-5139-448f-acb6-a8d4ac5c0b5a
+        childIds:
+        - d13f4d84-f28e-44f3-937a-c54dd40a48ef
+      - name: SLOW_DOWN
+        id: d13f4d84-f28e-44f3-937a-c54dd40a48ef
+        position: {x: 907.2, y: 691.19995}
+        node:
+          rid: 2352687948324405259
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352687948324405263
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a1417218-e32f-48db-b7fd-1f62a9f73971
+        childIds:
+        - 6d780c24-3994-4452-ab11-56977db666bc
+      - name: 
+        id: 6d780c24-3994-4452-ab11-56977db666bc
+        position: {x: 923.2, y: 909.6}
+        node:
+          rid: 2352687948324405264
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - d13f4d84-f28e-44f3-937a-c54dd40a48ef
+        childIds: []
     pushPerceptions: []
   references:
     version: 2
@@ -42737,12 +42955,6 @@ MonoBehaviour:
     - rid: 2352687894773628952
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data: 
-    - rid: 2352687894773628955
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: NewCarsController
-          methodName: ToMove
     - rid: 2352687918901624832
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data: 
@@ -42755,11 +42967,11 @@ MonoBehaviour:
     - rid: 2352687918901624834
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
-        StatusFlags: -1
+        StatusFlags: 2
     - rid: 2352687918901624838
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
-        StatusFlags: -1
+        StatusFlags: 2
     - rid: 2352687918901624844
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -42796,6 +43008,216 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
+    - rid: 2352687948324405253
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687948324405254
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687948324405255
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController
+          methodName: ToMove
+    - rid: 2352687948324405256
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 2352687948324405257
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: NewCarsController
+          methodName: IsInInterestZone
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 2352687948324405259
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687948324405263
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController
+          methodName: SlowDown
+    - rid: 2352687948324405264
+      type: {class: ExitTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+        ExitStatus: 2
+    - rid: 2352687948324405282
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController
+          methodName: ToMove
+    - rid: 2352687966468177920
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687966468177921
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController
+          methodName: TurnTo
+    - rid: 2352687966468177922
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: 2
+    - rid: 2352687966468177923
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: NewCarsController
+          methodName: EverythingFine
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 2352687984149004288
+      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687984149004289
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687984149004290
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController_v2
+          methodName: ToMove
+    - rid: 2352687989254520834
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 2352687989254520835
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: NewCarsController_v2
+          methodName: IsInWaypoint
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 2352687989254520836
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687989254520837
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController_v2
+          methodName: ChooseDirection
+    - rid: 2352687989254520838
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 2352687989254520839
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: NewCarsController_v2
+          methodName: DirectionChosen
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 2352687994123583488
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352687994123583489
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 2352687994123583490
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: NewCarsController_v2
+          methodName: DirectionIsNotCorrect
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 2352687994123583491
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController_v2
+          methodName: ToTurn
+--- !u!114 &2696559846287320781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614700256750960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c292b2597b03b4c9c7839fb115a3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficSystem: {fileID: 1938862188}
+--- !u!114 &2696559846287320782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809614700256750960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f62dbddc517644449fe6495ce0475f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftWheelShape: {fileID: 100002, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
+  rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
+  maxSpeed: 15
+  animateWheels: 1
 --- !u!65 &2696559846325161651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43377,6 +43799,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457258494468705
 GameObject:
   m_ObjectHideFlags: 0
@@ -44157,6 +44580,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100006, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!33 &3312457258518334989
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44550,6 +44974,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100006, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &3312457258731154651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45092,6 +45517,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457258789734567
 GameObject:
   m_ObjectHideFlags: 0
@@ -45458,6 +45884,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457258910818329
 GameObject:
   m_ObjectHideFlags: 0
@@ -46192,6 +46619,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!65 &3312457259134417289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46490,6 +46918,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457259195999971
 GameObject:
   m_ObjectHideFlags: 0
@@ -47271,6 +47700,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457259289871722
 GameObject:
   m_ObjectHideFlags: 0
@@ -47718,6 +48148,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &3312457259335167130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48240,6 +48671,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457259599399808
 GameObject:
   m_ObjectHideFlags: 0
@@ -48705,6 +49137,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100006, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457259784372712
 GameObject:
   m_ObjectHideFlags: 0
@@ -49160,6 +49593,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457260169145494
 GameObject:
   m_ObjectHideFlags: 0
@@ -49905,6 +50339,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: 25a29d2766309ac48a1840f0088d95eb, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!1 &3312457260280749551
 GameObject:
   m_ObjectHideFlags: 0
@@ -50740,6 +51175,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174903863567021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51156,6 +51592,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174904046597069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51552,6 +51989,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174904155028317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52378,6 +52816,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174904444216193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52647,6 +53086,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174904589624897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53583,6 +54023,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174904947323261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53933,6 +54374,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174905013495482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54240,6 +54682,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174905106877725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54924,6 +55367,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174905255592685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55617,6 +56061,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174905503660513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56139,6 +56584,7 @@ MonoBehaviour:
   rightWheelShape: {fileID: 100004, guid: e573176e04888a947a9a7b761514096e, type: 3}
   animateWheels: 1
   driveType: 0
+  wheels: []
 --- !u!114 &7118174905732438556
 MonoBehaviour:
   m_ObjectHideFlags: 0
