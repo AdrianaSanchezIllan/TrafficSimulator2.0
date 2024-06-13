@@ -4,6 +4,10 @@ using System.Collections;
 using BehaviourAPI.Core;
 using BehaviourAPI.StateMachines;
 using BehaviourAPI.BehaviourTrees;
+using System.Collections.Generic;
+using static PedestrianBehaviour;
+using static UnityEditor.ShaderData;
+using System.Runtime.ConstrainedExecution;
 
 public class PedestrianBehaviour : MonoBehaviour
 {
@@ -11,19 +15,28 @@ public class PedestrianBehaviour : MonoBehaviour
     public float range; // Radio de deambulación
     public Transform centrePoint; // Centro del área de deambulación
 
+    private List<Crosswalk> crosswalks = new List<Crosswalk>(); // Lista de pasos de cebra
+    private Crosswalk nearbyCrosswalk; // Variable para almacenar el paso de cebra cercano
+    private bool hasCrossed = false;
+    private Vector3 originalDestination; // Para almacenar el destino original antes de cruzar
+    private bool canCrossNow = false;
+
+    //public TrafficLights trafficLight; // Referencia al semáforo
+    
+
     private Animator animator;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
 
     private GameObject currentActionIndicator;
     public InterestZone currentZone;
-    private Transform currentLocation;
+    public Transform currentLocation;
+    public string currentAction;
+    private bool isActionCompleted = false;
 
     Transform location;
-    private bool isActionCompleted = false;
     private bool inTrafficLight = false;
     private bool isCrossingStreet = false;
-    private TrafficLights trafficLight;
-
+    
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -43,32 +56,18 @@ public class PedestrianBehaviour : MonoBehaviour
         {
             centrePoint = transform;
         }
-    }
 
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.TryGetComponent<TrafficLights>(out TrafficLights semaforo))
+        // Buscar todos los objetos con la etiqueta "Crosswalk" y añadir sus componentes a la lista
+        GameObject[] crosswalkObjects = GameObject.FindGameObjectsWithTag("Crosswalk");
+        foreach (var crosswalkObject in crosswalkObjects)
         {
-            trafficLight = semaforo;
-            if (!semaforo.IsRedForCars() || semaforo.TimeToChange() < 5)
+            Crosswalk crosswalk = crosswalkObject.GetComponent<Crosswalk>();
+            if (crosswalk != null)
             {
-            inTrafficLight = true;
+                crosswalks.Add(crosswalk);
+            }
         }
     }
-        inTrafficLight = false;
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        trafficLight = null;
-        inTrafficLight = false;
-    }
-
-    private bool InTrafficLight()
-    {
-        return inTrafficLight;
-    }
-
-    #region FSM States
 
     // Estado de deambulación
     public void StartRoaming()
@@ -92,36 +91,118 @@ public class PedestrianBehaviour : MonoBehaviour
 
             bool isMoving = agent.velocity.magnitude > 0.1f;
             animator.SetBool(IsWalking, isMoving);
+            yield return null;
 
-            if (inTrafficLight && !trafficLight.IsRedForCars())
+        }
+    }
+
+    // Método para verificar si el peatón está cerca de algún paso de cebra y guardar el crosswalk cercano
+    private bool InCrosswalkArea()
+    {
+        if(nearbyCrosswalk != null)
+        {
+            Debug.Log("en paso de cebra");
+            return true;
+        }
+        nearbyCrosswalk = null;
+        return false;
+    }
+
+    public void EnterCrosswalkArea(Crosswalk crosswalk)
+    {
+        nearbyCrosswalk = crosswalk;
+        Debug.Log("Entered crosswalk area");
+        //MoveToCrosswalk();
+    }
+
+    public void ExitCrosswalkArea(Crosswalk crosswalk)
+    {
+        if (crosswalk == nearbyCrosswalk)
+        {
+            nearbyCrosswalk = null;
+            Debug.Log("Exited crosswalk area");
+        }
+    }
+
+    // Método para mover al peatón al inicio del paso de cebra
+    public void MoveToCrosswalk()
+    {
+        originalDestination = agent.destination; // Guardar el destino original
+        agent.SetDestination(GetCrosswalkEntrance()); // Mover al inicio del paso de cebra
+        StartCoroutine(WaitAtCrosswalk());
+    }
+
+    // Obtener el punto de entrada del paso de cebra
+    private Vector3 GetCrosswalkEntrance()
+    {
+        return nearbyCrosswalk.collider.ClosestPoint(agent.transform.position);
+    }
+
+    // Estado para esperar en el paso de cebra
+    private IEnumerator WaitAtCrosswalk()
+    {
+        while (true)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                agent.isStopped = true;
-                StartCrossingStreet();
+                agent.isStopped = true; // Detener al agente
+                if (nearbyCrosswalk.trafficLight.greenForPedestrian)
+                {
+                    agent.isStopped = false; // Reanudar el agente
+                    canCrossNow = true;
+                    yield break;
+                }
+            }
+
+            yield return new WaitForSeconds(1.0f); // Esperar antes de verificar nuevamente
+        }
+    }
+    private bool CanCrossNow()
+    {
+        return canCrossNow;
+    }
+    // Estado para comenzar a cruzar la calle
+    public void StartCrossing()
+    {
+        StartCoroutine(CrossStreet());
+    }
+
+    private IEnumerator CrossStreet()
+    {
+        while (true)
+        {
+            // Verificar si el semáforo del crosswalk cercano está en verde
+            if (nearbyCrosswalk != null && nearbyCrosswalk.trafficLight.greenForPedestrian)
+            {
+                agent.SetDestination(originalDestination); // Continuar al destino original
+                hasCrossed = true;
                 yield break;
             }
 
-            yield return null;
+            yield return new WaitForSeconds(1.0f); // Esperar antes de verificar nuevamente
         }
     }
-    
-    // Estado de cruce de calle
-    public void StartCrossingStreet()
+
+    public bool CheckIfStreetCrossed()
     {
-        StartCoroutine(WaitForGreenLight());
+        return hasCrossed;
     }
 
-    private IEnumerator WaitForGreenLight()
+
+
+    private bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
-        while (!trafficLight.IsRedForCars())
+        Vector3 randomPoint = center + Random.insideUnitSphere * range;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
         {
-            yield return new WaitForSeconds(0.5f); // Esperar 0.5 segundos antes de verificar nuevamente
+            result = hit.position;
+            return true;
         }
 
-        isCrossingStreet = true;
-        StartRoaming();
+        result = Vector3.zero;
+        return false;
     }
-
-    #endregion
 
     public void MoveTo(Vector3 destination)
     {
@@ -145,7 +226,18 @@ public class PedestrianBehaviour : MonoBehaviour
             yield return null;
         }
     }
+    /*
+private IEnumerator WaitForGreenLight()
+{
+    while (!trafficLight.IsRedForCars())
+    {
+        yield return new WaitForSeconds(0.5f); // Esperar 0.5 segundos antes de verificar nuevamente
+    }
 
+    isCrossingStreet = true;
+    StartRoaming();
+}
+*/
     public void PerformAction(string action)
     {
         switch (action)
@@ -167,12 +259,19 @@ public class PedestrianBehaviour : MonoBehaviour
 
     public Status EnterInterestZone()
     {
-        currentLocation = currentZone.GetAvailableLocation();
-        Debug.Log("current location" + currentLocation);
-        return currentLocation != null ? Status.Success : Status.Failure;
+        if (currentZone != null)
+        {
+            currentLocation = currentZone.GetAvailableLocation();
+            Debug.Log("se asigna currentLocation");
+            if (currentLocation != null)
+            {
+                return Status.Success;
+            }
+        }
+        return Status.Failure;
     }
 
-    public Status MoveToLocation()
+    /*public Status MoveToLocation()
     {
         if (currentLocation != null)
         {
@@ -187,16 +286,36 @@ public class PedestrianBehaviour : MonoBehaviour
         }
         return Status.Failure;
        
-    }
+    }*/
+    public Status MoveToLocation()
+    {
+        if (currentLocation != null)
+        {
+            Debug.Log($"Moving to location: {currentLocation.position}");
+            MoveTo(currentLocation.position);
 
+            if (isPathComplete())
+            {
+                Debug.Log("Path is complete.");
+                return Status.Success;
+            }
+            else
+            {
+                Debug.Log("Moving to location...");
+                return Status.Running;
+            }
+        }
+        return Status.Failure;
+    }
     public Status PerformActionBT()
     {
-        if (currentZone != null)
+        if (!isActionCompleted)
         {
+            isActionCompleted = false;
             StartCoroutine(PerformInterestAction());
             return Status.Running;
         }
-        return Status.Failure;
+        return Status.Success;
     }
 
     private IEnumerator PerformInterestAction()
@@ -205,8 +324,9 @@ public class PedestrianBehaviour : MonoBehaviour
         {
             yield return null;
         }
-        PerformAction(currentZone.interestAction);
+
         agent.isStopped = true;
+        PerformAction(currentZone.interestAction);
 
         if (currentActionIndicator != null)
         {
@@ -232,22 +352,9 @@ public class PedestrianBehaviour : MonoBehaviour
         currentZone.VacateLocation(currentLocation); // Liberar la ubicación
         currentLocation = null;
         isActionCompleted = true;
-        StartRoaming(); // Retomar el roaming después de completar la acción
     }
 
-    private bool RandomPoint(Vector3 center, float range, out Vector3 result)
-    {
-        Vector3 randomPoint = center + Random.insideUnitSphere * range;
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-        {
-            result = hit.position;
-            return true;
-        }
-
-        result = Vector3.zero;
-        return false;
-    }
+    
 
     #region Behaviour Tree Nodes
 
@@ -256,23 +363,20 @@ public class PedestrianBehaviour : MonoBehaviour
         return currentZone != null ? Status.Success : Status.Failure;
     }
 
-    public Status CheckIfCanCrossStreet()
-    {
-        return trafficLight != null && trafficLight.IsRedForCars() ? Status.Success : Status.Failure;
-    }
+    
 
     public Status IsInCoffeeShop()
     {
-        if (currentZone != null && currentZone.interestAction == "Coffee")
+        if (currentAction == "Coffee")
         {
+            Debug.Log("es una coffee shop");
             return Status.Success;
         }
         return Status.Failure;
     }
-
     public Status IsInPark()
     {
-        if (currentZone != null && currentZone.interestAction == "Park")
+        if (currentAction == "Park")
         {
             return Status.Success;
         }
@@ -281,7 +385,7 @@ public class PedestrianBehaviour : MonoBehaviour
 
     public Status IsInSupermarket()
     {
-        if (currentZone != null && currentZone.interestAction == "Supermarket")
+        if (currentAction == "Supermarket")
         {
             return Status.Success;
         }
@@ -327,4 +431,5 @@ public class PedestrianBehaviour : MonoBehaviour
         }
         return Status.Running;
     }
+
 }

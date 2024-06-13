@@ -9,7 +9,11 @@ TagManager:
   - CoffeeShop
   - Park
   - Pedestrian
+<<<<<<< Updated upstream
   - Intersection
+=======
+  - Crosswalk
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

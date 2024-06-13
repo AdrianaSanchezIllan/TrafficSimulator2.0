@@ -20,7 +20,9 @@ public class InterestZone : MonoBehaviour
         if (pedestrianBehaviour != null)
         {
             pedestrianBehaviour.currentZone = this;
+            pedestrianBehaviour.currentAction = this.interestAction;
             //roamMovement.EnterInterestZone(this);
+            //Debug.Log("interest action: " + interestAction);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -55,4 +57,5 @@ public class InterestZone : MonoBehaviour
             }
         }
     }
+
 }

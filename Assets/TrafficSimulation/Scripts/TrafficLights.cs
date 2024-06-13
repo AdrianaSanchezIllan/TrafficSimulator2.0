@@ -8,7 +8,8 @@ public class TrafficLights : MonoBehaviour
 {
     public int lightGroupId;  // Belong to traffic light 1 or 2?
     public Intersection intersection;
-
+    
+    public bool greenForPedestrian = false;
     Light pointLight;
 
     void Start()
@@ -30,9 +31,12 @@ public class TrafficLights : MonoBehaviour
         else
             pointLight.color = new Color(0, 1, 0); // Green
     }
-    public bool IsRedForCars()
+    public void IsRedForCars()
     {
-        return pointLight.color == new Color(1, 0, 0); // Red light
+        if( pointLight.color == new Color(1, 0, 0))
+        {
+            greenForPedestrian = true;
+        }
     }
 
     public float TimeToChange()
