@@ -20,9 +20,9 @@ public class PedestrianBehaviour : MonoBehaviour
     private bool hasCrossed = false;
     private Vector3 originalDestination; // Para almacenar el destino original antes de cruzar
     private bool canCrossNow = false;
+    private bool isInCrosswalk = false; // Flag para controlar la entrada y salida
+                                        //public TrafficLights trafficLight; // Referencia al semáforo
 
-    //public TrafficLights trafficLight; // Referencia al semáforo
-    
 
     private Animator animator;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
@@ -96,7 +96,7 @@ public class PedestrianBehaviour : MonoBehaviour
         }
     }
 
-    // Método para verificar si el peatón está cerca de algún paso de cebra y guardar el crosswalk cercano
+    // Método para verificar si el peatón en algún paso de cebra
     private bool InCrosswalkArea()
     {
         if(nearbyCrosswalk != null)
@@ -108,17 +108,23 @@ public class PedestrianBehaviour : MonoBehaviour
         return false;
     }
 
+    //guarda el paso de cebra en el q esta
     public void EnterCrosswalkArea(Crosswalk crosswalk)
     {
-        nearbyCrosswalk = crosswalk;
-        Debug.Log("Entered crosswalk area");
-        //MoveToCrosswalk();
+        if (!isInCrosswalk) // Verificar si ya está en el paso de cebra
+        {
+            isInCrosswalk = true;
+            //agent.isStopped = true;
+            nearbyCrosswalk = crosswalk;
+            Debug.Log("Entered crosswalk area" + nearbyCrosswalk);
+        }
     }
 
     public void ExitCrosswalkArea(Crosswalk crosswalk)
     {
-        if (crosswalk == nearbyCrosswalk)
+        if (isInCrosswalk && crosswalk == nearbyCrosswalk)
         {
+            isInCrosswalk = false;
             nearbyCrosswalk = null;
             Debug.Log("Exited crosswalk area");
         }
@@ -238,6 +244,8 @@ private IEnumerator WaitForGreenLight()
     StartRoaming();
 }
 */
+
+    // Acciones en zonas de interés
     public void PerformAction(string action)
     {
         switch (action)
