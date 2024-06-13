@@ -94,7 +94,6 @@ namespace TrafficSimulation.Scripts
         {
             while(true)
             {
-
                 wheelDrive.maxSpeed = initMaxSpeed;
                 float acc = 0.5f;
                 float brake = 0.0f; //freno
@@ -103,16 +102,18 @@ namespace TrafficSimulation.Scripts
                 if (rotateAngle != Quaternion.identity)
                 {
                     Debug.Log("Rotate");
-                    acc = 0.0f;
+                    //acc = 0.0f;
+                    wheelDrive.maxSpeed = Mathf.Max(wheelDrive.maxSpeed / 2f, wheelDrive.minSpeed);
                 }
                 if(isStopped)
                 {
+                    Debug.Log("STOP");
                     acc = 0.0f;
                     brake = 1.0f;
                     wheelDrive.maxSpeed = Mathf.Max(wheelDrive.maxSpeed / 2f, wheelDrive.minSpeed);
                 }
 
-                Debug.Log("Acc: " + acc + " | brake: " + brake + " | speed: " + wheelDrive.maxSpeed);
+                Debug.Log("Acc: " + acc + " | Brake: " + brake + " | Speed: " + wheelDrive.maxSpeed);
                 wheelDrive.Move(acc, brake);
                 /*
                 if (isStopped)
@@ -134,16 +135,11 @@ namespace TrafficSimulation.Scripts
         {
             while(true)
             {
-                /*
-                Vector3 desiredVel = trafficSystem.segments[intersectionNode.segment].waypoints[intersectionNode.waypoint].transform.position - this.transform.position;
-                float steering = Mathf.Clamp(this.transform.InverseTransformDirection(desiredVel.normalized).x, -1f, 1f);
-                Debug.Log("Steering = " + steering);
-                wheelDrive.WheelsRotation(steering);
-
-                Vector3 direction = (intersectionNode.transf.position - transform.position).normalized;
-                if (Mathf.Abs(1.0f - Vector3.Dot(direction, transform.forward)) < 0.1f) yield break;*/
+                //Vector3 desiredVel = intersectionNode.transf.position - this.transform.position;
+                //float angle = Mathf.Clamp(this.transform.InverseTransformDirection(desiredVel.normalized).x, -1f, 1f);
+                //wheelDrive.WheelsRotation(angle);
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotateAngle, Time.deltaTime * 1);
-                if (!DirectionIsNotCorrect())
+                if (!DirectionIsNotCorrect()) //direccion corregida
                 {
                     rotateAngle = Quaternion.identity;
                     transform.LookAt(intersectionNode.transf.position);
@@ -186,7 +182,7 @@ namespace TrafficSimulation.Scripts
 
             if (nextNode.waypoint >= trafficSystem.segments[intersectionNode.segment].waypoints.Count)
             {
-                nextNode.waypoint = 1;
+                nextNode.waypoint = 0;
                 nextNode.segment = GetNextSegmentId();
             }
             nextNode.transf = trafficSystem.segments[nextNode.segment].waypoints[nextNode.waypoint].transform;
@@ -215,7 +211,7 @@ namespace TrafficSimulation.Scripts
         {
             Vector3 direction = (intersectionNode.transf.position - transform.position).normalized;
             float angle = Mathf.Abs(1.0f - Vector3.Dot(direction, transform.forward));
-            if(angle > 0.05f)
+            if(angle > 0.01f)
             {
                 rotateAngle = Quaternion.LookRotation((intersectionNode.transf.position - transform.position).normalized);
                 return true;
@@ -309,7 +305,7 @@ namespace TrafficSimulation.Scripts
             for (float i =-finalPos; i <= finalPos;i+=raySpacing)
             {
                 RaycastHit hit;
-                Debug.DrawRay(centreCar, Quaternion.Euler(0, i, 0) * transform.forward * raycastLength, Color.yellow);
+                //Debug.DrawRay(centreCar, Quaternion.Euler(0, i, 0) * transform.forward * raycastLength, Color.yellow);
                 //Vector3 carPosition = car.transform.position;
 
                 if (Physics.Raycast(centreCar, Quaternion.Euler(0,i,0)*transform.forward, out hit, raycastLength))
