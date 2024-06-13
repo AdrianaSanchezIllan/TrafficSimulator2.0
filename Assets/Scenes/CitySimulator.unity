@@ -2880,6 +2880,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835416112509624188, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
       propertyPath: data.graphs.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -17791,11 +17795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pedestrianPrefabs:
   - {fileID: 7501788059647666026, guid: bcc8c8f342f71a7439ac0579aa86f030, type: 3}
-<<<<<<< Updated upstream
-  numberOfPedestrians: 5
-=======
   numberOfPedestrians: 60
->>>>>>> Stashed changes
   spawnRadius: 100
 --- !u!4 &1044269653
 Transform:
@@ -20124,9 +20124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
-<<<<<<< Updated upstream
   belongsIntersection: 0
-=======
 --- !u!1 &1169264284
 GameObject:
   m_ObjectHideFlags: 0
@@ -20195,7 +20193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 1169264286}
   trafficLight: {fileID: 1274376590}
->>>>>>> Stashed changes
 --- !u!1001 &1170510461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24539,9 +24536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
-<<<<<<< Updated upstream
   belongsIntersection: 0
-=======
 --- !u!1 &1406289265
 GameObject:
   m_ObjectHideFlags: 0
@@ -24610,7 +24605,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 1406289267}
   trafficLight: {fileID: 816708014}
->>>>>>> Stashed changes
 --- !u!1 &1411291729
 GameObject:
   m_ObjectHideFlags: 0
@@ -28609,9 +28603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
-<<<<<<< Updated upstream
   belongsIntersection: 0
-=======
 --- !u!1 &1628590226
 GameObject:
   m_ObjectHideFlags: 0
@@ -28659,7 +28651,6 @@ Transform:
   - {fileID: 782236145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &1631763020
 GameObject:
   m_ObjectHideFlags: 0
@@ -28805,27 +28796,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
-<<<<<<< Updated upstream
-=======
---- !u!114 &1640027616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640027610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bced25bcae7e954dadcff4608399881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  range: 100
-  centrePoint: {fileID: 581491098}
-  currentZone: {fileID: 0}
-  currentLocation: {fileID: 0}
-  currentAction: 
->>>>>>> Stashed changes
 --- !u!1001 &1644489788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29402,9 +29372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segment: {fileID: 0}
-<<<<<<< Updated upstream
   belongsIntersection: 0
-=======
 --- !u!1 &1661133606
 GameObject:
   m_ObjectHideFlags: 0
@@ -29524,7 +29492,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661133606}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> Stashed changes
 --- !u!1 &1663973332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
