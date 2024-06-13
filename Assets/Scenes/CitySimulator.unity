@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 56356147}
   - component: {fileID: 56356148}
   - component: {fileID: 56356149}
+  - component: {fileID: 56356150}
   m_Layer: 0
   m_Name: Intersection-3
   m_TagString: Intersection
@@ -810,13 +811,34 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56356146}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intersectionType: 0
   id: 3
+  prioritySegments: []
+  lightsDuration: 5
+  orangeLightDuration: 2
+  lightsNbr1: []
+  lightsNbr2: []
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
+--- !u!114 &56356150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56356146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 0
+  id: 0
   prioritySegments: []
   lightsDuration: 5
   orangeLightDuration: 2
@@ -2193,6 +2215,7 @@ GameObject:
   - component: {fileID: 175473568}
   - component: {fileID: 175473569}
   - component: {fileID: 175473570}
+  - component: {fileID: 175473571}
   m_Layer: 0
   m_Name: Intersection-6
   m_TagString: Intersection
@@ -2243,13 +2266,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175473567}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intersectionType: 0
   id: 6
+  prioritySegments:
+  - {fileID: 151142524}
+  - {fileID: 685921471}
+  lightsDuration: 5
+  orangeLightDuration: 2
+  lightsNbr1: []
+  lightsNbr2: []
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
+--- !u!114 &175473571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175473567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 0
+  id: 0
   prioritySegments:
   - {fileID: 151142524}
   - {fileID: 685921471}
@@ -2801,6 +2847,7 @@ GameObject:
   - component: {fileID: 198311807}
   - component: {fileID: 198311808}
   - component: {fileID: 198311809}
+  - component: {fileID: 198311810}
   m_Layer: 0
   m_Name: Intersection-0
   m_TagString: Intersection
@@ -2851,9 +2898,32 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198311806}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 0
+  id: 0
+  prioritySegments:
+  - {fileID: 1902215357}
+  - {fileID: 1233360794}
+  lightsDuration: 5
+  orangeLightDuration: 2
+  lightsNbr1: []
+  lightsNbr2: []
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
+--- !u!114 &198311810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198311806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intersectionType: 0
@@ -4523,6 +4593,7 @@ GameObject:
   - component: {fileID: 278981550}
   - component: {fileID: 278981551}
   - component: {fileID: 278981552}
+  - component: {fileID: 278981553}
   m_Layer: 0
   m_Name: Intersection-7
   m_TagString: Intersection
@@ -4573,13 +4644,39 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278981549}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intersectionType: 1
   id: 7
+  prioritySegments:
+  - {fileID: 766746091}
+  - {fileID: 2072114415}
+  lightsDuration: 5
+  orangeLightDuration: 2
+  lightsNbr1:
+  - {fileID: 766746091}
+  - {fileID: 2072114415}
+  lightsNbr2:
+  - {fileID: 1800101872}
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
+--- !u!114 &278981553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278981549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 1
+  id: 0
   prioritySegments:
   - {fileID: 766746091}
   - {fileID: 2072114415}
@@ -5168,9 +5265,10 @@ GameObject:
   - component: {fileID: 319165160}
   - component: {fileID: 321194636}
   - component: {fileID: 321194635}
+  - component: {fileID: 321194637}
   m_Layer: 0
   m_Name: traffic-light (7)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5202,8 +5300,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 1800328398}
+  intersection: {fileID: 1800328399}
   greenForPedestrian: 0
+--- !u!65 &321194637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321162280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.0055371355}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523175}
 --- !u!1 &321600195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 9bff4c4ffbc29a041a638ec3743c588d, type: 3}
@@ -6712,7 +6831,7 @@ Transform:
   m_GameObject: {fileID: 380213307}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.75, y: 0.00000011920929, z: 12.469999}
+  m_LocalPosition: {x: 25.65, y: 0.00000011920929, z: 12.469999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7487,7 +7606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 1147061346}
+  intersection: {fileID: 0}
 --- !u!1 &429337484
 GameObject:
   m_ObjectHideFlags: 0
@@ -7501,9 +7620,10 @@ GameObject:
   - component: {fileID: 431338828}
   - component: {fileID: 431338829}
   - component: {fileID: 429305135}
+  - component: {fileID: 431338830}
   m_Layer: 0
   m_Name: traffic-light (10)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7581,6 +7701,27 @@ MonoBehaviour:
   lightGroupId: 1
   intersection: {fileID: 1147061346}
   greenForPedestrian: 0
+--- !u!65 &431338830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429337484}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!1001 &433112524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11367,9 +11508,10 @@ GameObject:
   - component: {fileID: 658253010}
   - component: {fileID: 658253011}
   - component: {fileID: 656358581}
+  - component: {fileID: 658253012}
   m_Layer: 0
   m_Name: traffic-light (2)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11454,8 +11596,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 2021926312}
+  intersection: {fileID: 2021926313}
   greenForPedestrian: 0
+--- !u!65 &658253012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656325138}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!1001 &660495003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13701,9 +13864,10 @@ GameObject:
   - component: {fileID: 814283597}
   - component: {fileID: 816708014}
   - component: {fileID: 816571184}
+  - component: {fileID: 816708015}
   m_Layer: 0
   m_Name: traffic-light (12)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13721,7 +13885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 1147061346}
+  intersection: {fileID: 0}
 --- !u!4 &816708013
 Transform:
   m_ObjectHideFlags: 0
@@ -13753,6 +13917,27 @@ MonoBehaviour:
   lightGroupId: 1
   intersection: {fileID: 1147061346}
   greenForPedestrian: 0
+--- !u!65 &816708015
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816473485}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!4 &817631651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 31bbda51eeab02f44a8e92a7da2f5ff8, type: 3}
@@ -14965,7 +15150,7 @@ Transform:
   m_GameObject: {fileID: 895439729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.4, y: 0, z: -0.18515778}
+  m_LocalPosition: {x: 31.44, y: 0, z: -0.18515778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17161,9 +17346,10 @@ GameObject:
   - component: {fileID: 998417950}
   - component: {fileID: 1000842495}
   - component: {fileID: 1000455809}
+  - component: {fileID: 1000842496}
   m_Layer: 0
   m_Name: traffic-light (3)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17211,8 +17397,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 2021926312}
+  intersection: {fileID: 2021926313}
   greenForPedestrian: 0
+--- !u!65 &1000842496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000356062}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!1001 &1008334823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18411,9 +18618,10 @@ GameObject:
   - component: {fileID: 1083641603}
   - component: {fileID: 1085641156}
   - component: {fileID: 1085544294}
+  - component: {fileID: 1085641157}
   m_Layer: 0
   m_Name: traffic-light (8)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18431,8 +18639,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 1800328398}
+  intersection: {fileID: 1800328399}
   greenForPedestrian: 0
+--- !u!65 &1085641157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085641155}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!1001 &1086050306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18752,9 +18981,10 @@ GameObject:
   - component: {fileID: 1114335573}
   - component: {fileID: 1115302806}
   - component: {fileID: 1112043832}
+  - component: {fileID: 1115302807}
   m_Layer: 0
   m_Name: traffic-light (4)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18841,8 +19071,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 1923635380}
+  intersection: {fileID: 1923635381}
   greenForPedestrian: 0
+--- !u!65 &1115302807
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112143765}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.0055371355}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523175}
 --- !u!1 &1116512804
 GameObject:
   m_ObjectHideFlags: 0
@@ -19101,6 +19352,7 @@ GameObject:
   - component: {fileID: 1127928446}
   - component: {fileID: 1127928447}
   - component: {fileID: 1127928448}
+  - component: {fileID: 1127928449}
   m_Layer: 0
   m_Name: Intersection-2
   m_TagString: Intersection
@@ -19151,7 +19403,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127928445}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
   m_Name: 
@@ -19160,6 +19412,27 @@ MonoBehaviour:
   id: 2
   prioritySegments: []
   lightsDuration: 5
+  orangeLightDuration: 2
+  lightsNbr1: []
+  lightsNbr2: []
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
+--- !u!114 &1127928449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127928445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 0
+  id: 0
+  prioritySegments: []
+  lightsDuration: 8
   orangeLightDuration: 2
   lightsNbr1: []
   lightsNbr2: []
@@ -19677,11 +19950,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147061343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intersectionType: 1
-  id: 4
+  id: 0
   prioritySegments: []
   lightsDuration: 8
   orangeLightDuration: 2
@@ -22380,9 +22653,10 @@ GameObject:
   - component: {fileID: 1272442701}
   - component: {fileID: 1274376590}
   - component: {fileID: 1274345264}
+  - component: {fileID: 1274376591}
   m_Layer: 0
   m_Name: traffic-light (1)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22400,8 +22674,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 2021926312}
+  intersection: {fileID: 2021926313}
   greenForPedestrian: 0
+--- !u!65 &1274376591
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274376589}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.0055371355}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523175}
 --- !u!1 &1275475203
 GameObject:
   m_ObjectHideFlags: 0
@@ -24618,9 +24913,10 @@ GameObject:
   - component: {fileID: 1411291732}
   - component: {fileID: 1411291734}
   - component: {fileID: 1411291731}
+  - component: {fileID: 1411291735}
   m_Layer: 0
   m_Name: traffic-light (14)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24721,8 +25017,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 278981552}
+  intersection: {fileID: 278981553}
   greenForPedestrian: 0
+--- !u!65 &1411291735
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411291729}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.0055371355}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523175}
 --- !u!4 &1412979289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8b680e0f7699a254c84ed6737b7eb53d, type: 3}
@@ -27080,9 +27397,10 @@ GameObject:
   - component: {fileID: 1566144959}
   - component: {fileID: 1566144961}
   - component: {fileID: 1566144958}
+  - component: {fileID: 1566144962}
   m_Layer: 0
   m_Name: traffic-light (15)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27183,8 +27501,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 278981552}
+  intersection: {fileID: 278981553}
   greenForPedestrian: 0
+--- !u!65 &1566144962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566144956}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.0055371355}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523175}
 --- !u!1 &1568174750
 GameObject:
   m_ObjectHideFlags: 0
@@ -28113,9 +28452,10 @@ GameObject:
   - component: {fileID: 1601084254}
   - component: {fileID: 1602214303}
   - component: {fileID: 1598915393}
+  - component: {fileID: 1602214304}
   m_Layer: 0
   m_Name: traffic-light (11)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28138,7 +28478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 1147061346}
+  intersection: {fileID: 0}
 --- !u!114 &1600214330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28233,6 +28573,27 @@ MonoBehaviour:
   lightGroupId: 2
   intersection: {fileID: 1147061346}
   greenForPedestrian: 0
+--- !u!65 &1602214304
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598817694}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.0055371355}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523175}
 --- !u!1001 &1602701406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29677,9 +30038,10 @@ GameObject:
   - component: {fileID: 1670616852}
   - component: {fileID: 1672910325}
   - component: {fileID: 1672515447}
+  - component: {fileID: 1672910326}
   m_Layer: 0
   m_Name: traffic-light (5)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29813,8 +30175,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 1923635380}
+  intersection: {fileID: 1923635381}
   greenForPedestrian: 0
+--- !u!65 &1672910326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672546772}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!1 &1673737451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -30815,6 +31198,7 @@ GameObject:
   - component: {fileID: 1750770670}
   - component: {fileID: 1750770669}
   - component: {fileID: 1750770668}
+  - component: {fileID: 1750770671}
   m_Layer: 0
   m_Name: Intersection-9
   m_TagString: Intersection
@@ -30881,6 +31265,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 406195719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1750770671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750770667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 0
+  id: 0
+  prioritySegments:
+  - {fileID: 495444333}
+  - {fileID: 1182472912}
+  lightsDuration: 5
+  orangeLightDuration: 2
+  lightsNbr1: []
+  lightsNbr2: []
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
 --- !u!1 &1752180066 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -32127,6 +32534,7 @@ GameObject:
   - component: {fileID: 1800328396}
   - component: {fileID: 1800328397}
   - component: {fileID: 1800328398}
+  - component: {fileID: 1800328399}
   m_Layer: 0
   m_Name: Intersection-8
   m_TagString: Intersection
@@ -32177,13 +32585,37 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800328395}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intersectionType: 1
   id: 8
+  prioritySegments: []
+  lightsDuration: 5
+  orangeLightDuration: 2
+  lightsNbr1:
+  - {fileID: 1177571010}
+  lightsNbr2:
+  - {fileID: 612858247}
+  - {fileID: 510115660}
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
+--- !u!114 &1800328399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800328395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 1
+  id: 0
   prioritySegments: []
   lightsDuration: 5
   orangeLightDuration: 2
@@ -32291,9 +32723,10 @@ GameObject:
   - component: {fileID: 1807668941}
   - component: {fileID: 1807668942}
   - component: {fileID: 1805504176}
+  - component: {fileID: 1807668943}
   m_Layer: 0
   m_Name: traffic-light
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32378,8 +32811,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 2021926312}
+  intersection: {fileID: 2021926313}
   greenForPedestrian: 0
+--- !u!65 &1807668943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805404173}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.0055371355}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523175}
 --- !u!1001 &1812452050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33492,9 +33946,10 @@ GameObject:
   - component: {fileID: 1868275491}
   - component: {fileID: 1868275493}
   - component: {fileID: 1868275490}
+  - component: {fileID: 1868275494}
   m_Layer: 0
   m_Name: traffic-light (13)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33595,8 +34050,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 278981552}
+  intersection: {fileID: 278981553}
   greenForPedestrian: 0
+--- !u!65 &1868275494
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868275488}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!1 &1882405229
 GameObject:
   m_ObjectHideFlags: 0
@@ -34177,6 +34653,7 @@ GameObject:
   - component: {fileID: 1923635378}
   - component: {fileID: 1923635379}
   - component: {fileID: 1923635380}
+  - component: {fileID: 1923635381}
   m_Layer: 0
   m_Name: Intersection-5
   m_TagString: Intersection
@@ -34227,13 +34704,37 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923635377}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intersectionType: 1
   id: 5
+  prioritySegments: []
+  lightsDuration: 8
+  orangeLightDuration: 2
+  lightsNbr1:
+  - {fileID: 458574989}
+  - {fileID: 123400319}
+  lightsNbr2:
+  - {fileID: 1759013214}
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
+--- !u!114 &1923635381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923635377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 1
+  id: 0
   prioritySegments: []
   lightsDuration: 8
   orangeLightDuration: 2
@@ -34434,9 +34935,10 @@ GameObject:
   - component: {fileID: 1931066233}
   - component: {fileID: 1933359514}
   - component: {fileID: 1933222684}
+  - component: {fileID: 1933359515}
   m_Layer: 0
   m_Name: traffic-light (6)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34470,8 +34972,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 1
-  intersection: {fileID: 1923635380}
+  intersection: {fileID: 1923635381}
   greenForPedestrian: 0
+--- !u!65 &1933359515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933256121}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!1 &1933828093
 GameObject:
   m_ObjectHideFlags: 0
@@ -34675,7 +35198,7 @@ MonoBehaviour:
   - {fileID: 2021926312}
   - {fileID: 1127928448}
   - {fileID: 56356149}
-  - {fileID: 1147061346}
+  - {fileID: 0}
   - {fileID: 1923635380}
   - {fileID: 175473570}
   - {fileID: 278981552}
@@ -36136,6 +36659,7 @@ GameObject:
   - component: {fileID: 2021926310}
   - component: {fileID: 2021926311}
   - component: {fileID: 2021926312}
+  - component: {fileID: 2021926313}
   m_Layer: 0
   m_Name: Intersection-1
   m_TagString: Intersection
@@ -36186,13 +36710,38 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021926309}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f233b62f5ccc049b5d20eba55f4afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   intersectionType: 1
   id: 1
+  prioritySegments: []
+  lightsDuration: 8
+  orangeLightDuration: 2
+  lightsNbr1:
+  - {fileID: 729030104}
+  - {fileID: 754122798}
+  lightsNbr2:
+  - {fileID: 306670944}
+  - {fileID: 325594512}
+  timeSinceChange: 0
+  currentRedLightsGroup: 1
+--- !u!114 &2021926313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021926309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef1f537d6cc1241aa6d44a4b83f7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intersectionType: 1
+  id: 0
   prioritySegments: []
   lightsDuration: 8
   orangeLightDuration: 2
@@ -37148,9 +37697,10 @@ GameObject:
   - component: {fileID: 2088000299}
   - component: {fileID: 2088000300}
   - component: {fileID: 2086093646}
+  - component: {fileID: 2088000301}
   m_Layer: 0
   m_Name: traffic-light (9)
-  m_TagString: Untagged
+  m_TagString: TrafficLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37235,8 +37785,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGroupId: 2
-  intersection: {fileID: 1800328398}
+  intersection: {fileID: 1800328399}
   greenForPedestrian: 0
+--- !u!65 &2088000301
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086061547}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.034101836, z: 0.005537137}
+  m_Center: {x: 0.01, y: 0.017050512, z: 0.0012523178}
 --- !u!1001 &2089834902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44869,9 +45440,12 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
         parentIds:
         - 28f1f438-ceb4-4090-b117-c7e98b76f904
+        - 1cca6f92-8483-4712-bd0c-e90346602002
+        - 509648cb-32bb-4161-bdb5-e325b6d650dc
         childIds:
         - 5f472b13-078d-4228-be00-b724f8ce4d31
         - c9126e76-a45d-4040-a076-56c73489bf16
+        - 1c73a559-7396-444e-9bb6-a71379d8dc15
       - name: IntersectionZone
         id: 5f472b13-078d-4228-be00-b724f8ce4d31
         position: {x: 100.8, y: 123.200005}
@@ -44909,7 +45483,7 @@ MonoBehaviour:
         - 28f1f438-ceb4-4090-b117-c7e98b76f904
       - name: DirectionChosen
         id: 28f1f438-ceb4-4090-b117-c7e98b76f904
-        position: {x: 408, y: -80.8}
+        position: {x: 404, y: -65.6}
         node:
           rid: 2352687989254520838
         references:
@@ -44940,7 +45514,8 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
         parentIds:
         - c9126e76-a45d-4040-a076-56c73489bf16
-        childIds: []
+        childIds:
+        - 1cca6f92-8483-4712-bd0c-e90346602002
       - name: CheckDirection
         id: c9126e76-a45d-4040-a076-56c73489bf16
         position: {x: 709.6, y: 131.20001}
@@ -44961,175 +45536,11 @@ MonoBehaviour:
         - 1fb651fe-63c7-4f88-b0c8-bd7adc14fec4
         childIds:
         - 536e532d-2630-4756-8fbe-481b70f906ba
-    - name: carsFSM
-      id: 0fd8091e-e505-4a88-8c6f-fb0c63696724
-      graph:
-        rid: 2352687894773628951
-      nodes:
-      - name: GO
-        id: 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
-        position: {x: 772.8, y: 219.20001}
-        node:
-          rid: 2352687894773628952
-        references:
-        - fieldName: Action
-          value:
-            rid: 2352687948324405282
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - cd7617a4-a542-491b-ba9f-d079bf899e39
-        childIds:
-        - 8bcc29b8-8666-49cd-9849-15c46663e507
-      - name: CHOOSE_DIRECTION
-        id: 9b6e9778-8c01-497a-a74d-923fad2ec8ec
-        position: {x: -143.2, y: 51.199997}
-        node:
-          rid: 2352687918901624832
-        references:
-        - fieldName: Action
-          value:
-            rid: 2352687918901624833
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 8bcc29b8-8666-49cd-9849-15c46663e507
-        childIds:
-        - 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
-      - name: checkDirection
-        id: 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
-        position: {x: 376.8, y: -237.6}
-        node:
-          rid: 2352687918901624834
-        references:
-        - fieldName: Perception
-          value:
-            rid: 2352687941662801920
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 9b6e9778-8c01-497a-a74d-923fad2ec8ec
-        childIds:
-        - d8e06334-0bc3-41af-be9b-ccd7dc42c8af
-      - name: intersectionZone
-        id: 8bcc29b8-8666-49cd-9849-15c46663e507
-        position: {x: 360.8, y: 206.4}
-        node:
-          rid: 2352687918901624838
-        references:
-        - fieldName: Perception
-          value:
-            rid: 2352687918901624844
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
-        childIds:
-        - 9b6e9778-8c01-497a-a74d-923fad2ec8ec
-      - name: TURN
-        id: d8e06334-0bc3-41af-be9b-ccd7dc42c8af
-        position: {x: 788.8, y: -191.20001}
-        node:
-          rid: 2352687966468177920
-        references:
-        - fieldName: Action
-          value:
-            rid: 2352687966468177921
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 8538cfe6-097d-434f-99c9-9f9ed8b15fcb
-        childIds:
-        - cd7617a4-a542-491b-ba9f-d079bf899e39
-      - name: gogogo
-        id: cd7617a4-a542-491b-ba9f-d079bf899e39
-        position: {x: 780.8, y: 12}
-        node:
-          rid: 2352687966468177922
-        references:
-        - fieldName: Perception
-          value:
-            rid: 2352687966468177923
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - d8e06334-0bc3-41af-be9b-ccd7dc42c8af
-        childIds:
-        - 5660d1b8-f33b-4eb1-9e6b-e9a8df6635d1
-    - name: carStates
-      id: 2085f9c8-179d-4df8-95f0-30a1be4f4d80
-      graph:
-        rid: 2352687948324405253
-      nodes:
-      - name: GO
-        id: e37a72a5-5139-448f-acb6-a8d4ac5c0b5a
-        position: {x: 891.2, y: 149.6}
-        node:
-          rid: 2352687948324405254
-        references:
-        - fieldName: Action
-          value:
-            rid: 2352687948324405255
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds: []
-        childIds:
-        - a1417218-e32f-48db-b7fd-1f62a9f73971
-      - name: enteringInInterestZone
-        id: a1417218-e32f-48db-b7fd-1f62a9f73971
-        position: {x: 673.6, y: 414.4}
-        node:
-          rid: 2352687948324405256
-        references:
-        - fieldName: Perception
-          value:
-            rid: 2352687948324405257
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - e37a72a5-5139-448f-acb6-a8d4ac5c0b5a
-        childIds:
-        - d13f4d84-f28e-44f3-937a-c54dd40a48ef
-      - name: SLOW_DOWN
-        id: d13f4d84-f28e-44f3-937a-c54dd40a48ef
-        position: {x: 907.2, y: 691.19995}
-        node:
-          rid: 2352687948324405259
-        references:
-        - fieldName: Action
-          value:
-            rid: 2352687948324405263
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - a1417218-e32f-48db-b7fd-1f62a9f73971
-        childIds:
-        - 6d780c24-3994-4452-ab11-56977db666bc
       - name: 
-        id: 6d780c24-3994-4452-ab11-56977db666bc
-        position: {x: 923.2, y: 909.6}
+        id: 1cca6f92-8483-4712-bd0c-e90346602002
+        position: {x: 712.8, y: 312}
         node:
-          rid: 2352687948324405264
+          rid: 2352688004788649984
         references:
         - fieldName: Perception
           value:
@@ -45142,158 +45553,70 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - d13f4d84-f28e-44f3-937a-c54dd40a48ef
-        childIds: []
+        - 536e532d-2630-4756-8fbe-481b70f906ba
+        childIds:
+        - 1fb651fe-63c7-4f88-b0c8-bd7adc14fec4
+      - name: RedLight
+        id: 1c73a559-7396-444e-9bb6-a71379d8dc15
+        position: {x: 440, y: 360.80002}
+        node:
+          rid: 2352688004788649985
+        references:
+        - fieldName: Perception
+          value:
+            rid: 2352688004788649986
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 1fb651fe-63c7-4f88-b0c8-bd7adc14fec4
+        childIds:
+        - 3692f20e-cb26-4b9c-af4a-76de02b0db14
+      - name: STOP
+        id: 3692f20e-cb26-4b9c-af4a-76de02b0db14
+        position: {x: 353.6, y: 600}
+        node:
+          rid: 2352688004788649987
+        references:
+        - fieldName: Action
+          value:
+            rid: 2352688004788649988
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 1c73a559-7396-444e-9bb6-a71379d8dc15
+        childIds:
+        - 509648cb-32bb-4161-bdb5-e325b6d650dc
+      - name: GreenLight
+        id: 509648cb-32bb-4161-bdb5-e325b6d650dc
+        position: {x: 153.6, y: 376.80002}
+        node:
+          rid: 2352688010396172288
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 3692f20e-cb26-4b9c-af4a-76de02b0db14
+        childIds:
+        - 1fb651fe-63c7-4f88-b0c8-bd7adc14fec4
     pushPerceptions: []
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 2352687894773628951
-      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2352687894773628952
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2352687918901624832
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2352687918901624833
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: NewCarsController
-          methodName: SetDirection
-    - rid: 2352687918901624834
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 2
-    - rid: 2352687918901624838
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 2
-    - rid: 2352687918901624844
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        init:
-          componentName: 
-          methodName: 
-        check:
-          componentName: NewCarsController
-          methodName: IsInWaypoint
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
-    - rid: 2352687941662801920
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        init:
-          componentName: 
-          methodName: 
-        check:
-          componentName: NewCarsController
-          methodName: DirectionChosen
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
-    - rid: 2352687948324405253
-      type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2352687948324405254
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2352687948324405255
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: NewCarsController
-          methodName: ToMove
-    - rid: 2352687948324405256
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 2
-    - rid: 2352687948324405257
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        init:
-          componentName: 
-          methodName: 
-        check:
-          componentName: NewCarsController
-          methodName: IsInInterestZone
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
-    - rid: 2352687948324405259
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2352687948324405263
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: NewCarsController
-          methodName: SlowDown
-    - rid: 2352687948324405264
-      type: {class: ExitTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 2
-        ExitStatus: 2
-    - rid: 2352687948324405282
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: NewCarsController
-          methodName: ToMove
-    - rid: 2352687966468177920
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2352687966468177921
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: NewCarsController
-          methodName: TurnTo
-    - rid: 2352687966468177922
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 2
-    - rid: 2352687966468177923
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        init:
-          componentName: 
-          methodName: 
-        check:
-          componentName: NewCarsController
-          methodName: EverythingFine
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
     - rid: 2352687984149004288
       type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data: 
@@ -45390,6 +45713,45 @@ MonoBehaviour:
         method:
           componentName: NewCarsController_v2
           methodName: ToTurn
+    - rid: 2352688004788649984
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 2352688004788649985
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 2352688004788649986
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: NewCarsController_v2
+          methodName: IsRedLight
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 2352688004788649987
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 2352688004788649988
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: NewCarsController_v2
+          methodName: ToStop
+    - rid: 2352688010396172288
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
 --- !u!114 &2696559846287320781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45418,6 +45780,7 @@ MonoBehaviour:
   leftWheelShape: {fileID: 100002, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   rightWheelShape: {fileID: 100004, guid: 5c72233a02f639443bf12a6065ddb741, type: 3}
   maxSpeed: 15
+  minSpeed: 5
   animateWheels: 1
 --- !u!65 &2696559846325161651
 BoxCollider:

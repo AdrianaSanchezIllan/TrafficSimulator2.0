@@ -7,7 +7,7 @@ using UnityEngine;
 public class TrafficLights : MonoBehaviour
 {
     public int lightGroupId;  // Belong to traffic light 1 or 2?
-    public Intersection intersection;
+    public Intersection_v2 intersection;
     
     public bool greenForPedestrian = false;
     Light pointLight;
@@ -31,12 +31,14 @@ public class TrafficLights : MonoBehaviour
         else
             pointLight.color = new Color(0, 1, 0); // Green
     }
-    public void IsRedForCars()
+    public bool IsRedForCars()
     {
         if( pointLight.color == new Color(1, 0, 0))
         {
             greenForPedestrian = true;
+            return true;
         }
+        return false;
     }
 
     public float TimeToChange()

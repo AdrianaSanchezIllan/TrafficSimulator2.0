@@ -48,6 +48,25 @@ namespace TrafficSimulation{
             //Invoke("MoveVehiclesQueue", orangeLightDuration);
         }
 
-       
+        bool IsRedLightSegment(int _vehicleSegment)
+        {
+            if (currentRedLightsGroup == 1)
+            {
+                foreach (Segment segment in lightsNbr1)
+                {
+                    if (segment.id == _vehicleSegment)
+                        return true;
+                }
+            }
+            else
+            {
+                foreach (Segment segment in lightsNbr2)
+                {
+                    if (segment.id == _vehicleSegment)
+                        return true;
+                }
+            }
+            return false;
+        }
     }
 }

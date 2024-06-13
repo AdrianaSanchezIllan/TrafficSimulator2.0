@@ -30,6 +30,17 @@ namespace TrafficSimulation.Scripts
         //Car
         WheelDrive_v2 wheelDrive;
         private float initMaxSpeed;
+        //private float brake = 0.0f;
+
+        private bool isStopped = false;
+        private bool isRedLight = false;
+
+        //Raycast
+        //private GameObject objectDetected;
+        private int raysNumber = 12;
+        private float raycastLength = 7.0f;
+        private float raySpacing = 3.0f;
+        private bool dangerDetected = false;
 
         void Awake()
         {
@@ -51,14 +62,14 @@ namespace TrafficSimulation.Scripts
         // Update is called once per frame
         void Update()
         {
-
+            //if (!CollisionDetected()) RayCaster();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Intersection"))
             {
-                Debug.Log("Entrando en interseccion " + other.GetComponent<Intersection>().id);
+                //Debug.Log("Entrando en interseccion " + other.GetComponent<Intersection_v2>().id);
                 isInIntersection = true;
             }
         }
@@ -83,11 +94,10 @@ namespace TrafficSimulation.Scripts
         {
             while(true)
             {
-                Debug.Log("Velocity: " + wheelDrive.maxSpeed);
 
                 wheelDrive.maxSpeed = initMaxSpeed;
                 float acc = 0.5f;
-                float brake = 0; //freno
+                float brake = 0.0f; //freno
                 //float steering = 0f;
 
                 if (rotateAngle != Quaternion.identity)
@@ -95,10 +105,17 @@ namespace TrafficSimulation.Scripts
                     Debug.Log("Rotate");
                     acc = 0.0f;
                 }
+                if(isStopped)
+                {
+                    acc = 0.0f;
+                    brake = 1.0f;
+                    wheelDrive.maxSpeed = Mathf.Max(wheelDrive.maxSpeed / 2f, wheelDrive.minSpeed);
+                }
 
+                Debug.Log("Acc: " + acc + " | brake: " + brake + " | speed: " + wheelDrive.maxSpeed);
                 wheelDrive.Move(acc, brake);
                 /*
-                if (isInIntersection)
+                if (isStopped)
                 {
                     Debug.Log("STOP");
                     yield break;
@@ -130,6 +147,30 @@ namespace TrafficSimulation.Scripts
                 {
                     rotateAngle = Quaternion.identity;
                     transform.LookAt(intersectionNode.transf.position);
+                    yield break;
+                }
+
+                yield return null;
+            }
+        }
+
+        public void ToStop()
+        {
+            isStopped = true;
+            StartCoroutine(Stop());
+            
+        }
+        
+        private IEnumerator Stop()
+        {
+            while(true)
+            {
+                
+                if (!IsRedLight())
+                {
+                    Debug.Log("Green: continue");
+                    isStopped = false;
+                    //objectDetected = null;
                     yield break;
                 }
                 yield return null;
@@ -181,10 +222,46 @@ namespace TrafficSimulation.Scripts
             }
             return false;
         }
+        
+        public bool IsRedLight()
+        {
+            GameObject objectDetected = RayCaster();
+            if(objectDetected!=null)
+            {
+                if(objectDetected.CompareTag("TrafficLight") && objectDetected.GetComponent<TrafficLights>().IsRedForCars())
+                {
+                    Debug.Log("STOP");
+                    //isStopped = true;
+                    //isRedLight = true;
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
+        /*
+        public bool IsGreenLight()
+        {
+            if (CollisionDetected() && objectDetected.CompareTag("TrafficLight")) 
+            {
+                if(!objectDetected.GetComponent<TrafficLights>().IsRedForCars())
+                {
+                    Debug.Log("Verde, continuar");
+                    isStopped = false;
+                    objectDetected = null;
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }*/
 
         #endregion
-
-
+        /*
+        private bool CollisionDetected()
+        {
+            return objectDetected!=null;
+        }*/
 
         private void SetInitWaypoint()
         {
@@ -222,6 +299,35 @@ namespace TrafficSimulation.Scripts
                 return 0;
             int c = UnityEngine.Random.Range(0, trafficSystem.segments[intersectionNode.segment].nextSegments.Count);
             return trafficSystem.segments[intersectionNode.segment].nextSegments[c].id;
+        }
+
+        private GameObject RayCaster()
+        {
+            Vector3 centreCar = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+            float finalPos = (raysNumber / 2f) * raySpacing;
+
+            for (float i =-finalPos; i <= finalPos;i+=raySpacing)
+            {
+                RaycastHit hit;
+                Debug.DrawRay(centreCar, Quaternion.Euler(0, i, 0) * transform.forward * raycastLength, Color.yellow);
+                //Vector3 carPosition = car.transform.position;
+
+                if (Physics.Raycast(centreCar, Quaternion.Euler(0,i,0)*transform.forward, out hit, raycastLength))
+                {
+                    Debug.Log("Collision: " + hit.collider);
+                    if (hit.collider.CompareTag("AutonomousVehicle") || hit.collider.CompareTag("TrafficLight"))
+                    {
+                        //dangerDetected = true;
+                        //return hit.collider.gameObject;
+                        Debug.Log("Traffic Light detected");
+                        return hit.collider.gameObject;
+                    }
+                    else return null;
+                }
+                else return null;
+            }
+            return null;
+            
         }
     }
 }

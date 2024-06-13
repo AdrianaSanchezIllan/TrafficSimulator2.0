@@ -22,6 +22,7 @@ namespace Assets.TrafficSimulation.Scripts
         private float steeringLerp = 5f;
 
         public float maxSpeed = 30;
+        public float minSpeed = 5;
 
 
         public bool animateWheels = true;

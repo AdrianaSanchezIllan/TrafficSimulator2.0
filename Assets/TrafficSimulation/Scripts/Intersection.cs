@@ -53,7 +53,7 @@ namespace TrafficSimulation{
         void OnTriggerEnter(Collider _other) {
             //Check if vehicle is already in the list if yes abort
             //Also abort if we just started the scene (if vehicles inside colliders at start)
-            if(IsAlreadyInIntersection(_other.gameObject) || Time.timeSinceLevelLoad < .5f) return;
+            //if(IsAlreadyInIntersection(_other.gameObject) || Time.timeSinceLevelLoad < .5f) return;
 
             if(_other.tag == "AutonomousVehicle" && intersectionType == IntersectionType.STOP)
                 TriggerStop(_other.gameObject);
