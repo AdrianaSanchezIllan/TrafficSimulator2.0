@@ -10,6 +10,7 @@ public class Crosswalk : MonoBehaviour
 
     private void Awake()
     {
+        //se asignan manualmente en el inspector
         //collider = GetComponent<Collider>();
         //trafficLight = GetComponentInChildren<TrafficLights>();
 
@@ -41,6 +42,4 @@ public class Crosswalk : MonoBehaviour
             pedestrian.ExitCrosswalkArea(this);
         }
     }
-
-    
 }
