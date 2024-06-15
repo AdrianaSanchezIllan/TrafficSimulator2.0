@@ -20,9 +20,10 @@ public class PedestrianBehaviour : MonoBehaviour
     private bool hasCrossed = false;
     private Vector3 originalDestination; // Para almacenar el destino original antes de cruzar
     private bool canCrossNow = false;
+    private bool isStopped = false;
     private bool isInCrosswalk = false; // Flag para controlar la entrada y salida
                                         //public TrafficLights trafficLight; // Referencia al semáforo
-
+    private bool isCrossing = false;
 
     private Animator animator;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
@@ -79,6 +80,7 @@ public class PedestrianBehaviour : MonoBehaviour
     {
         while (true)
         {
+            agent.isStopped = false;
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
                 Vector3 point;
@@ -90,18 +92,22 @@ public class PedestrianBehaviour : MonoBehaviour
             }
 
             bool isMoving = agent.velocity.magnitude > 0.1f;
+            if (isStopped && !isCrossing)
+            {
+                agent.isStopped = true;
+            }
             animator.SetBool(IsWalking, isMoving);
             yield return null;
 
         }
     }
 
-    // Método para verificar si el peatón en algún paso de cebra
-    private bool InCrosswalkArea()
+    // Transicion para verificar si el peatón en algún paso de cebra
+    public bool InCrosswalkArea()
     {
         if(nearbyCrosswalk != null)
         {
-            Debug.Log("en paso de cebra");
+            Debug.Log("En paso de cebra" + nearbyCrosswalk);
             return true;
         }
         nearbyCrosswalk = null;
@@ -120,6 +126,16 @@ public class PedestrianBehaviour : MonoBehaviour
         }
     }
 
+    public bool FinishCrossing()
+    {
+        if (!isInCrosswalk)
+        {
+            nearbyCrosswalk = null;
+            return true;
+        }
+        return false;
+    }
+
     public void ExitCrosswalkArea(Crosswalk crosswalk)
     {
         if (isInCrosswalk && crosswalk == nearbyCrosswalk)
@@ -131,61 +147,62 @@ public class PedestrianBehaviour : MonoBehaviour
     }
 
     // Método para mover al peatón al inicio del paso de cebra
-    public void MoveToCrosswalk()
+    public void WaitUntilGreen()
     {
-        originalDestination = agent.destination; // Guardar el destino original
-        agent.SetDestination(GetCrosswalkEntrance()); // Mover al inicio del paso de cebra
+        Debug.Log("WAITINGGG" + nearbyCrosswalk);
         StartCoroutine(WaitAtCrosswalk());
+        
     }
 
-    // Obtener el punto de entrada del paso de cebra
-    private Vector3 GetCrosswalkEntrance()
-    {
-        return nearbyCrosswalk.collider.ClosestPoint(agent.transform.position);
-    }
 
     // Estado para esperar en el paso de cebra
-    private IEnumerator WaitAtCrosswalk()
+    IEnumerator WaitAtCrosswalk()
     {
+        
         while (true)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            isStopped = true; // Detener al agente
+            isCrossing = false;
+            if (nearbyCrosswalk.trafficLight.IsRedForCars())
             {
-                agent.isStopped = true; // Detener al agente
-                if (nearbyCrosswalk.trafficLight.greenForPedestrian)
-                {
-                    agent.isStopped = false; // Reanudar el agente
-                    canCrossNow = true;
-                    yield break;
-                }
+                isStopped = false; // Reanudar el agente
+                canCrossNow = true;
+                yield break;
             }
 
-            yield return new WaitForSeconds(1.0f); // Esperar antes de verificar nuevamente
+            yield return null; 
         }
     }
-    private bool CanCrossNow()
+
+    public bool CanCrossNow()
     {
+        isStopped = false;
         return canCrossNow;
     }
     // Estado para comenzar a cruzar la calle
     public void StartCrossing()
     {
         StartCoroutine(CrossStreet());
+        
     }
 
-    private IEnumerator CrossStreet()
+    IEnumerator CrossStreet()
     {
+        Debug.Log("CROSSINGGG" + nearbyCrosswalk);
         while (true)
         {
+            isStopped = false;
+            isCrossing = true;
+            canCrossNow = true;
             // Verificar si el semáforo del crosswalk cercano está en verde
-            if (nearbyCrosswalk != null && nearbyCrosswalk.trafficLight.greenForPedestrian)
+            if (FinishCrossing())
             {
-                agent.SetDestination(originalDestination); // Continuar al destino original
-                hasCrossed = true;
+                canCrossNow = false;
+                isCrossing = false;
                 yield break;
             }
 
-            yield return new WaitForSeconds(1.0f); // Esperar antes de verificar nuevamente
+            yield return null; 
         }
     }
 

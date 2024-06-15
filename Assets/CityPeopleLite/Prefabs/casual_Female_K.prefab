@@ -962,7 +962,7 @@ GameObject:
   - component: {fileID: -4513969838509426261}
   - component: {fileID: 5898017177226930641}
   - component: {fileID: -288927898240609580}
-  - component: {fileID: -2852192164222084729}
+  - component: {fileID: 5993728369022494607}
   m_Layer: 0
   m_Name: casual_Female_K
   m_TagString: Untagged
@@ -1111,7 +1111,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-2852192164222084729
+--- !u!114 &5993728369022494607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1147,84 +1147,12 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 9576a185-490e-40e4-9f05-d07486f281c2
-        - 10bc222c-f740-4301-a6d8-55041b52aa65
+        - 84e22c28-0099-4135-ab81-277a8a8bf0f8
         childIds:
         - ce04bce5-a320-438e-ad1c-719b34543686
-        - 057d088e-1d94-4e6a-a374-1c9b8aba39c3
-      - name: RoamingToInterestZone
-        id: 057d088e-1d94-4e6a-a374-1c9b8aba39c3
-        position: {x: 511, y: 448}
-        node:
-          rid: 2249593760004964356
-        references:
-        - fieldName: Perception
-          value:
-            rid: 2249593760004964357
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
-        childIds:
-        - 9858c6dc-3195-4d8a-89d8-eb68b3ab52bc
-      - name: ActionsInterestZone
-        id: 9858c6dc-3195-4d8a-89d8-eb68b3ab52bc
-        position: {x: 579, y: 703}
-        node:
-          rid: 2249593760004964358
-        references:
-        - fieldName: Action
-          value:
-            rid: 2249593760004964359
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 057d088e-1d94-4e6a-a374-1c9b8aba39c3
-        childIds:
-        - 9576a185-490e-40e4-9f05-d07486f281c2
-      - name: ActionCompleted
-        id: 9576a185-490e-40e4-9f05-d07486f281c2
-        position: {x: 897, y: 541}
-        node:
-          rid: 8944971379418333232
-        references:
-        - fieldName: Perception
-          value:
-            rid: 8944971398790512640
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 9858c6dc-3195-4d8a-89d8-eb68b3ab52bc
-        childIds:
-        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
-      - name: CrossingState
-        id: cb52aaea-67c0-4186-9455-dc744b8b1e39
-        position: {x: 972, y: 35}
-        node:
-          rid: 8944971535672672256
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971535672672257
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 486bd41f-8457-46f5-a1c2-24ceaebd436b
-        childIds:
-        - 10bc222c-f740-4301-a6d8-55041b52aa65
       - name: NearCrosswalk
         id: ce04bce5-a320-438e-ad1c-719b34543686
-        position: {x: 1020, y: 310}
+        position: {x: 1044, y: 331}
         node:
           rid: 8944971535672672258
         references:
@@ -1242,29 +1170,9 @@ MonoBehaviour:
         - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
         childIds:
         - 6031abb3-5033-499b-9658-8946d6ebfe45
-      - name: HasCrossed
-        id: 10bc222c-f740-4301-a6d8-55041b52aa65
-        position: {x: 686, y: 13}
-        node:
-          rid: 8944971535672672261
-        references:
-        - fieldName: Perception
-          value:
-            rid: 8944971535672672262
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - cb52aaea-67c0-4186-9455-dc744b8b1e39
-        childIds:
-        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
       - name: WaitForGreenLight
         id: 6031abb3-5033-499b-9658-8946d6ebfe45
-        position: {x: 1298, y: 288}
+        position: {x: 1355, y: 315}
         node:
           rid: 8944971559209533440
         references:
@@ -1279,13 +1187,13 @@ MonoBehaviour:
         - 486bd41f-8457-46f5-a1c2-24ceaebd436b
       - name: CanCrossNow
         id: 486bd41f-8457-46f5-a1c2-24ceaebd436b
-        position: {x: 1242, y: 71}
+        position: {x: 1371, y: 90}
         node:
           rid: 8944971559209533442
         references:
         - fieldName: Perception
           value:
-            rid: 8944971559209533445
+            rid: -2
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         - fieldName: Action
@@ -1296,7 +1204,42 @@ MonoBehaviour:
         parentIds:
         - 6031abb3-5033-499b-9658-8946d6ebfe45
         childIds:
-        - cb52aaea-67c0-4186-9455-dc744b8b1e39
+        - 47289928-ee84-4b3b-b095-98c28eb3dd03
+      - name: CrossingState
+        id: 47289928-ee84-4b3b-b095-98c28eb3dd03
+        position: {x: 1049, y: 52}
+        node:
+          rid: 8944971643323678744
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971643323678745
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 486bd41f-8457-46f5-a1c2-24ceaebd436b
+        childIds:
+        - 84e22c28-0099-4135-ab81-277a8a8bf0f8
+      - name: HasCrossed
+        id: 84e22c28-0099-4135-ab81-277a8a8bf0f8
+        position: {x: 752, y: 60}
+        node:
+          rid: 8944971643323678746
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 47289928-ee84-4b3b-b095-98c28eb3dd03
+        childIds:
+        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
     - name: InterestZoneBT
       id: ba61d50a-d830-49c0-bdb8-794912d0aac6
       graph:
@@ -1448,44 +1391,9 @@ MonoBehaviour:
         method:
           componentName: PedestrianBehaviour
           methodName: StartRoaming
-    - rid: 2249593760004964356
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
-    - rid: 2249593760004964357
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        init:
-          componentName: 
-          methodName: 
-        check:
-          componentName: PedestrianBehaviour
-          methodName: IsInterestZone
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
-    - rid: 2249593760004964358
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2249593760004964359
-      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        ExecuteOnLoop: 0
-        InterruptOptions: 2
-        subgraphId: ba61d50a-d830-49c0-bdb8-794912d0aac6
     - rid: 2249593760004964360
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333232
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
     - rid: 8944971379418333233
       type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
@@ -1525,24 +1433,6 @@ MonoBehaviour:
     - rid: 8944971379418333244
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971398790512640
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        init:
-          componentName: 
-          methodName: 
-        check:
-          componentName: PedestrianBehaviour
-          methodName: HasCompletedAction
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
     - rid: 8944971398790512641
       type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -1598,41 +1488,10 @@ MonoBehaviour:
         method:
           componentName: PedestrianBehaviour
           methodName: IsInPark
-    - rid: 8944971535672672256
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 8944971535672672257
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: StartCrossing
     - rid: 8944971535672672258
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
         StatusFlags: -1
-    - rid: 8944971535672672261
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
-    - rid: 8944971535672672262
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        init:
-          componentName: 
-          methodName: 
-        check:
-          componentName: PedestrianBehaviour
-          methodName: CheckIfStreetCrossed
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
     - rid: 8944971559209533440
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data: 
@@ -1641,7 +1500,7 @@ MonoBehaviour:
       data:
         method:
           componentName: PedestrianBehaviour
-          methodName: MoveToCrosswalk
+          methodName: WaitUntilGreen
     - rid: 8944971559209533442
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -1664,24 +1523,19 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 8944971559209533445
-      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971643323678744
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 8944971643323678745
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        init:
-          componentName: 
-          methodName: 
-        check:
+        method:
           componentName: PedestrianBehaviour
-          methodName: CanCrossNow
-        reset:
-          componentName: 
-          methodName: 
-        pause:
-          componentName: 
-          methodName: 
-        unpause:
-          componentName: 
-          methodName: 
+          methodName: StartCrossing
+    - rid: 8944971643323678746
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
 --- !u!1 &7524111919617231996
 GameObject:
   m_ObjectHideFlags: 0
