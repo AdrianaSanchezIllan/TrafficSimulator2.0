@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RotateIndicator : MonoBehaviour
 {
+    public float rotationSpeed = 100f;
+
     void Update()
     {
-        transform.Rotate(Vector3.up * 50 * Time.deltaTime);
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
     }
 }

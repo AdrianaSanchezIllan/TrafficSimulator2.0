@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class InterestZone : MonoBehaviour
 {
-    public string interestAction;
-    public GameObject actionIndicatorPrefab;
-
-    private InterestLocation[] locations;
+    public List<InterestLocation> locations = new List<InterestLocation>();
+    public string interestAction; // Acción que se realiza en esta zona
+    public GameObject actionIndicatorPrefab; // Prefab para mostrar la acción actual
 
     private void Start()
     {
-        locations = GetComponentsInChildren<InterestLocation>();
+        locations.Clear();
+        foreach (Transform child in transform)
+        {
+            InterestLocation location = child.GetComponent<InterestLocation>();
+            if (location != null)
+            {
+                locations.Add(location);
+            }
+            else
+            {
+                Debug.LogWarning("El hijo " + child.name + " no tiene el componente InterestLocation.");
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,41 +32,40 @@ public class InterestZone : MonoBehaviour
         {
             pedestrianBehaviour.currentZone = this;
             pedestrianBehaviour.currentAction = this.interestAction;
-            //roamMovement.EnterInterestZone(this);
-            //Debug.Log("interest action: " + interestAction);
+            //Debug.Log("Entered interest zone: " + interestAction);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         PedestrianBehaviour pedestrianBehaviour = other.GetComponent<PedestrianBehaviour>();
         if (pedestrianBehaviour != null)
         {
             pedestrianBehaviour.currentZone = null;
-            //roamMovement.EnterInterestZone(this);
-        }
-    }
-    public Transform GetAvailableLocation()
-    {
-        foreach (var location in locations)
-        {
-            if (location.Occupy())
-            {
-                return location.transform;
-            }
-        }
-        return null;
-    }
-
-    public void VacateLocation(Transform locationTransform)
-    {
-        foreach (var location in locations)
-        {
-            if (location.transform == locationTransform)
-            {
-                location.Vacate();
-                break;
-            }
+            Debug.Log("Exited interest zone");
         }
     }
 
+    // Método para obtener la primera localización libre
+    public InterestLocation GetFirstFreeLocation()
+    {
+        foreach (var location in locations)
+        {
+            if (!location.IsOccupied)
+            {
+                location.Occupy();
+                return location;
+            }
+        }
+        return null; // Si no hay localizaciones libres, devuelve null
+    }
+
+    // Método para liberar una localización
+    public void VacateLocation(InterestLocation location)
+    {
+        if (locations.Contains(location))
+        {
+            location.Vacate();
+        }
+    }
 }
