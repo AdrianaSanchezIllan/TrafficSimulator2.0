@@ -68,4 +68,43 @@ public class InterestZone : MonoBehaviour
             location.Vacate();
         }
     }
+
+    // Método para obtener la localización libre más cercana
+    public InterestLocation GetClosestLocation(Transform pedestrianTransform)
+    {
+        InterestLocation closestLocation = null;
+        float closestDistance = float.MaxValue;
+
+        foreach (var location in locations)
+        {
+            float distance = Vector3.Distance(pedestrianTransform.position, location.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestLocation = location;
+            }
+        }
+
+
+        return closestLocation;
+    }
+
+    // Método para obtener la localización libre más lejana
+    public InterestLocation GetFurthestLocation(Transform pedestrianTransform)
+    {
+        InterestLocation furthestLocation = null;
+        float furthestDistance = float.MinValue;
+
+        foreach (var location in locations)
+        {
+            float distance = Vector3.Distance(pedestrianTransform.position, location.transform.position);
+            if (distance > furthestDistance)
+            {
+                furthestDistance = distance;
+                furthestLocation = location;
+            }
+        }
+
+        return furthestLocation;
+    }
 }

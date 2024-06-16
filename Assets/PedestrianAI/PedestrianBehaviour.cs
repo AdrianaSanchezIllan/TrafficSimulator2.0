@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using static PedestrianBehaviour;
 using static UnityEditor.ShaderData;
 using System.Runtime.ConstrainedExecution;
+using UnityEditor;
+using Unity.VisualScripting;
 
 public class PedestrianBehaviour : MonoBehaviour
 {
@@ -27,12 +29,15 @@ public class PedestrianBehaviour : MonoBehaviour
 
     private Animator animator;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    private static readonly int isWarmingUp = Animator.StringToHash("isWarmingUp");
+    private static readonly int isRunning = Animator.StringToHash("isRunning");
 
     private GameObject currentActionIndicator;
     public InterestZone currentZone;
     public string currentAction;
     private bool isActionCompleted = false;
     public InterestLocation currentTarget = null;
+    InterestLocation runTo = null;
 
     private bool inTrafficLight = false;
     private bool isCrossingStreet = false;
@@ -41,7 +46,6 @@ public class PedestrianBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-
         if (animator == null)
         {
             Debug.LogError("Animator not found!");
@@ -99,6 +103,7 @@ public class PedestrianBehaviour : MonoBehaviour
             {
                 agent.SetDestination(currentTarget.transform.position);
             }
+
             animator.SetBool(IsWalking, isMoving);
             yield return null;
 
@@ -237,128 +242,7 @@ public class PedestrianBehaviour : MonoBehaviour
         currentZone = null;
         return false;
     }
-
-    public Status SearchLocation()
-    {
-        //Debug.Log("Buscar silla disponible");
-        agent.isStopped = true;
-        currentTarget = currentZone.GetFirstFreeLocation();
-
-        if (currentTarget != null)
-        {
-            //Debug.Log("Se asigna silla " + currentTarget);
-            return Status.Success;
-        }
-        return Status.Failure;
-    }
-
-    public void MoveTo(InterestLocation newTarget)
-    {
-        if (newTarget != null)
-        {
-            currentTarget = newTarget;
-            agent.SetDestination(currentTarget.transform.position);
-        }
-        else
-        {
-            Debug.LogError("New target is null.");
-        }
-    }
-
-    public Status MoveToLocation()
-    {
-        Debug.Log("MOVING TO CHAIR");
-        MoveTo(currentTarget);
-        
-        if (HasReachedTarget())
-        {
-            Debug.Log("REACHED THE CHAIR");
-            return Status.Success;
-        }
-        return Status.Failure;
-    }
-
-    public bool HasReachedTarget()
-    {
-        if (currentTarget != null)
-        {
-            // Check if the agent has reached the target
-            return !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
-        }
-        return false;
-    }
-
-    public Status PerformActionBT()
-    {
-        if (!isActionCompleted)
-        {
-            StartCoroutine(PerformInterestAction());
-            return Status.Running;
-        }
-        return Status.Success;
-    }
-
-    IEnumerator PerformInterestAction()
-    {
-        if (!isActionCompleted)
-        {
-            while (agent.remainingDistance > agent.stoppingDistance)
-            {
-                yield return null;
-            }
-
-            agent.isStopped = true;
-            PerformAction(currentZone.interestAction);
-
-            
-
-            if (currentZone.actionIndicatorPrefab != null)
-            {
-                if (currentActionIndicator == null)
-                {
-                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
-                    currentActionIndicator.transform.localPosition = new Vector3(0, 3.0f, 0);
-                    currentActionIndicator.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-                }
-                
-            }
-
-            // Simular duración de la acción
-            yield return new WaitForSeconds(10.0f); // Por ejemplo,10 segundos para tomar café
-
-            if (currentActionIndicator != null)
-            {
-                Destroy(currentActionIndicator);
-            }
-
-            agent.isStopped = false;
-            currentZone.VacateLocation(currentTarget);
-            currentZone = null;
-            currentTarget = null;
-            isActionCompleted = true;
-        }
-        
-    }
-    // Acciones en zonas de interés
-    public void PerformAction(string action)
-    {
-        switch (action)
-        {
-            case "Coffee":
-                Debug.Log("Tomando un café.");
-                break;
-            case "Park":
-                Debug.Log("Dando una vuelta corriendo.");
-                break;
-            case "Supermarket":
-                Debug.Log("Comprando víveres.");
-                break;
-            default:
-                Debug.LogWarning("Acción desconocida: " + action);
-                break;
-        }
-    }
-
+    //sitios donde puedes estar
     public Status IsInCoffeeShop()
     {
         //Debug.Log("compueba si es coffee shop");
@@ -389,6 +273,243 @@ public class PedestrianBehaviour : MonoBehaviour
         }
         return Status.Failure;
     }
+
+    public Status SearchLocation()
+    {
+        agent.isStopped = true;
+        if(currentAction == "Coffee")
+        {
+            currentTarget = currentZone.GetFirstFreeLocation();
+        }
+        if (currentAction == "Park" || currentAction == "Supermarket")
+        {
+            currentTarget = currentZone.GetClosestLocation(agent.transform);
+        }
+
+        if (currentTarget != null)
+        {
+            return Status.Success;
+        }
+        return Status.Failure;
+    }
+
+    public void MoveTo(InterestLocation newTarget)
+    {
+        if (newTarget != null)
+        {
+            currentTarget = newTarget;
+            agent.SetDestination(currentTarget.transform.position);
+        }
+        else
+        {
+            Debug.LogError("New target is null.");
+        }
+    }
+
+    public Status MoveToLocation()
+    {
+        MoveTo(currentTarget);
+        
+        if (HasReachedTarget())
+        {
+            return Status.Success;
+        }
+        return Status.Failure;
+    }
+
+    public bool HasReachedTarget()
+    {
+        if (currentTarget != null)
+        {
+            // Check if the agent has reached the target
+            return !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
+        }
+        return false;
+    }
+
+    public Status PerformActionBT()
+    {
+        if (!isActionCompleted)
+        {
+            if(currentAction == "Coffee")
+            {
+                StartCoroutine(CoffeeAction());
+            }
+            if(currentAction == "Park")
+            {
+                StartCoroutine(ParkAction());
+            }
+            if(currentAction == "Supermarket")
+            {
+                StartCoroutine(SupermarketAction());
+            }
+            
+            return Status.Running;
+        }
+        return Status.Success;
+    }
+
+    IEnumerator CoffeeAction()
+    {
+        if (!isActionCompleted)
+        {
+            while (agent.remainingDistance > agent.stoppingDistance)
+            {
+                yield return null;
+            }
+
+            agent.isStopped = true;
+            PerformAction(currentZone.interestAction);
+
+            if (currentZone.actionIndicatorPrefab != null)
+            {
+                if (currentActionIndicator == null)
+                {
+                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
+                    currentActionIndicator.transform.localPosition = new Vector3(0, 3.0f, 0);
+                    currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                }
+                
+            }
+
+            yield return new WaitForSeconds(10.0f); // 10 segundos para tomar café
+            
+            if (currentActionIndicator != null)
+            {
+                Destroy(currentActionIndicator);
+            }
+
+            agent.isStopped = false;
+            currentZone.VacateLocation(currentTarget);
+            currentZone = null;
+            currentTarget = null;
+            isActionCompleted = true;
+        }
+        
+    }
+
+    IEnumerator ParkAction()
+    {
+        if (!isActionCompleted)
+        {
+            while (agent.remainingDistance > agent.stoppingDistance)
+            {
+                yield return null;
+            }
+
+            agent.isStopped = true;
+            PerformAction(currentZone.interestAction);
+
+            if (currentZone.actionIndicatorPrefab != null)
+            {
+                if (currentActionIndicator == null)
+                {
+                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
+                    currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
+                    currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                }
+
+            }
+
+            animator.SetBool(isWarmingUp, true);
+            yield return new WaitForSeconds(5.0f);
+            animator.SetBool(isWarmingUp, false);
+
+            if (runTo == null)
+            {
+                runTo = currentZone.GetFurthestLocation(agent.transform);
+                MoveTo(runTo);
+                Debug.Log("Corre hacia el otro extremo: " + runTo.name);
+                agent.speed = 3;
+                animator.SetBool(isRunning, true);
+                Debug.Log("CORRIENDO");
+                // Esperar hasta que se complete el camino
+                while (!isPathComplete())
+                {
+                    yield return null;
+                }
+
+                //yield return new WaitForSeconds(0.5f);
+
+                if (currentActionIndicator != null)
+                {
+                    Destroy(currentActionIndicator);
+                }
+                animator.SetBool(isRunning, false);
+                animator.SetBool(isWarmingUp, false);
+                animator.SetBool(IsWalking, false);
+                //currentZone.VacateLocation(runTo);
+                agent.speed = 2;
+                isActionCompleted = true;
+                agent.isStopped = false;
+                currentZone.VacateLocation(currentTarget);
+                currentZone = null;
+                //currentTarget = null;
+            }
+            
+        }
+
+    }
+
+    IEnumerator SupermarketAction()
+    {
+        if (!isActionCompleted)
+        {
+            while (agent.remainingDistance > agent.stoppingDistance)
+            {
+                yield return null;
+            }
+
+            agent.isStopped = true;
+            PerformAction(currentZone.interestAction);
+
+            yield return new WaitForSeconds(10.0f); // Simular tiempo dentro de la tienda
+            
+            if (currentZone.actionIndicatorPrefab != null)
+            {
+                if (currentActionIndicator == null)
+                {
+                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
+                    currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
+                    currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                }
+            }
+
+            if (currentActionIndicator != null)
+            {
+                Destroy(currentActionIndicator);
+            }
+
+            agent.isStopped = false;
+            currentZone.VacateLocation(currentTarget);
+            currentZone = null;
+            currentTarget = null;
+            isActionCompleted = true;
+        }
+
+    }
+
+    // Acciones en zonas de interés
+    public void PerformAction(string action)
+    {
+        switch (action)
+        {
+            case "Coffee":
+                Debug.Log("Tomando un café.");
+                break;
+            case "Park":
+                Debug.Log("Dando una vuelta corriendo.");
+                break;
+            case "Supermarket":
+                Debug.Log("Comprando víveres.");
+                break;
+            default:
+                Debug.LogWarning("Acción desconocida: " + action);
+                break;
+        }
+    }
+
+    
 
     public bool HasCompletedAction()
     {
