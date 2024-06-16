@@ -90,7 +90,7 @@ public class PedestrianBehaviour : MonoBehaviour
                 }
             }
 
-            bool isMoving = agent.velocity.magnitude > 0.1f;
+            bool isMoving = agent.velocity.magnitude > 0.01f;
             if (isStopped && !isCrossing)
             {
                 agent.isStopped = true;
@@ -203,7 +203,7 @@ public class PedestrianBehaviour : MonoBehaviour
 
     IEnumerator CrossStreet()
     {
-        Debug.Log("CROSSINGGG" + nearbyCrosswalk);
+        //Debug.Log("CROSSINGGG" + nearbyCrosswalk);
         while (true)
         {
             isStopped = false;
@@ -230,7 +230,8 @@ public class PedestrianBehaviour : MonoBehaviour
     {
         if (currentZone != null && !isCrossing)
         {
-            Debug.Log("Esta en ZONA INTERES");
+            //Debug.Log("Esta en ZONA INTERES");
+            isActionCompleted = false;
             return true;
         }
         currentZone = null;
@@ -239,13 +240,13 @@ public class PedestrianBehaviour : MonoBehaviour
 
     public Status SearchLocation()
     {
-        Debug.Log("Buscar silla disponible");
+        //Debug.Log("Buscar silla disponible");
         agent.isStopped = true;
         currentTarget = currentZone.GetFirstFreeLocation();
 
         if (currentTarget != null)
         {
-            Debug.Log("Se asigna silla " + currentTarget);
+            //Debug.Log("Se asigna silla " + currentTarget);
             return Status.Success;
         }
         return Status.Failure;
@@ -299,47 +300,44 @@ public class PedestrianBehaviour : MonoBehaviour
 
     IEnumerator PerformInterestAction()
     {
-        while (agent.remainingDistance > agent.stoppingDistance)
+        if (!isActionCompleted)
         {
-            yield return null;
+            while (agent.remainingDistance > agent.stoppingDistance)
+            {
+                yield return null;
+            }
+
+            agent.isStopped = true;
+            PerformAction(currentZone.interestAction);
+
+            
+
+            if (currentZone.actionIndicatorPrefab != null)
+            {
+                if (currentActionIndicator == null)
+                {
+                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
+                    currentActionIndicator.transform.localPosition = new Vector3(0, 3.0f, 0);
+                    currentActionIndicator.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                }
+                
+            }
+
+            // Simular duración de la acción
+            yield return new WaitForSeconds(10.0f); // Por ejemplo,10 segundos para tomar café
+
+            if (currentActionIndicator != null)
+            {
+                Destroy(currentActionIndicator);
+            }
+
+            agent.isStopped = false;
+            currentZone.VacateLocation(currentTarget);
+            currentZone = null;
+            currentTarget = null;
+            isActionCompleted = true;
         }
-
-        agent.isStopped = true;
-        PerformAction(currentZone.interestAction);
-
-        if (currentActionIndicator != null)
-        {
-            Destroy(currentActionIndicator);
-        }
-
-        if (currentZone.actionIndicatorPrefab != null)
-        {
-            currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
-            currentActionIndicator.transform.localPosition = new Vector3(0, 3.0f, 0);
-            currentActionIndicator.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            currentActionIndicator.AddComponent<RotateIndicator>();
-        }
-
-        // Simular duración de la acción
-        yield return new WaitForSeconds(10.0f); // Por ejemplo,10 segundos para tomar café
-
-        if (currentActionIndicator != null)
-        {
-            Destroy(currentActionIndicator);
-        }
-
-        agent.isStopped = false;
-
-        // Verificación de currentZone antes de llamar a VacateLocation
-        if (currentZone == null)
-        {
-            Debug.LogError("currentZone is null");
-            yield break;
-        }
-        currentZone.VacateLocation(currentTarget);
-        currentZone = null;
-        currentTarget = null;
-        isActionCompleted = true;
+        
     }
     // Acciones en zonas de interés
     public void PerformAction(string action)
@@ -363,7 +361,7 @@ public class PedestrianBehaviour : MonoBehaviour
 
     public Status IsInCoffeeShop()
     {
-        Debug.Log("compueba si es coffee shop");
+        //Debug.Log("compueba si es coffee shop");
         if (currentAction == "Coffee")
         {
             Debug.Log("Esta en una COFFEE SHOP");

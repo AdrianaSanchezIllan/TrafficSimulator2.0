@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class RotateIndicator : MonoBehaviour
 {
-    public float rotationSpeed = 100f;
-
+    [SerializeField]
+    private Vector3 _rotation;
+    [SerializeField]
+    private float _speed;
+    private void Start()
+    {
+        Debug.Log("Crea CAFEEE");
+    }
     void Update()
     {
-        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        transform.Rotate( _rotation * _speed * Time.deltaTime);
+        //transform.Rotate(0, 5f, 0);
     }
 }
