@@ -21,7 +21,7 @@ namespace Assets.TrafficSimulation.Scripts
         private float currentSteering = 0f;
         private float steeringLerp = 5f;
 
-        public float maxSpeed = 30;
+        public float maxSpeed = 15;
         public float minSpeed = 5;
 
 

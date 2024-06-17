@@ -23,8 +23,6 @@ namespace TrafficSimulation.Scripts
         private Node nextNode;
 
         private bool isInIntersection = false;
-        //private bool isRotating = false;
-        //private Vector3 desiredDir;
         private Quaternion rotateAngle=Quaternion.identity;
 
         //Car
@@ -41,6 +39,8 @@ namespace TrafficSimulation.Scripts
         private float raycastLength = 7.0f;
         private float raySpacing = 3.0f;
         private bool dangerDetected = false;
+
+        private GameObject carDetected;
 
         void Awake()
         {
@@ -105,6 +105,7 @@ namespace TrafficSimulation.Scripts
                     //acc = 0.0f;
                     wheelDrive.maxSpeed = Mathf.Max(wheelDrive.maxSpeed / 2f, wheelDrive.minSpeed);
                 }
+                
                 if(isStopped)
                 {
                     Debug.Log("STOP");
@@ -173,6 +174,29 @@ namespace TrafficSimulation.Scripts
             }
         }
 
+        public void ToSlowDown()
+        {
+
+            StartCoroutine(SlowDown());
+
+        }
+
+        private IEnumerator SlowDown()
+        {
+            WheelDrive_v2 carDetected = GetCarNear().GetComponent<WheelDrive_v2>();
+            while (true)
+            { 
+                //if(carDetected.maxSpeed <)
+                if (!CarNear())
+                {
+                    Debug.Log("No car near");
+                    dangerDetected = false;
+                    yield break;
+                }
+                yield return null;
+            }
+        }
+
         public void ChooseDirection()
         {
             Debug.Log("Actual: Segmento " + intersectionNode.segment + ", Waypoint " + intersectionNode.waypoint);
@@ -235,29 +259,30 @@ namespace TrafficSimulation.Scripts
             }
             return false;
         }
-        /*
-        public bool IsGreenLight()
+
+        public bool CarNear()
         {
-            if (CollisionDetected() && objectDetected.CompareTag("TrafficLight")) 
+            GameObject objectDetected = RayCaster();
+            if (objectDetected != null)
             {
-                if(!objectDetected.GetComponent<TrafficLights>().IsRedForCars())
+                if (objectDetected.CompareTag("AutonomousVehicle"))
                 {
-                    Debug.Log("Verde, continuar");
-                    isStopped = false;
-                    objectDetected = null;
+                    Debug.Log("PI PI PI");
+                    carDetected = objectDetected;
                     return true;
                 }
                 return false;
             }
             return false;
-        }*/
-
+        }
         #endregion
-        /*
-        private bool CollisionDetected()
+        private GameObject GetCarNear()
         {
-            return objectDetected!=null;
-        }*/
+            return carDetected;
+        }
+        #region GETTERS
+        
+        #endregion
 
         private void SetInitWaypoint()
         {

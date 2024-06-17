@@ -9,6 +9,9 @@ namespace TrafficSimulation {
 
         public bool belongsIntersection = false;
 
+        //AStar
+        public int actual;
+
         public void Refresh(int _newId, Segment _newSegment) {
             segment = _newSegment;
             name = "Waypoint-" + _newId;
