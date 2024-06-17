@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using static PedestrianBehaviour;
 using static UnityEditor.ShaderData;
 using System.Runtime.ConstrainedExecution;
+using UnityEditor;
+using Unity.VisualScripting;
 
 public class PedestrianBehaviour : MonoBehaviour
 {
@@ -20,20 +22,23 @@ public class PedestrianBehaviour : MonoBehaviour
     private bool hasCrossed = false;
     private Vector3 originalDestination; // Para almacenar el destino original antes de cruzar
     private bool canCrossNow = false;
+    private bool isStopped = false;
     private bool isInCrosswalk = false; // Flag para controlar la entrada y salida
                                         //public TrafficLights trafficLight; // Referencia al semáforo
-
+    private bool isCrossing = false;
 
     private Animator animator;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    private static readonly int isWarmingUp = Animator.StringToHash("isWarmingUp");
+    private static readonly int isRunning = Animator.StringToHash("isRunning");
 
     private GameObject currentActionIndicator;
     public InterestZone currentZone;
-    public Transform currentLocation;
     public string currentAction;
     private bool isActionCompleted = false;
+    public InterestLocation currentTarget = null;
+    InterestLocation runTo = null;
 
-    Transform location;
     private bool inTrafficLight = false;
     private bool isCrossingStreet = false;
     
@@ -41,7 +46,6 @@ public class PedestrianBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-
         if (animator == null)
         {
             Debug.LogError("Animator not found!");
@@ -68,7 +72,7 @@ public class PedestrianBehaviour : MonoBehaviour
             }
         }
     }
-
+    #region ROAMING
     // Estado de deambulación
     public void StartRoaming()
     {
@@ -79,6 +83,7 @@ public class PedestrianBehaviour : MonoBehaviour
     {
         while (true)
         {
+            agent.isStopped = false;
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
                 Vector3 point;
@@ -89,19 +94,30 @@ public class PedestrianBehaviour : MonoBehaviour
                 }
             }
 
-            bool isMoving = agent.velocity.magnitude > 0.1f;
+            bool isMoving = agent.velocity.magnitude > 0.01f;
+            if (isStopped && !isCrossing)
+            {
+                agent.isStopped = true;
+            }
+            if(currentTarget != null && !isActionCompleted)
+            {
+                agent.SetDestination(currentTarget.transform.position);
+            }
+
             animator.SetBool(IsWalking, isMoving);
             yield return null;
 
         }
     }
+    #endregion
 
-    // Método para verificar si el peatón en algún paso de cebra
-    private bool InCrosswalkArea()
+    #region CROSSWALK
+    // Transicion para verificar si el peatón en algún paso de cebra
+    public bool InCrosswalkArea()
     {
         if(nearbyCrosswalk != null)
         {
-            Debug.Log("en paso de cebra");
+            Debug.Log("En paso de cebra" + nearbyCrosswalk);
             return true;
         }
         nearbyCrosswalk = null;
@@ -114,10 +130,19 @@ public class PedestrianBehaviour : MonoBehaviour
         if (!isInCrosswalk) // Verificar si ya está en el paso de cebra
         {
             isInCrosswalk = true;
-            //agent.isStopped = true;
             nearbyCrosswalk = crosswalk;
             Debug.Log("Entered crosswalk area" + nearbyCrosswalk);
         }
+    }
+
+    public bool FinishCrossing()
+    {
+        if (!isInCrosswalk)
+        {
+            nearbyCrosswalk = null;
+            return true;
+        }
+        return false;
     }
 
     public void ExitCrosswalkArea(Crosswalk crosswalk)
@@ -131,40 +156,48 @@ public class PedestrianBehaviour : MonoBehaviour
     }
 
     // Método para mover al peatón al inicio del paso de cebra
-    public void MoveToCrosswalk()
+    public void WaitUntilGreen()
     {
-        originalDestination = agent.destination; // Guardar el destino original
-        agent.SetDestination(GetCrosswalkEntrance()); // Mover al inicio del paso de cebra
+        Debug.Log("WAITINGGG" + nearbyCrosswalk);
         StartCoroutine(WaitAtCrosswalk());
+        
     }
 
-    // Obtener el punto de entrada del paso de cebra
-    private Vector3 GetCrosswalkEntrance()
-    {
-        return nearbyCrosswalk.collider.ClosestPoint(agent.transform.position);
-    }
 
     // Estado para esperar en el paso de cebra
-    private IEnumerator WaitAtCrosswalk()
+    IEnumerator WaitAtCrosswalk()
     {
         while (true)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            isStopped = true; // Detener al agente
+            isCrossing = false;
+            //para comrpobar si nearbyCrosswalk es null
+            if (nearbyCrosswalk == null)
             {
-                agent.isStopped = true; // Detener al agente
-                if (nearbyCrosswalk.trafficLight.greenForPedestrian)
-                {
-                    agent.isStopped = false; // Reanudar el agente
-                    canCrossNow = true;
-                    yield break;
-                }
+                Debug.LogError("nearbyCrosswalk is null");
+                yield break;
+            }
+            //para comrpobar si trafficLight es null
+            if (nearbyCrosswalk.trafficLight == null)
+            {
+                Debug.LogError("trafficLight is null");
+                yield break;
             }
 
-            yield return new WaitForSeconds(1.0f); // Esperar antes de verificar nuevamente
+            if (nearbyCrosswalk.trafficLight.IsRedForCars())
+            {
+                isStopped = false; // Reanudar el agente
+                canCrossNow = true;
+                yield break;
+            }
+
+            yield return null; 
         }
     }
-    private bool CanCrossNow()
+
+    public bool CanCrossNow()
     {
+        isStopped = false;
         return canCrossNow;
     }
     // Estado para comenzar a cruzar la calle
@@ -173,77 +206,288 @@ public class PedestrianBehaviour : MonoBehaviour
         StartCoroutine(CrossStreet());
     }
 
-    private IEnumerator CrossStreet()
+    IEnumerator CrossStreet()
     {
+        //Debug.Log("CROSSINGGG" + nearbyCrosswalk);
         while (true)
         {
-            // Verificar si el semáforo del crosswalk cercano está en verde
-            if (nearbyCrosswalk != null && nearbyCrosswalk.trafficLight.greenForPedestrian)
+            isStopped = false;
+            isCrossing = true;
+            canCrossNow = true;
+            if (FinishCrossing())
             {
-                agent.SetDestination(originalDestination); // Continuar al destino original
-                hasCrossed = true;
+                canCrossNow = false;
+                isCrossing = false;
                 yield break;
             }
 
-            yield return new WaitForSeconds(1.0f); // Esperar antes de verificar nuevamente
+            yield return null; 
         }
     }
 
-    public bool CheckIfStreetCrossed()
+    #endregion
+
+
+
+    #region INTEREST ZONE
+    // transicion para entrar en BT de acciones
+    public bool IsInterestZone()
     {
-        return hasCrossed;
-    }
-
-
-
-    private bool RandomPoint(Vector3 center, float range, out Vector3 result)
-    {
-        Vector3 randomPoint = center + Random.insideUnitSphere * range;
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        if (currentZone != null && !isCrossing)
         {
-            result = hit.position;
+            //Debug.Log("Esta en ZONA INTERES");
+            isActionCompleted = false;
             return true;
         }
+        currentZone = null;
+        return false;
+    }
+    //sitios donde puedes estar
+    public Status IsInCoffeeShop()
+    {
+        //Debug.Log("compueba si es coffee shop");
+        if (currentAction == "Coffee")
+        {
+            Debug.Log("Esta en una COFFEE SHOP");
+            return Status.Success;
+        }
+        return Status.Failure;
+    }
 
-        result = Vector3.zero;
+    public Status IsInPark()
+    {
+        if (currentAction == "Park")
+        {
+            Debug.Log("Esta en un PARK");
+            return Status.Success;
+        }
+        return Status.Failure;
+    }
+
+    public Status IsInSupermarket()
+    {
+        if (currentAction == "Supermarket")
+        {
+            Debug.Log("Esta en un SUPERMARKET");
+            return Status.Success;
+        }
+        return Status.Failure;
+    }
+
+    public Status SearchLocation()
+    {
+        agent.isStopped = true;
+        if(currentAction == "Coffee")
+        {
+            currentTarget = currentZone.GetFirstFreeLocation();
+        }
+        if (currentAction == "Park" || currentAction == "Supermarket")
+        {
+            currentTarget = currentZone.GetClosestLocation(agent.transform);
+        }
+
+        if (currentTarget != null)
+        {
+            return Status.Success;
+        }
+        return Status.Failure;
+    }
+
+    public void MoveTo(InterestLocation newTarget)
+    {
+        if (newTarget != null)
+        {
+            currentTarget = newTarget;
+            agent.SetDestination(currentTarget.transform.position);
+        }
+        else
+        {
+            Debug.LogError("New target is null.");
+        }
+    }
+
+    public Status MoveToLocation()
+    {
+        MoveTo(currentTarget);
+        
+        if (HasReachedTarget())
+        {
+            return Status.Success;
+        }
+        return Status.Failure;
+    }
+
+    public bool HasReachedTarget()
+    {
+        if (currentTarget != null)
+        {
+            // Check if the agent has reached the target
+            return !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
+        }
         return false;
     }
 
-    public void MoveTo(Vector3 destination)
+    public Status PerformActionBT()
     {
-        agent.SetDestination(destination);
-        StartCoroutine(CheckIfArrived());
+        if (!isActionCompleted)
+        {
+            if(currentAction == "Coffee")
+            {
+                StartCoroutine(CoffeeAction());
+            }
+            if(currentAction == "Park")
+            {
+                StartCoroutine(ParkAction());
+            }
+            if(currentAction == "Supermarket")
+            {
+                StartCoroutine(SupermarketAction());
+            }
+            
+            return Status.Running;
+        }
+        return Status.Success;
     }
 
-    private IEnumerator CheckIfArrived()
+    IEnumerator CoffeeAction()
     {
-        while (true)
+        if (!isActionCompleted)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            while (agent.remainingDistance > agent.stoppingDistance)
             {
-                agent.isStopped = true;
-                yield break; // Terminar coroutine cuando el agente llega al destino
+                yield return null;
             }
 
-            bool isMoving = agent.velocity.magnitude > 0.1f;
-            animator.SetBool(IsWalking, isMoving);
+            agent.isStopped = true;
+            PerformAction(currentZone.interestAction);
 
-            yield return null;
+            if (currentZone.actionIndicatorPrefab != null)
+            {
+                if (currentActionIndicator == null)
+                {
+                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
+                    currentActionIndicator.transform.localPosition = new Vector3(0, 3.0f, 0);
+                    currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                }
+                
+            }
+
+            yield return new WaitForSeconds(10.0f); // 10 segundos para tomar café
+            
+            if (currentActionIndicator != null)
+            {
+                Destroy(currentActionIndicator);
+            }
+
+            agent.isStopped = false;
+            currentZone.VacateLocation(currentTarget);
+            currentZone = null;
+            currentTarget = null;
+            isActionCompleted = true;
         }
-    }
-    /*
-private IEnumerator WaitForGreenLight()
-{
-    while (!trafficLight.IsRedForCars())
-    {
-        yield return new WaitForSeconds(0.5f); // Esperar 0.5 segundos antes de verificar nuevamente
+        
     }
 
-    isCrossingStreet = true;
-    StartRoaming();
-}
-*/
+    IEnumerator ParkAction()
+    {
+        if (!isActionCompleted)
+        {
+            while (agent.remainingDistance > agent.stoppingDistance)
+            {
+                yield return null;
+            }
+
+            agent.isStopped = true;
+            PerformAction(currentZone.interestAction);
+
+            if (currentZone.actionIndicatorPrefab != null)
+            {
+                if (currentActionIndicator == null)
+                {
+                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
+                    currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
+                    currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                }
+
+            }
+
+            animator.SetBool(isWarmingUp, true);
+            yield return new WaitForSeconds(5.0f);
+            animator.SetBool(isWarmingUp, false);
+
+            if (runTo == null)
+            {
+                runTo = currentZone.GetFurthestLocation(agent.transform);
+                MoveTo(runTo);
+                Debug.Log("Corre hacia el otro extremo: " + runTo.name);
+                agent.speed = 3;
+                animator.SetBool(isRunning, true);
+                Debug.Log("CORRIENDO");
+                // Esperar hasta que se complete el camino
+                while (!isPathComplete())
+                {
+                    yield return null;
+                }
+
+                //yield return new WaitForSeconds(0.5f);
+
+                if (currentActionIndicator != null)
+                {
+                    Destroy(currentActionIndicator);
+                }
+                animator.SetBool(isRunning, false);
+                animator.SetBool(isWarmingUp, false);
+                animator.SetBool(IsWalking, false);
+                //currentZone.VacateLocation(runTo);
+                agent.speed = 2;
+                isActionCompleted = true;
+                agent.isStopped = false;
+                currentZone.VacateLocation(currentTarget);
+                currentZone = null;
+                //currentTarget = null;
+            }
+            
+        }
+
+    }
+
+    IEnumerator SupermarketAction()
+    {
+        if (!isActionCompleted)
+        {
+            while (agent.remainingDistance > agent.stoppingDistance)
+            {
+                yield return null;
+            }
+
+            agent.isStopped = true;
+            PerformAction(currentZone.interestAction);
+
+            yield return new WaitForSeconds(10.0f); // Simular tiempo dentro de la tienda
+            
+            if (currentZone.actionIndicatorPrefab != null)
+            {
+                if (currentActionIndicator == null)
+                {
+                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
+                    currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
+                    currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                }
+            }
+
+            if (currentActionIndicator != null)
+            {
+                Destroy(currentActionIndicator);
+            }
+
+            agent.isStopped = false;
+            currentZone.VacateLocation(currentTarget);
+            currentZone = null;
+            currentTarget = null;
+            isActionCompleted = true;
+        }
+
+    }
 
     // Acciones en zonas de interés
     public void PerformAction(string action)
@@ -265,153 +509,12 @@ private IEnumerator WaitForGreenLight()
         }
     }
 
-    public Status EnterInterestZone()
-    {
-        if (currentZone != null)
-        {
-            currentLocation = currentZone.GetAvailableLocation();
-            Debug.Log("se asigna currentLocation");
-            if (currentLocation != null)
-            {
-                return Status.Success;
-            }
-        }
-        return Status.Failure;
-    }
-
-    /*public Status MoveToLocation()
-    {
-        if (currentLocation != null)
-        {
-            Debug.Log(currentLocation);
-            MoveTo(currentLocation.position);
-            if (isPathComplete())
-            {
-                Debug.Log("he llegado a la silla");
-                return Status.Success;
-            }
-            return Status.Running;
-        }
-        return Status.Failure;
-       
-    }*/
-    public Status MoveToLocation()
-    {
-        if (currentLocation != null)
-        {
-            Debug.Log($"Moving to location: {currentLocation.position}");
-            MoveTo(currentLocation.position);
-
-            if (isPathComplete())
-            {
-                Debug.Log("Path is complete.");
-                return Status.Success;
-            }
-            else
-            {
-                Debug.Log("Moving to location...");
-                return Status.Running;
-            }
-        }
-        return Status.Failure;
-    }
-    public Status PerformActionBT()
-    {
-        if (!isActionCompleted)
-        {
-            isActionCompleted = false;
-            StartCoroutine(PerformInterestAction());
-            return Status.Running;
-        }
-        return Status.Success;
-    }
-
-    private IEnumerator PerformInterestAction()
-    {
-        while (agent.remainingDistance > agent.stoppingDistance)
-        {
-            yield return null;
-        }
-
-        agent.isStopped = true;
-        PerformAction(currentZone.interestAction);
-
-        if (currentActionIndicator != null)
-        {
-            Destroy(currentActionIndicator);
-        }
-
-        if (currentZone.actionIndicatorPrefab != null)
-        {
-            currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
-            // Ajustar la posición de la imagen por encima del personaje
-            currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
-        }
-
-        // Simular duración de la acción
-        yield return new WaitForSeconds(10.0f); // Por ejemplo,10 segundos para tomar café
-
-        if (currentActionIndicator != null)
-        {
-            Destroy(currentActionIndicator);
-        }
-
-        agent.isStopped = false;
-        currentZone.VacateLocation(currentLocation); // Liberar la ubicación
-        currentLocation = null;
-        isActionCompleted = true;
-    }
-
     
-
-    #region Behaviour Tree Nodes
-
-    public Status CheckIfCanPerformAction()
-    {
-        return currentZone != null ? Status.Success : Status.Failure;
-    }
-
-    
-
-    public Status IsInCoffeeShop()
-    {
-        if (currentAction == "Coffee")
-        {
-            Debug.Log("es una coffee shop");
-            return Status.Success;
-        }
-        return Status.Failure;
-    }
-    public Status IsInPark()
-    {
-        if (currentAction == "Park")
-        {
-            return Status.Success;
-        }
-        return Status.Failure;
-    }
-
-    public Status IsInSupermarket()
-    {
-        if (currentAction == "Supermarket")
-        {
-            return Status.Success;
-        }
-        return Status.Failure;
-    }
-
-    #endregion
-
-    public bool IsInterestZone()
-    {
-        return currentZone != null;
-    }
 
     public bool HasCompletedAction()
     {
         return isActionCompleted;
     }
-
 
     public bool isPathComplete()
     {
@@ -431,13 +534,19 @@ private IEnumerator WaitForGreenLight()
         return Status.Running;
     }
 
-    public Status ActionHasBeenCompleted()
-    {
-        if(isActionCompleted)
-        {
-            return Status.Success;
-        }
-        return Status.Running;
-    }
 
+    #endregion
+    private bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    {
+        Vector3 randomPoint = center + Random.insideUnitSphere * range;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            result = hit.position;
+            return true;
+        }
+
+        result = Vector3.zero;
+        return false;
+    }
 }

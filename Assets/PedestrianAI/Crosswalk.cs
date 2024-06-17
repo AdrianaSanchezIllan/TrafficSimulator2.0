@@ -40,6 +40,11 @@ public class Crosswalk : MonoBehaviour
         if (pedestrian != null)
         {
             pedestrian.ExitCrosswalkArea(this);
+
         }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        
     }
 }

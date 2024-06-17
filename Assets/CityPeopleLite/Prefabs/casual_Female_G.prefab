@@ -918,6 +918,8 @@ MonoBehaviour:
   range: 100
   centrePoint: {fileID: 5556656506850165741, guid: 1a2afbcf572de5242acc0ac27cd0d300, type: 3}
   currentZone: {fileID: 0}
+  currentLocation: {fileID: 0}
+  currentAction: 
 --- !u!195 &-1922757224603340836
 NavMeshAgent:
   m_ObjectHideFlags: 0
