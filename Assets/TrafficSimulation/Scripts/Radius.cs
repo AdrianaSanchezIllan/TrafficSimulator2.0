@@ -4,28 +4,48 @@ using UnityEngine;
 
 public class Radius : MonoBehaviour
 {
-    private GameObject carNeighbor;
+    private GameObject pedestrian;
+    private GameObject car;
 
     private void OnTriggerEnter(Collider other)
     {
         
-        if(other.gameObject.CompareTag("AutonomousVehicle"))
+        if(other.gameObject.CompareTag("Pedestrian"))
         {
-            carNeighbor = other.gameObject;
+            pedestrian = other.gameObject;
+        }
+        if (other.gameObject.CompareTag("AutonomousVehicle"))
+        {
+            car = other.gameObject;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         
+        if (other.gameObject.CompareTag("Pedestrian"))
+        {
+            pedestrian = null;
+        }
         if (other.gameObject.CompareTag("AutonomousVehicle"))
         {
-            carNeighbor = null;
+            car = null;
         }
     }
 
-    public GameObject CarDetected()
+    public GameObject PedestrianDetected()
     {
-        return carNeighbor;
+        return pedestrian;
+    }
+    public bool CarInRadius(out GameObject _car)
+    {
+        
+        if(car != null)
+        {
+            _car = car;
+            return true;
+        }
+        _car = null;
+        return false;
     }
 }
