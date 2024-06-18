@@ -6,26 +6,42 @@ using UnityEngine.AI;
 public class RandomPedestrianSpawner : MonoBehaviour
 {
     public GameObject[] pedestrianPrefabs; // Array que contiene los prefabs de los peatones disponibles
-    public int numberOfPedestrians; // Número de peatones a aparecer
-    public float spawnRadius; // Radio dentro del cual aparecerán los peatones
+    public int numberOfPedestrians; // Nï¿½mero de peatones a aparecer
+    public float spawnRadius; // Radio dentro del cual aparecerï¿½n los peatones
+    private int numHooligans = 7;//Numero de holligans debe ser multiplo de 6 (mas o menos)
 
     void Start()
     {
         SpawnPedestrians();
+        SpawnHooligans();
     }
 
     void SpawnPedestrians()
     {
         for (int i = 0; i < numberOfPedestrians; i++)
         {
-            // Selecciona un prefab de peatón aleatorio del array
-            GameObject randomPedestrianPrefab = pedestrianPrefabs[Random.Range(0, pedestrianPrefabs.Length)];
+            // Selecciona un prefab de peatï¿½n aleatorio del array
+            GameObject randomPedestrianPrefab = pedestrianPrefabs[0];
 
-            // Genera una posición aleatoria dentro del radio de spawn
+            // Genera una posiciï¿½n aleatoria dentro del radio de spawn
             Vector3 randomSpawnPosition = RandomNavMeshPosition(transform.position, spawnRadius);
 
-            // Instancia el prefab de peatón en la posición aleatoria
+            // Instancia el prefab de peatï¿½n en la posiciï¿½n aleatoria
             GameObject newPedestrian = Instantiate(randomPedestrianPrefab, randomSpawnPosition, Quaternion.identity);
+        }
+    }
+        void SpawnHooligans()
+    {
+        for (int i = 0; i < numHooligans; i++)
+        {
+            // Selecciona un prefab de peatï¿½n aleatorio del array
+            GameObject randomHooliganPrefab = pedestrianPrefabs[1];
+
+            // Genera una posiciï¿½n aleatoria dentro del radio de spawn
+            Vector3 randomSpawnPosition = RandomNavMeshPosition(transform.position, spawnRadius);
+
+            // Instancia el prefab de peatï¿½n en la posiciï¿½n aleatoria
+            GameObject newHooligan = Instantiate(randomHooliganPrefab, randomSpawnPosition, Quaternion.identity);
         }
     }
 
