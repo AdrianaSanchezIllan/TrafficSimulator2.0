@@ -1089,6 +1089,10 @@ MonoBehaviour:
   currentZone: {fileID: 0}
   currentAction: 
   currentTarget: {fileID: 0}
+  runTo: {fileID: 0}
+  insideSupermarket: {fileID: 0}
+  outsideSupermarket: {fileID: 0}
+  hasFinishedShopping: 0
 --- !u!195 &-288927898240609580
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1422,6 +1426,7 @@ MonoBehaviour:
         - e19ba21e-892c-41e9-9315-59114b16b8a0
         - 174f19ba-54f3-4c86-b236-211abd6aa00c
         - 31a72d37-0547-4b20-a85f-d6ea2cce6728
+        - 69323057-7f3f-47d0-be23-b7f786e797e4
       - name: IsInSupermarket
         id: 8472269e-5048-4eeb-a65e-61cae569174a
         position: {x: 809, y: 1097}
@@ -1480,7 +1485,7 @@ MonoBehaviour:
         childIds: []
       - name: SearchEntrance
         id: e19ba21e-892c-41e9-9315-59114b16b8a0
-        position: {x: 1207, y: 1097}
+        position: {x: 1131, y: 1118}
         node:
           rid: 8944971670120300550
         references:
@@ -1494,7 +1499,7 @@ MonoBehaviour:
         childIds: []
       - name: MoveToEntrance
         id: 174f19ba-54f3-4c86-b236-211abd6aa00c
-        position: {x: 1548, y: 1102}
+        position: {x: 1429, y: 1113}
         node:
           rid: 8944971670120300552
         references:
@@ -1508,13 +1513,27 @@ MonoBehaviour:
         childIds: []
       - name: Shopping
         id: 31a72d37-0547-4b20-a85f-d6ea2cce6728
-        position: {x: 1882, y: 1111}
+        position: {x: 1699, y: 1126}
         node:
           rid: 8944971670120300554
         references:
         - fieldName: Action
           value:
             rid: 8944971670120300555
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: FinishShopping
+        id: 69323057-7f3f-47d0-be23-b7f786e797e4
+        position: {x: 1969, y: 1134}
+        node:
+          rid: 8944971692167659522
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971692167659523
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
@@ -1901,6 +1920,27 @@ MonoBehaviour:
         update:
           componentName: PedestrianBehaviour
           methodName: PerformActionBT
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971692167659522
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8944971692167659523
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: PedestrianBehaviour
+          methodName: FinishShoppingBT
         stop:
           componentName: 
           methodName: 

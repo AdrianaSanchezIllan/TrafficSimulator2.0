@@ -10,6 +10,8 @@ TagManager:
   - AutonomousVehicle
   - Pedestrian
   - TrafficLight
+  - Supermarket
+  - Salida
   layers:
   - Default
   - TransparentFX
