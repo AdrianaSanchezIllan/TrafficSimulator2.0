@@ -11,23 +11,25 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.Animations;
 
 enum CarStates
 {
     CIRCULATE,
     REFUEL,
-    STEP_ON
+    STEP_ON,
+    STEP_ASIDE
 }
 namespace TrafficSimulation.Scripts
 {
+    public struct Node
+    {
+        public int segment;
+        public int waypoint;
+        public Transform transf;
+    }
     public class CarBehaviour : MonoBehaviour
     {
-        private struct Node
-        {
-            public int segment;
-            public int waypoint;
-            public Transform transf;
-        }
 
         [SerializeField]
         private TrafficSystem trafficSystem;
@@ -72,12 +74,17 @@ namespace TrafficSimulation.Scripts
         private bool isOvertaking = false;
         private bool stopped = false;
 
+        //Police
+        public bool hearingHooter = false;
+
+
         public void Awake()
         {
             wheelDrive = GetComponent<WheelDrive_v2>();
             currentGasoline = Random.Range(20, maxGasoline);
             //currentGasoline = 20;
             SetInitWaypoint();
+            
         }
 
         public void Update()
@@ -93,7 +100,6 @@ namespace TrafficSimulation.Scripts
                 while (true)
                 {
                     seed = Random.Range(0, 100);
-                    Debug.Log("New seed");
                     yield return new WaitForSeconds(20);
                 }
             }
@@ -102,7 +108,6 @@ namespace TrafficSimulation.Scripts
         #region CIRCULATE NORMAL
         public void Circulate()
         {
-            Debug.Log("CIRCULATE");
             state = CarStates.CIRCULATE;
 
             initMaxSpeed = wheelDrive.maxSpeed;
@@ -131,9 +136,6 @@ namespace TrafficSimulation.Scripts
                     if(LowFuelTank())
                     {
                         yield break;
-                        //state = CarStates.REFUEL;
-                        //init = new NodeInfo(actualNode.segment, actualNode.waypoint, actualNode.transf);
-                        //goal = new NodeInfo(2, 0, trafficSystem.segments[2].waypoints[0].transform);
                     }
                     if (GoFast()) yield break;
                     if (IsInWaypoint())
@@ -174,9 +176,7 @@ namespace TrafficSimulation.Scripts
                         //Slow down
                         acc = 0.1f;
                         wheelDrive.maxSpeed = Mathf.Max(wheelDrive.maxSpeed / 2f, wheelDrive.minSpeed);
-                        //Comprobar q no hay nadie al girar
-                        GameObject obj;
-                        yield return new WaitUntil(() => { return !raycast.CarInRadius(out obj); });
+                        
                         StartCoroutine(Rotate());
                         IEnumerator Rotate()
                         {
@@ -191,6 +191,12 @@ namespace TrafficSimulation.Scripts
 
                                 yield return null;
                             }
+                        }
+                        if (raycast.CarInRadius()) //Comprobar q no hay nadie al girar
+                        {
+                            Debug.Log("Someone in intersection");
+                            yield return new WaitUntil(() => { return !raycast.CarInRadius(); });
+                            Debug.Log("Intersection free");
                         }
                     }
 
@@ -273,6 +279,12 @@ namespace TrafficSimulation.Scripts
                                 yield return null;
                             }
                         }
+                        if (raycast.CarInRadius())
+                        {
+                            Debug.Log("Someone in intersection");
+                            yield return new WaitUntil(() => { return !raycast.CarInRadius(); });
+                            Debug.Log("Intersection free");
+                        }
                     }
 
                     if (RedTrafficLight()) //CUIDADO QUE PILLA LOS SEMAFOROS A LOS LADOS
@@ -323,7 +335,6 @@ namespace TrafficSimulation.Scripts
         {
             if (currentCorutine != null)
             {
-                Debug.Log("ON FUEL STATION (break coroutine)");
                 StopCoroutine(currentCorutine);
                 currentCorutine = null;
             }
@@ -354,7 +365,6 @@ namespace TrafficSimulation.Scripts
                     if (WrongDirection(FuelStation.position))
                     {
                         //Slow down
-                        Debug.Log("Rotating to fuel zone");
                         acc = 0.1f;
                         wheelDrive.maxSpeed = Mathf.Max(wheelDrive.maxSpeed / 2f, wheelDrive.minSpeed);
                         StartCoroutine(Rotate());
@@ -387,12 +397,12 @@ namespace TrafficSimulation.Scripts
         #region STEP_ON
         public void StepOn()
         {
-            Debug.Log("STEP_ON");
             state = CarStates.STEP_ON;
 
             timer = 60.0f;
             initMaxSpeed = wheelDrive.maxSpeed;
             nextNode.waypoint = -1;
+            stopped = false;
             //SetInitWaypoint();
 
             if (currentCorutine != null)
@@ -413,45 +423,46 @@ namespace TrafficSimulation.Scripts
                     wheelDrive.maxSpeed = initMaxSpeed*2;
                     float acc = 0.8f;
                     float brake = 0.0f; //freno
-
+                    
+                    if (CheckPolice())
+                    {
+                        Debug.Log("AHH LA POLII");
+                        stopped = true;
+                        yield break;
+                    }
+                    if (stopped == true) yield break;
                     if (LowFuelTank())
                     {
                         yield break;
-                        //state = CarStates.REFUEL;
-                        //init = new NodeInfo(actualNode.segment, actualNode.waypoint, actualNode.transf);
-                        //goal = new NodeInfo(2, 0, trafficSystem.segments[2].waypoints[0].transform);
                     }
-                    if (Timer()) yield break;
+                    if (timer<=0.0f) yield break;
                     if (IsInWaypoint())
                     {
                         actualNode = ChooseDirection();
                         //ChooseDirection();
 
                     }
-                    GameObject other;
-                    //float hitDist;
-                    if (raycast.CarInRadius(out other))
+                    //GameObject other;
+                    float hitDist;
+                    if (CarDetected(out hitDist))
                     {
-                        //WheelDrive_v2 other = carDetected.GetComponent<WheelDrive_v2>();
+                        WheelDrive_v2 other = carDetected.GetComponent<WheelDrive_v2>();
                         float dotFront = Vector3.Dot(transform.forward, other.transform.forward);
-                        float hitDist = Vector3.Distance(transform.position, other.transform.position);
+                        //float hitDist = Vector3.Distance(transform.position, other.transform.position);
                         //Si hay coche delante ADELANTA (por la izq)
-                        if (other.GetComponent<WheelDrive_v2>().maxSpeed <= wheelDrive.maxSpeed && dotFront > 0.8f && !isOvertaking)
+                        if (other.maxSpeed <= wheelDrive.maxSpeed && dotFront > 0.8f && !isOvertaking)
                         {
                             Debug.Log("Adelantar");
-                            
-                            //transform.LookAt(new Vector3 (transform.position.x, transform.position.y + 45, transform.position.z));
                             acc = 1.0f;
-                            //transform.LookAt(new Vector3(carDetected.transform.position.x+2.5f, carDetected.transform.position.y, carDetected.transform.position.z));
-                            //.LookAt(carDetected.transform.forward);
-                            transform.localPosition = new Vector3(transform.localPosition.x+1.5f, transform.localPosition.y, transform.localPosition.z);
+                            //transform.position = new Vector3(transform.localPosition.x-1.5f, transform.position.y, transform.position.z);
+                            transform.position -= transform.right * 1.5f;
                             isOvertaking = true;
                             yield return new WaitForSeconds(1);
                         }
                         //Si estan muy cerca y van en la direcciones opuestas
                         else if (hitDist < safetyDist && dotFront <= .8f)
                         {
-                            Debug.Log("AHHHHHHHHHHHHHHHHH");
+                            Debug.Log("CHOQUE INMINENTE");
                             acc = -0.5f;
                             brake = 1;
                             wheelDrive.maxSpeed = initMaxSpeed;
@@ -459,18 +470,15 @@ namespace TrafficSimulation.Scripts
                             wheelDrive.Move(acc, brake);
                             yield return new WaitForSeconds(2);
                             stopped = true;
-                            yield break;
                         }
                     }
-                    //wheelDrive.Move(acc, brake);
-                    //yield return new WaitUntil(() => { return ; });
                     
-                    if(isOvertaking && !raycast.CarInRadius(out other))
+                    if(isOvertaking && !raycast.CarInRadius())
                     {
-                        Debug.Log("Finished overtaking");
                         isOvertaking = false;
                         acc = 0.6f;
-                        transform.localPosition = new Vector3(transform.localPosition.x - 1.5f, transform.localPosition.y, transform.localPosition.z);
+                        //transform.localPosition = new Vector3(transform.localPosition.x + 1.5f, transform.localPosition.y, transform.localPosition.z);
+                        transform.position += transform.right * 1.5f;
                         yield return new WaitForSeconds(1);
                         SetInitWaypoint();
                         carDetected = null;
@@ -503,6 +511,7 @@ namespace TrafficSimulation.Scripts
                                 yield return null;
                             }
                         }
+                        
                     }
 
                     wheelDrive.Move(acc, brake);
@@ -519,6 +528,49 @@ namespace TrafficSimulation.Scripts
                 }
             }
 
+        }
+        #endregion
+
+        #region STEP_ASIDE
+        public void StepAside()
+        {
+            state = CarStates.STEP_ASIDE;
+
+            if (currentCorutine != null)
+            {
+                StopCoroutine(currentCorutine);
+                currentCorutine = null;
+                //setdestination
+            }
+
+            currentCorutine = StartCoroutine(StepAsideCorutine());
+
+            IEnumerator StepAsideCorutine()
+            {
+                while(true)
+                {
+                    if (!hearingHooter) yield break;
+                    wheelDrive.maxSpeed = Mathf.Max(wheelDrive.maxSpeed / 2f, wheelDrive.minSpeed);
+                    float acc = 0.2f;
+                    float brake = 0.0f; //freno
+
+                    transform.Rotate(transform.forward, 0.45f);
+
+                    wheelDrive.Move(acc, brake);
+
+                    yield return new WaitForSeconds(3);
+
+                    acc = 0.0f;
+                    brake = 1.0f;
+                    wheelDrive.Move(acc, brake);
+
+                    yield return new WaitForSeconds(5);
+                    hearingHooter = false;
+
+                }
+                
+                
+            }
         }
         #endregion
 
@@ -559,9 +611,14 @@ namespace TrafficSimulation.Scripts
             return trafficSystem.segments[actualNode.segment].nextSegments[c].id;
         }
 
-        private bool IsInWaypoint()
+        public bool IsInWaypoint()
         {
             return Vector3.Distance(this.transform.position, actualNode.transf.position) < 1.2f;
+        }
+
+        public Node GetActualNode()
+        {
+            return actualNode;
         }
 
         private Node ChooseDirection()
@@ -581,11 +638,22 @@ namespace TrafficSimulation.Scripts
             return nextNode;
         }
 
+        private bool CheckPolice()
+        {
+            Vector3 centreCar = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+            RaycastHit hit;
+            Debug.DrawRay(centreCar, transform.forward*50f, new Color(1, 0, 0, 0.5f));
+            if (Physics.Raycast(centreCar, transform.forward, out hit, 50))
+            {
+                if (hit.collider.CompareTag("Police")) return true;
+            }
+            return false;
+        }
         
 
         private bool RedTrafficLight()
         {
-            Vector3 centreCar = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.localPosition.z);
+            Vector3 centreCar = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
             RaycastHit hit;
             if (Physics.Raycast(centreCar, transform.forward, out hit, 5))
             {
@@ -627,7 +695,6 @@ namespace TrafficSimulation.Scripts
         private NodeInfo GetNextWaypoint(NodeInfo current, NodeInfo goal)
         {
             Debug.Log("Search path");
-            //Point searchResult = SearchPath(new NodeInfo(current.segment, current.waypoint, current.transf), goal);
             if (currentPlan.Any())
             {
                 return currentPlan.Pop();
@@ -662,7 +729,6 @@ namespace TrafficSimulation.Scripts
             {
                 if (path[0].actual.segment == goal.segment && path[0].actual.waypoint == goal.waypoint)
                 {
-                    Debug.Log("RETURN");
                     return path[0];
                 }
 
@@ -719,22 +785,32 @@ namespace TrafficSimulation.Scripts
 
         public bool GoFast()
         {
-            if(seed == 21 || seed == 3 || seed == 74)
+            if(seed == 21 || seed == 35 || seed == 74 || seed == 89)
             {
-                Debug.Log("A correr");
                 return true;
             }
             return false;
         }
+    
         public bool Timer()
         {
             if (timer <= 0.0f) return true;
             return false;
         }
-
+        
         public bool Stopped()
         {
             return stopped;
+        }
+
+        public bool HearingHooter()
+        {
+            return hearingHooter && state != CarStates.STEP_ON;
+        }
+
+        public bool PoliceAway()
+        {
+            return !hearingHooter;
         }
         
         #endregion
@@ -744,7 +820,6 @@ namespace TrafficSimulation.Scripts
         {
             if (OnRefuelEntry())
             {
-                Debug.Log("Return success");
                 return Status.Success;
             }
             return Status.Running;
@@ -754,6 +829,18 @@ namespace TrafficSimulation.Scripts
             if (currentGasoline == maxGasoline) return Status.Success;
             return Status.Running;
         }
+        /*
+        public Status Timer()
+        {
+            if (timer <= 0.0f) return Status.Success;
+            return Status.Failure;
+        }
+
+        public Status Stopped()
+        {
+            if(stopped) return Status.Success;
+            return Status.Failure;
+        }*/
         #endregion
 
 

@@ -10,6 +10,7 @@ TagManager:
   - AutonomousVehicle
   - Pedestrian
   - TrafficLight
+  - Police
   layers:
   - Default
   - TransparentFX

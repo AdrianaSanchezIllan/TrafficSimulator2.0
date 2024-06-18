@@ -37,15 +37,20 @@ public class Radius : MonoBehaviour
     {
         return pedestrian;
     }
-    public bool CarInRadius(out GameObject _car)
+    public bool CarInRadius()
     {
         
         if(car != null)
         {
-            _car = car;
+            //_car = car;
             return true;
         }
-        _car = null;
+        //_car = null;
         return false;
+    }
+
+    public GameObject GetCar()
+    {
+        return car;
     }
 }
