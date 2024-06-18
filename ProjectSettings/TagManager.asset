@@ -11,6 +11,8 @@ TagManager:
   - Pedestrian
   - TrafficLight
   - Police
+  - Supermarket
+  - Salida
   layers:
   - Default
   - TransparentFX

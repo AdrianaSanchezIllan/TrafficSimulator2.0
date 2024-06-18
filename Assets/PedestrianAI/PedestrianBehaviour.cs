@@ -10,6 +10,7 @@ using static UnityEditor.ShaderData;
 using System.Runtime.ConstrainedExecution;
 using UnityEditor;
 using Unity.VisualScripting;
+using System.ComponentModel;
 
 public class PedestrianBehaviour : MonoBehaviour
 {
@@ -37,7 +38,13 @@ public class PedestrianBehaviour : MonoBehaviour
     public string currentAction;
     private bool isActionCompleted = false;
     public InterestLocation currentTarget = null;
-    InterestLocation runTo = null;
+    public InterestLocation runTo = null;
+    public Transform insideSupermarket;
+    public Transform outsideSupermarket;
+    public bool hasFinishedShopping = false;
+    private Vector3 randomAux;
+    private bool canSpawnOutside = false;
+
 
     private bool inTrafficLight = false;
     private bool isCrossingStreet = false;
@@ -60,7 +67,8 @@ public class PedestrianBehaviour : MonoBehaviour
         {
             centrePoint = transform;
         }
-
+        randomAux = new Vector3(Random.Range(0.5f, 3), 0, Random.Range(0.5f, 1));
+        
         // Buscar todos los objetos con la etiqueta "Crosswalk" y añadir sus componentes a la lista
         GameObject[] crosswalkObjects = GameObject.FindGameObjectsWithTag("Crosswalk");
         foreach (var crosswalkObject in crosswalkObjects)
@@ -71,6 +79,27 @@ public class PedestrianBehaviour : MonoBehaviour
                 crosswalks.Add(crosswalk);
             }
         }
+
+        GameObject supermarketObject = GameObject.FindWithTag("Supermarket");
+        if (supermarketObject != null)
+        {
+            insideSupermarket = supermarketObject.transform;
+        }
+        else
+        {
+            Debug.LogError("No se encontró el objeto del supermercado con la etiqueta 'Supermarket'.");
+        }
+
+        GameObject supermarketExit = GameObject.FindWithTag("Salida");
+        if (supermarketExit != null)
+        {
+            outsideSupermarket = supermarketExit.transform;
+        }
+        else
+        {
+            Debug.LogError("No se encontró el objeto del supermercado con la etiqueta 'Salida'.");
+        }
+
     }
     #region ROAMING
     // Estado de deambulación
@@ -342,6 +371,10 @@ public class PedestrianBehaviour : MonoBehaviour
             if(currentAction == "Supermarket")
             {
                 StartCoroutine(SupermarketAction());
+                if(hasFinishedShopping)
+                {
+                    return Status.Success;
+                }
             }
             
             return Status.Running;
@@ -408,7 +441,6 @@ public class PedestrianBehaviour : MonoBehaviour
                     currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
                     currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
-
             }
 
             animator.SetBool(isWarmingUp, true);
@@ -453,18 +485,62 @@ public class PedestrianBehaviour : MonoBehaviour
 
     IEnumerator SupermarketAction()
     {
-        if (!isActionCompleted)
+        if (!hasFinishedShopping)
         {
-            while (agent.remainingDistance > agent.stoppingDistance)
+            /*while (agent.remainingDistance > agent.stoppingDistance)
             {
                 yield return null;
-            }
+            }*/
 
             agent.isStopped = true;
             PerformAction(currentZone.interestAction);
+            if (insideSupermarket != null)
+            {
+                agent.Warp(insideSupermarket.position);
+                agent.isStopped = true;
+                
+                yield return new WaitForSeconds(10.0f); // Simular tiempo dentro de la tienda
 
-            yield return new WaitForSeconds(10.0f); // Simular tiempo dentro de la tienda
+                //agent.isStopped = false;    
+            }
+            else
+            {
+                Debug.LogError("InsideShop is null.");
+            }
+         
+            //currentTarget = null;
+            hasFinishedShopping = true;
+        }
+
+    }
+    public Status FinishShoppingBT()
+    {
+        agent.isStopped = true;
+        if (!isActionCompleted)
+        {
+            StartCoroutine(FinishShopping());
+            return Status.Running;
+        }
+        
+        return Status.Success;
+
+    }
+    IEnumerator FinishShopping()
+    {
+        if (!isActionCompleted)
+        {
+            agent.isStopped = true;
+
+            if (!canSpawnOutside)
+            {
+                Vector3 outsideSpawn = outsideSupermarket.position + randomAux;
+                agent.Warp(outsideSpawn); // spawnea fuera del super
+                canSpawnOutside = true;
+                currentTarget = null;
+            }
             
+            agent.isStopped = true;
+            Debug.Log("SALE CON LA COMPRA");
             if (currentZone.actionIndicatorPrefab != null)
             {
                 if (currentActionIndicator == null)
@@ -474,19 +550,19 @@ public class PedestrianBehaviour : MonoBehaviour
                     currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
             }
-
+            yield return new WaitForSeconds(5.0f);
+            Debug.Log("Me voy");
             if (currentActionIndicator != null)
             {
                 Destroy(currentActionIndicator);
             }
-
-            agent.isStopped = false;
-            currentZone.VacateLocation(currentTarget);
             currentZone = null;
-            currentTarget = null;
+                
+            canSpawnOutside = false;
             isActionCompleted = true;
+            
+            
         }
-
     }
 
     // Acciones en zonas de interés
@@ -508,8 +584,6 @@ public class PedestrianBehaviour : MonoBehaviour
                 break;
         }
     }
-
-    
 
     public bool HasCompletedAction()
     {

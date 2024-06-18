@@ -23,7 +23,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77367801407696239}
-  serializedVersion: 2
   m_LocalRotation: {x: -4.6386048e-10, y: -4.0912187e-11, z: 0.08785827, w: 0.99613297}
   m_LocalPosition: {x: -0.36270162, y: 0.0000000023841857, z: 0.000000019073486}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,6 +30,7 @@ Transform:
   m_Children:
   - {fileID: 3699366829457830879}
   m_Father: {fileID: 1786548270425471540}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90921593705419415
 GameObject:
@@ -55,13 +55,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90921593705419415}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000008815099, y: -0.0000000047862287, z: -0.11664809, w: 0.9931733}
   m_LocalPosition: {x: -0.038262136, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4808610647832690790}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &861265175060544594
 GameObject:
@@ -86,13 +86,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861265175060544594}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000007689984, y: -0.000000014779036, z: -0.016131172, w: 0.9998699}
   m_LocalPosition: {x: -0.044082105, y: -0.000000038146972, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8274129812364164837}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &913845681951795218
 GameObject:
@@ -105,9 +105,11 @@ GameObject:
   - component: {fileID: 568985597124981416}
   - component: {fileID: 5838175529488836818}
   - component: {fileID: 3295747975015287969}
-  - component: {fileID: -5836115307529262516}
   - component: {fileID: 5872060405398444105}
-  - component: {fileID: -4951104603058614550}
+  - component: {fileID: 4135129076867319083}
+  - component: {fileID: 7419359202623192857}
+  - component: {fileID: 4829054906199880517}
+  - component: {fileID: 4651819816133637048}
   m_Layer: 0
   m_Name: casual_Male_K
   m_TagString: Untagged
@@ -122,7 +124,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913845681951795218}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -132,6 +133,7 @@ Transform:
   - {fileID: 88854893034453554}
   - {fileID: 1460374590014791121}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5838175529488836818
 Animator:
@@ -166,24 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f141628068b9b4493f69f797f003b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5836115307529262516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913845681951795218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bced25bcae7e954dadcff4608399881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  range: 100
-  centrePoint: {fileID: 5556656506850165741, guid: 1a2afbcf572de5242acc0ac27cd0d300, type: 3}
-  currentZone: {fileID: 0}
-  currentLocation: {fileID: 0}
-  currentAction: 
 --- !u!195 &5872060405398444105
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -206,7 +190,78 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-4951104603058614550
+--- !u!136 &4135129076867319083
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913845681951795218}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.45
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.82, z: 0}
+--- !u!54 &7419359202623192857
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913845681951795218}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4829054906199880517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913845681951795218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a987c3c407763184cba9559d902e95a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
+  range: 100
+  centrePoint: {fileID: 0}
+  destinyPoint: {fileID: 0}
+  destPos: {x: -5.34, y: 1.7, z: -21.33}
+  currentZone: {fileID: 0}
+  currentAction: 
+  currentTarget: {fileID: 0}
+  timeToGo: 5
+--- !u!114 &4651819816133637048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,14 +280,14 @@ MonoBehaviour:
     identifier: 
   data:
     graphs:
-    - name: prueba
+    - name: FSM
       id: 880b89d4-aa72-4472-8965-27ed34eaea25
       graph:
         rid: 2249593760004964353
       nodes:
       - name: RoamingState
         id: ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
-        position: {x: 710, y: 252}
+        position: {x: 717.6, y: 276}
         node:
           rid: 2249593760004964354
         references:
@@ -243,8 +298,11 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
         parentIds:
         - 84e22c28-0099-4135-ab81-277a8a8bf0f8
+        - 9b428f3e-9854-47c3-9912-9f669385b3c1
         childIds:
         - ce04bce5-a320-438e-ad1c-719b34543686
+        - 8e274b2e-0847-4934-94a6-2cd9a8b0a890
+        - 78ced694-f283-44cf-830b-4565894f8e2e
       - name: NearCrosswalk
         id: ce04bce5-a320-438e-ad1c-719b34543686
         position: {x: 1044, y: 331}
@@ -335,138 +393,354 @@ MonoBehaviour:
         - 47289928-ee84-4b3b-b095-98c28eb3dd03
         childIds:
         - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
-    - name: InterestZoneBT
-      id: ba61d50a-d830-49c0-bdb8-794912d0aac6
-      graph:
-        rid: 2249593760004964360
-      nodes:
-      - name: 
-        id: 164b3982-f338-4e94-b7f6-2138c66343a2
-        position: {x: 896.8522, y: 382.67444}
+      - name: EnterInterestZone
+        id: 8e274b2e-0847-4934-94a6-2cd9a8b0a890
+        position: {x: 371, y: 333}
         node:
-          rid: 8944971379418333233
+          rid: 8944971648215023616
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8944971648215023621
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
+        childIds:
+        - 4d9c67d6-bf5e-4644-888c-7336e59eac0f
+      - name: ActionsBT
+        id: 4d9c67d6-bf5e-4644-888c-7336e59eac0f
+        position: {x: 374, y: 652}
+        node:
+          rid: 8944971648215023617
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971648215023619
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 8e274b2e-0847-4934-94a6-2cd9a8b0a890
+        - dfb72d8f-67d0-4426-9153-f8f1fb3f1057
+        childIds:
+        - 9b428f3e-9854-47c3-9912-9f669385b3c1
+      - name: FinishAction
+        id: 9b428f3e-9854-47c3-9912-9f669385b3c1
+        position: {x: 736, y: 583}
+        node:
+          rid: 8944971648215023620
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8944971665975541766
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 4d9c67d6-bf5e-4644-888c-7336e59eac0f
+        childIds:
+        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
+      - name: StartDium
+        id: 4bb9408c-b4f6-4d4b-8c02-456cf9c3c37e
+        position: {x: 26.4, y: 107.2}
+        node:
+          rid: 7533014073235210249
+        references:
+        - fieldName: Action
+          value:
+            rid: 7533014073235210252
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 78ced694-f283-44cf-830b-4565894f8e2e
+        childIds:
+        - dfb72d8f-67d0-4426-9153-f8f1fb3f1057
+      - name: 
+        id: 78ced694-f283-44cf-830b-4565894f8e2e
+        position: {x: 329.6, y: 76}
+        node:
+          rid: 7533014073235210250
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7533014073235210251
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
+        childIds:
+        - 4bb9408c-b4f6-4d4b-8c02-456cf9c3c37e
+      - name: EnterInterestZone
+        id: dfb72d8f-67d0-4426-9153-f8f1fb3f1057
+        position: {x: 106, y: 391}
+        node:
+          rid: 7533014073235210253
+        references:
+        - fieldName: Perception
+          value:
+            rid: 7533014073235210254
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 4bb9408c-b4f6-4d4b-8c02-456cf9c3c37e
+        childIds:
+        - 4d9c67d6-bf5e-4644-888c-7336e59eac0f
+    - name: InterestZoneBT
+      id: 0ab7736a-eb71-4022-bb3e-3e5c1c61d51b
+      graph:
+        rid: 8944971648215023699
+      nodes:
+      - name: ActionsBT
+        id: a9160585-48f7-49d4-9a25-84bf8a4bd889
+        position: {x: 424, y: 517}
+        node:
+          rid: 8944971648215023703
         references: []
         parentIds: []
         childIds:
-        - 475e1c2b-79f8-4007-84d5-6f860de1d863
-        - 1eecf994-6b8d-4967-8c40-107e2101e938
-      - name: can perform action?
-        id: 475e1c2b-79f8-4007-84d5-6f860de1d863
-        position: {x: 467, y: 585}
+        - bfbca71e-810d-4bfd-a9cc-1a00124de303
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+      - name: CoffeeShop Actions
+        id: 0ee1b75e-553e-4b5a-9ab1-74567422ee82
+        position: {x: 100, y: 868.8}
         node:
-          rid: 8944971379418333234
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971419381137409
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 164b3982-f338-4e94-b7f6-2138c66343a2
-        childIds: []
-      - name: place
-        id: 1eecf994-6b8d-4967-8c40-107e2101e938
-        position: {x: 1445, y: 637}
-        node:
-          rid: 8944971379418333236
+          rid: 8944971648215023704
         references: []
         parentIds:
-        - 164b3982-f338-4e94-b7f6-2138c66343a2
+        - a9160585-48f7-49d4-9a25-84bf8a4bd889
         childIds:
-        - 077bb90f-cc48-4b22-86fb-dd4af9c57f0e
-        - c51fcb4c-4a88-43f0-98ad-b46c83340135
-      - name: CoffeeShop actions
-        id: 077bb90f-cc48-4b22-86fb-dd4af9c57f0e
-        position: {x: 745, y: 855}
+        - 00aeeee4-bd29-4a45-9ae1-dc7700163392
+        - fee7757a-a8ee-459b-986f-6ccae73aa884
+        - 6ece78a8-a1d2-4a7f-9eee-f5b268b97f21
+        - 99b5be57-e662-4070-a13b-af390ef9db9f
+      - name: IsInCoffeeShop
+        id: 00aeeee4-bd29-4a45-9ae1-dc7700163392
+        position: {x: -396.8, y: 1048.7999}
         node:
-          rid: 8944971379418333237
-        references: []
-        parentIds:
-        - 1eecf994-6b8d-4967-8c40-107e2101e938
-        childIds:
-        - d1fb48cf-bcac-4b63-ad67-fb69d4724328
-        - c9095947-1cb4-4a2f-87a0-525b1d91d18d
-        - 12209fca-9ed0-4371-bc5f-61535bdb3464
-        - a413f32a-1098-4807-9807-8556bb119a9b
-      - name: IsInCoffeeShop?
-        id: d1fb48cf-bcac-4b63-ad67-fb69d4724328
-        position: {x: 429, y: 1017}
-        node:
-          rid: 8944971379418333238
+          rid: 8944971648215023705
         references:
         - fieldName: Action
           value:
-            rid: 8944971379418333239
+            rid: 8944971648215023706
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 077bb90f-cc48-4b22-86fb-dd4af9c57f0e
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
         childIds: []
-      - name: EnterCoffeeShop
-        id: c9095947-1cb4-4a2f-87a0-525b1d91d18d
-        position: {x: 707, y: 1033}
+      - name: SearchChair
+        id: fee7757a-a8ee-459b-986f-6ccae73aa884
+        position: {x: -85.6, y: 1064.7999}
         node:
-          rid: 8944971379418333240
+          rid: 8944971648215023707
         references:
         - fieldName: Action
           value:
-            rid: 8944971379418333241
+            rid: 8944971648215023709
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 077bb90f-cc48-4b22-86fb-dd4af9c57f0e
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
         childIds: []
-      - name: MoveToLocation
-        id: 12209fca-9ed0-4371-bc5f-61535bdb3464
-        position: {x: 977, y: 1033}
+      - name: MoveToChair
+        id: 6ece78a8-a1d2-4a7f-9eee-f5b268b97f21
+        position: {x: 210.4, y: 1056.7999}
         node:
-          rid: 8944971379418333242
+          rid: 8944971648215023710
         references:
         - fieldName: Action
           value:
-            rid: 8944971398790512641
+            rid: 8944971648215023711
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 077bb90f-cc48-4b22-86fb-dd4af9c57f0e
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
         childIds: []
       - name: DrinkCoffee
-        id: a413f32a-1098-4807-9807-8556bb119a9b
-        position: {x: 1269, y: 1049}
+        id: 99b5be57-e662-4070-a13b-af390ef9db9f
+        position: {x: 545.6, y: 1064.7999}
         node:
-          rid: 8944971379418333244
+          rid: 8944971648215023712
         references:
         - fieldName: Action
           value:
-            rid: 8944971398790512642
+            rid: 8944971648215023713
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 077bb90f-cc48-4b22-86fb-dd4af9c57f0e
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
         childIds: []
-      - name: Park actions
-        id: c51fcb4c-4a88-43f0-98ad-b46c83340135
-        position: {x: 2048, y: 944}
+      - name: Supermarket Actions
+        id: a4d79457-4896-4c72-8174-0e164d0eb397
+        position: {x: 1330, y: 907}
         node:
-          rid: 8944971487417729024
+          rid: 8944971665975541763
         references: []
         parentIds:
-        - 1eecf994-6b8d-4967-8c40-107e2101e938
+        - a9160585-48f7-49d4-9a25-84bf8a4bd889
         childIds:
-        - 1f28d785-9f6f-4255-a9b5-5664b4ce5174
-      - name: isInPark?
-        id: 1f28d785-9f6f-4255-a9b5-5664b4ce5174
-        position: {x: 1830, y: 1098}
+        - 8472269e-5048-4eeb-a65e-61cae569174a
+        - e19ba21e-892c-41e9-9315-59114b16b8a0
+        - 174f19ba-54f3-4c86-b236-211abd6aa00c
+        - 31a72d37-0547-4b20-a85f-d6ea2cce6728
+        - 69323057-7f3f-47d0-be23-b7f786e797e4
+      - name: IsInSupermarket
+        id: 8472269e-5048-4eeb-a65e-61cae569174a
+        position: {x: 809, y: 1097}
         node:
-          rid: 8944971487417729025
+          rid: 8944971665975541764
         references:
         - fieldName: Action
           value:
-            rid: 8944971487417729027
+            rid: 8944971665975541765
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - c51fcb4c-4a88-43f0-98ad-b46c83340135
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: SearchEntrance
+        id: e19ba21e-892c-41e9-9315-59114b16b8a0
+        position: {x: 1131, y: 1118}
+        node:
+          rid: 8944971670120300550
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971670120300551
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: MoveToEntrance
+        id: 174f19ba-54f3-4c86-b236-211abd6aa00c
+        position: {x: 1429, y: 1113}
+        node:
+          rid: 8944971670120300552
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971670120300553
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: Shopping
+        id: 31a72d37-0547-4b20-a85f-d6ea2cce6728
+        position: {x: 1699, y: 1126}
+        node:
+          rid: 8944971670120300554
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971670120300555
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: FinishShopping
+        id: 69323057-7f3f-47d0-be23-b7f786e797e4
+        position: {x: 1969, y: 1134}
+        node:
+          rid: 8944971692167659522
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971692167659523
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: Stadium Actions
+        id: bfbca71e-810d-4bfd-a9cc-1a00124de303
+        position: {x: -752.8, y: 659.2}
+        node:
+          rid: 7533014073235210240
+        references: []
+        parentIds:
+        - a9160585-48f7-49d4-9a25-84bf8a4bd889
+        childIds:
+        - a57870ab-1977-4c7c-93ce-6e32e6f167b3
+        - 95657dc1-30a8-4c2a-a1bb-c0764341979d
+        - e82121b9-4a16-4904-922c-a20210a2593d
+        - ede15930-77f7-4925-8008-0097f81b0971
+      - name: IsInStadium
+        id: a57870ab-1977-4c7c-93ce-6e32e6f167b3
+        position: {x: -1160, y: 828.8}
+        node:
+          rid: 7533014073235210241
+        references:
+        - fieldName: Action
+          value:
+            rid: 7533014073235210245
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - bfbca71e-810d-4bfd-a9cc-1a00124de303
+        childIds: []
+      - name: SearchLocation
+        id: 95657dc1-30a8-4c2a-a1bb-c0764341979d
+        position: {x: -905.6, y: 836}
+        node:
+          rid: 7533014073235210242
+        references:
+        - fieldName: Action
+          value:
+            rid: 7533014073235210246
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - bfbca71e-810d-4bfd-a9cc-1a00124de303
+        childIds: []
+      - name: MoveToLocation
+        id: e82121b9-4a16-4904-922c-a20210a2593d
+        position: {x: -653.6, y: 844.8}
+        node:
+          rid: 7533014073235210243
+        references:
+        - fieldName: Action
+          value:
+            rid: 7533014073235210247
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - bfbca71e-810d-4bfd-a9cc-1a00124de303
+        childIds: []
+      - name: PerformActionBT
+        id: ede15930-77f7-4925-8008-0097f81b0971
+        position: {x: -372.8, y: 844.8}
+        node:
+          rid: 7533014073235210244
+        references:
+        - fieldName: Action
+          value:
+            rid: 7533014073235210248
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - bfbca71e-810d-4bfd-a9cc-1a00124de303
         childIds: []
     pushPerceptions: []
   references:
@@ -476,59 +750,295 @@ MonoBehaviour:
       type: {class: , ns: , asm: }
     - rid: 2249593760004964353
       type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2249593760004964354
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2249593760004964355
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         method:
-          componentName: PedestrianBehaviour
+          componentName: HoolBehaviour
           methodName: StartRoaming
-    - rid: 2249593760004964360
-      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333233
+    - rid: 7533014073235210240
       type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
         IsRandomized: 0
-    - rid: 8944971379418333234
+    - rid: 7533014073235210241
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333236
+    - rid: 7533014073235210242
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 7533014073235210243
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 7533014073235210244
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 7533014073235210245
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: HoolBehaviour
+          methodName: IsInterestZone
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7533014073235210246
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: HoolBehaviour
+          methodName: SearchLocation
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7533014073235210247
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: HoolBehaviour
+          methodName: MoveToLocation
+        update:
+          componentName: HoolBehaviour
+          methodName: PathStatus
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7533014073235210248
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: HoolBehaviour
+          methodName: PerformActionBT
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7533014073235210249
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+    - rid: 7533014073235210250
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7533014073235210251
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: HoolBehaviour
+          methodName: CheckReadyToGo
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7533014073235210252
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: HoolBehaviour
+          methodName: StartDium
+        update:
+          componentName: 
+          methodName: 
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 7533014073235210253
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 7533014073235210254
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: HoolBehaviour
+          methodName: IsInterestZone
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971535672672258
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971559209533440
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+    - rid: 8944971559209533441
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: HoolBehaviour
+          methodName: WaitUntilGreen
+    - rid: 8944971559209533442
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971559209533444
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: HoolBehaviour
+          methodName: InCrosswalkArea
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971643323678744
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+    - rid: 8944971643323678745
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: HoolBehaviour
+          methodName: StartCrossing
+    - rid: 8944971643323678746
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971648215023616
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971648215023617
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+    - rid: 8944971648215023619
+      type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        ExecuteOnLoop: 0
+        InterruptOptions: 2
+        subgraphId: 0ab7736a-eb71-4022-bb3e-3e5c1c61d51b
+    - rid: 8944971648215023620
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971648215023621
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: HoolBehaviour
+          methodName: IsInterestZone
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971648215023699
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 8944971648215023703
       type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
         IsRandomized: 0
-    - rid: 8944971379418333237
+    - rid: 8944971648215023704
       type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
         IsRandomized: 0
-    - rid: 8944971379418333238
+    - rid: 8944971648215023705
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333239
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971648215023706
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
           methodName: IsInCoffeeShop
-    - rid: 8944971379418333240
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971648215023707
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333241
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971648215023709
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
-          methodName: EnterInterestZone
-    - rid: 8944971379418333242
+          methodName: SearchLocation
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971648215023710
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333244
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971398790512641
+    - rid: 8944971648215023711
       type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         start:
@@ -546,15 +1056,17 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 8944971398790512642
+    - rid: 8944971648215023712
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 8944971648215023713
       type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         start:
-          componentName: PedestrianBehaviour
-          methodName: PerformActionBT
+          componentName: 
+          methodName: 
         update:
           componentName: PedestrianBehaviour
-          methodName: ActionHasBeenCompleted
+          methodName: PerformActionBT
         stop:
           componentName: 
           methodName: 
@@ -564,51 +1076,39 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 8944971419381137409
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: CheckIfCanPerformAction
-    - rid: 8944971487417729024
+    - rid: 8944971665975541763
       type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
         IsRandomized: 0
-    - rid: 8944971487417729025
+    - rid: 8944971665975541764
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971487417729027
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971665975541765
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
-          methodName: IsInPark
-    - rid: 8944971535672672258
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
-    - rid: 8944971559209533440
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 8944971559209533441
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: WaitUntilGreen
-    - rid: 8944971559209533442
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: -1
-    - rid: 8944971559209533444
+          methodName: IsInSupermarket
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971665975541766
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         init:
           componentName: 
           methodName: 
         check:
-          componentName: PedestrianBehaviour
-          methodName: InCrosswalkArea
+          componentName: HoolBehaviour
+          methodName: HasCompletedAction
         reset:
           componentName: 
           methodName: 
@@ -618,19 +1118,86 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 8944971643323678744
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 8944971643323678745
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971670120300550
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 8944971670120300551
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
-          methodName: StartCrossing
-    - rid: 8944971643323678746
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+          methodName: SearchLocation
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971670120300552
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 8944971670120300553
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        StatusFlags: -1
+        start:
+          componentName: PedestrianBehaviour
+          methodName: MoveToLocation
+        update:
+          componentName: PedestrianBehaviour
+          methodName: PathStatus
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971670120300554
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 8944971670120300555
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: PedestrianBehaviour
+          methodName: PerformActionBT
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971692167659522
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+    - rid: 8944971692167659523
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: PedestrianBehaviour
+          methodName: FinishShoppingBT
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
 --- !u!1 &944684095800602908
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +1221,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944684095800602908}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.0000000100141975, y: -0.00000000836275, z: 0.08785827, w: 0.99613297}
   m_LocalPosition: {x: -0.36270157, y: -0.0000000023841857, z: -0.000000019073486}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -662,6 +1228,7 @@ Transform:
   m_Children:
   - {fileID: 7508272566073732652}
   m_Father: {fileID: 3155115179294795598}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640848165812475790
 GameObject:
@@ -686,7 +1253,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640848165812475790}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.14591019, y: 0.12606102, z: 0.0039344397, w: 0.98122543}
   m_LocalPosition: {x: -0.12833339, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -694,6 +1260,7 @@ Transform:
   m_Children:
   - {fileID: 2611194603758697691}
   m_Father: {fileID: 3299233546113719692}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1675959038841506693
 GameObject:
@@ -718,13 +1285,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675959038841506693}
-  serializedVersion: 2
   m_LocalRotation: {x: 3.3656447e-10, y: -6.907744e-10, z: -0.7507482, w: 0.66058844}
   m_LocalPosition: {x: -0.0866919, y: 0.14267431, z: -0.001474781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7508272566073732652}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2228176839346836929
 GameObject:
@@ -749,7 +1316,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2228176839346836929}
-  serializedVersion: 2
   m_LocalRotation: {x: -1.4192703e-10, y: 0.0000000020323188, z: 0.06966536, w: 0.99757046}
   m_LocalPosition: {x: -0.24493964, y: -0.000000009536743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -757,6 +1323,7 @@ Transform:
   m_Children:
   - {fileID: 1573391951402977418}
   m_Father: {fileID: 2905425784693528470}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3230335394704909869
 GameObject:
@@ -781,7 +1348,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3230335394704909869}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.6930474, y: 0.13571663, z: -0.04158759, w: 0.70677924}
   m_LocalPosition: {x: -0.24018085, y: -0.000000019073486, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -790,6 +1356,7 @@ Transform:
   - {fileID: 8274129812364164837}
   - {fileID: 4808610647832690790}
   m_Father: {fileID: 2611194603758697691}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3437902268827110383
 GameObject:
@@ -814,7 +1381,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3437902268827110383}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.6159676, y: -0.17461228, z: -0.00092902005, w: 0.76817554}
   m_LocalPosition: {x: -0.051850393, y: 0.024488373, z: -0.055632494}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -822,6 +1388,7 @@ Transform:
   m_Children:
   - {fileID: 6652955910217109030}
   m_Father: {fileID: 1573391951402977418}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4113159114265965606
 GameObject:
@@ -846,7 +1413,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4113159114265965606}
-  serializedVersion: 2
   m_LocalRotation: {x: 1.3769475e-13, y: 0.0000007796438, z: -0.28109452, w: 0.9596801}
   m_LocalPosition: {x: -0.29515287, y: 0.027971763, z: 0.00000004962814}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -854,6 +1420,7 @@ Transform:
   m_Children:
   - {fileID: 4587813193319516732}
   m_Father: {fileID: 2726223424316126095}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4386610270165916890
 GameObject:
@@ -878,7 +1445,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4386610270165916890}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.019222727, y: 0.9963443, z: -0.07291967, w: -0.040140536}
   m_LocalPosition: {x: -0.00000015258789, y: -0.000000095367426, z: -0.09608835}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -886,6 +1452,7 @@ Transform:
   m_Children:
   - {fileID: 5131989331676061119}
   m_Father: {fileID: 5172207139811484688}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4796404977791593330
 GameObject:
@@ -910,7 +1477,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4796404977791593330}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.14591019, y: -0.12606132, z: 0.0039344067, w: 0.98122543}
   m_LocalPosition: {x: -0.12833339, y: 0.000000019073486, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -918,6 +1484,7 @@ Transform:
   m_Children:
   - {fileID: 3513899499612023354}
   m_Father: {fileID: 5793242255239022609}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4945522798045509994
 GameObject:
@@ -942,13 +1509,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4945522798045509994}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000009249647, y: 0.0000000010863702, z: -0.116648115, w: 0.9931733}
   m_LocalPosition: {x: -0.03826225, y: 0, z: 0.000000019073486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4609811912812543400}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5068009392078146268
 GameObject:
@@ -973,13 +1540,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5068009392078146268}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.0000000028257547, y: -0.0000000021196638, z: -0.7507482, w: 0.66058844}
   m_LocalPosition: {x: -0.0866919, y: 0.14267431, z: 0.001474781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3699366829457830879}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5272417177126669794
 GameObject:
@@ -1004,7 +1571,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5272417177126669794}
-  serializedVersion: 2
   m_LocalRotation: {x: 7.501856e-11, y: -0.0000000010742256, z: 0.06966536, w: 0.99757046}
   m_LocalPosition: {x: -0.24493964, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1012,6 +1578,7 @@ Transform:
   m_Children:
   - {fileID: 6881832098831962314}
   m_Father: {fileID: 7962991899936000533}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5498982108412606373
 GameObject:
@@ -1036,7 +1603,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5498982108412606373}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.00039737552, y: 0.000024899417, z: -0.06252896, w: 0.9980431}
   m_LocalPosition: {x: -0.11399723, y: -0.006282043, z: 0.00039724348}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1044,6 +1610,7 @@ Transform:
   m_Children:
   - {fileID: 6383442598101951652}
   m_Father: {fileID: 6881832098831962314}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5724836245346224887
 GameObject:
@@ -1068,7 +1635,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5724836245346224887}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.039689187, y: 0.036060967, z: -0.0671126, w: 0.9963033}
   m_LocalPosition: {x: -0.40162283, y: 0.0000000047683715, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1076,6 +1642,7 @@ Transform:
   m_Children:
   - {fileID: 403577309110335904}
   m_Father: {fileID: 1334223786805904050}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5844583332526098261
 GameObject:
@@ -1100,7 +1667,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5844583332526098261}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.03968919, y: -0.036061056, z: -0.067112595, w: 0.9963033}
   m_LocalPosition: {x: -0.40162283, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1108,6 +1674,7 @@ Transform:
   m_Children:
   - {fileID: 1512054181843247168}
   m_Father: {fileID: 5131989331676061119}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5922001735615400014
 GameObject:
@@ -1132,7 +1699,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922001735615400014}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1140,6 +1706,7 @@ Transform:
   m_Children:
   - {fileID: 3384165730348025545}
   m_Father: {fileID: 568985597124981416}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6266979170328052076
 GameObject:
@@ -1164,7 +1731,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6266979170328052076}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.4999993, w: 0.5000007}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1174,6 +1740,7 @@ Transform:
   - {fileID: 1786548270425471540}
   - {fileID: 8704012182563296697}
   m_Father: {fileID: 3384165730348025545}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6292184026343580831
 GameObject:
@@ -1198,13 +1765,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6292184026343580831}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00000002442574, y: -0.00000030803687, z: 0.16586694, w: 0.9861482}
   m_LocalPosition: {x: -0.052847594, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3500710716153223075}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6495018019069612102
 GameObject:
@@ -1229,7 +1796,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6495018019069612102}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.7950628, y: 0.00031739252, z: -0.6065269, w: 0.00024039115}
   m_LocalPosition: {x: -0.24379943, y: -0.00039892195, z: 0.04450922}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1237,6 +1803,7 @@ Transform:
   m_Children:
   - {fileID: 2905425784693528470}
   m_Father: {fileID: 2726223424316126095}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7181205271115269272
 GameObject:
@@ -1261,7 +1828,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7181205271115269272}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.0000020986956, y: 0.00000075096693, z: -0.027858675, w: 0.99961185}
   m_LocalPosition: {x: -0.072285384, y: 0.00906144, z: 0.000000037773717}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1269,6 +1835,7 @@ Transform:
   m_Children:
   - {fileID: 2726223424316126095}
   m_Father: {fileID: 5172207139811484688}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7422851143255773775
 GameObject:
@@ -1294,13 +1861,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7422851143255773775}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 568985597124981416}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5061046543345898046
 SkinnedMeshRenderer:
@@ -1407,13 +1974,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7780384624796570001}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000015139594, y: -0.000000014658849, z: -0.016131142, w: 0.9998699}
   m_LocalPosition: {x: -0.044082105, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6355587291228775119}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8016492176865390631
 GameObject:
@@ -1438,7 +2005,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8016492176865390631}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.6159676, y: 0.17461231, z: -0.000929039, w: 0.76817554}
   m_LocalPosition: {x: -0.051850356, y: 0.024488678, z: 0.055632476}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1446,6 +2012,7 @@ Transform:
   m_Children:
   - {fileID: 6486235141791803116}
   m_Father: {fileID: 6881832098831962314}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8353249830358982969
 GameObject:
@@ -1470,7 +2037,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8353249830358982969}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00000002070493, y: -0.0000005685742, z: 0.13600107, w: 0.9907087}
   m_LocalPosition: {x: -0.19559814, y: -0.00019001961, z: -5.086258e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1480,6 +2046,7 @@ Transform:
   - {fileID: 3500710716153223075}
   - {fileID: 3299233546113719692}
   m_Father: {fileID: 8704012182563296697}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8496443858478868980
 GameObject:
@@ -1504,7 +2071,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8496443858478868980}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00039736822, y: -0.000024901747, z: -0.062528946, w: 0.9980431}
   m_LocalPosition: {x: -0.11399734, y: -0.006282196, z: -0.00039724348}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1512,6 +2078,7 @@ Transform:
   m_Children:
   - {fileID: 2350362923576700967}
   m_Father: {fileID: 1573391951402977418}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8528048400651513665
 GameObject:
@@ -1536,7 +2103,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8528048400651513665}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.019222677, y: 0.9963445, z: 0.0729183, w: 0.04013904}
   m_LocalPosition: {x: 0.00000015258789, y: 0.00000016927719, z: 0.09608835}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1544,6 +2110,7 @@ Transform:
   m_Children:
   - {fileID: 1334223786805904050}
   m_Father: {fileID: 5172207139811484688}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8528590216658366030
 GameObject:
@@ -1568,7 +2135,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8528590216658366030}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.7950628, y: 0.00031571105, z: 0.6065269, w: -0.00024259694}
   m_LocalPosition: {x: -0.24379943, y: -0.000398674, z: -0.04450923}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1576,6 +2142,7 @@ Transform:
   m_Children:
   - {fileID: 7962991899936000533}
   m_Father: {fileID: 2726223424316126095}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8783215628669486931
 GameObject:
@@ -1600,7 +2167,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8783215628669486931}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.6930474, y: -0.13571666, z: -0.041587584, w: 0.70677924}
   m_LocalPosition: {x: -0.2401809, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1609,6 +2175,7 @@ Transform:
   - {fileID: 6355587291228775119}
   - {fileID: 4609811912812543400}
   m_Father: {fileID: 3513899499612023354}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8814859009517054594
 GameObject:
@@ -1633,7 +2200,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8814859009517054594}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071063, w: 0.70710725}
   m_LocalPosition: {x: -0, y: 0.016664496, z: 0.8530674}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1641,6 +2207,7 @@ Transform:
   m_Children:
   - {fileID: 5172207139811484688}
   m_Father: {fileID: 1460374590014791121}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8976775322387202612
 GameObject:
@@ -1666,13 +2233,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8976775322387202612}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 1.5520662, z: 0.08204192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 568985597124981416}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5784824473368395811
 SkinnedMeshRenderer:
