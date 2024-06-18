@@ -538,30 +538,29 @@ public class PedestrianBehaviour : MonoBehaviour
                 canSpawnOutside = true;
                 currentTarget = null;
             }
-            else
+            
+            agent.isStopped = true;
+            Debug.Log("SALE CON LA COMPRA");
+            if (currentZone.actionIndicatorPrefab != null)
             {
-                agent.isStopped = true;
-                Debug.Log("SALE CON LA COMPRA");
-                if (currentZone.actionIndicatorPrefab != null)
+                if (currentActionIndicator == null)
                 {
-                    if (currentActionIndicator == null)
-                    {
-                        currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
-                        currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
-                        currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                    }
+                    currentActionIndicator = Instantiate(currentZone.actionIndicatorPrefab, transform);
+                    currentActionIndicator.transform.localPosition = new Vector3(0, 2.0f, 0);
+                    currentActionIndicator.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 }
-                yield return new WaitForSeconds(5.0f);
-                Debug.Log("Me voy");
-                if (currentActionIndicator != null)
-                {
-                    Destroy(currentActionIndicator);
-                }
-                currentZone = null;
-                
-                canSpawnOutside = false;
-                isActionCompleted = true;
             }
+            yield return new WaitForSeconds(5.0f);
+            Debug.Log("Me voy");
+            if (currentActionIndicator != null)
+            {
+                Destroy(currentActionIndicator);
+            }
+            currentZone = null;
+                
+            canSpawnOutside = false;
+            isActionCompleted = true;
+            
             
         }
     }
