@@ -69,7 +69,7 @@ namespace TrafficSimulation.Scripts
         private float safetyDist = 3f;
 
         //Step_on
-        private int seed;
+        public int seed;
         private float timer = 60.0f;
         private bool isOvertaking = false;
         private bool stopped = false;

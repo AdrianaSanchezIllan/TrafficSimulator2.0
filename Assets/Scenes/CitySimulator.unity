@@ -152,13 +152,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2842173}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3772828, y: 0.18, z: 0.6049637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1252976947}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &2842175
 WheelCollider:
@@ -705,13 +705,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43771752}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: 0.3772821, y: 0.18, z: -0.6200364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1252976947}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!146 &43771754
 WheelCollider:
@@ -851,13 +851,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59052341}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.39439088, y: 0.15307999, z: -0.75037235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 132515418}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &59052343
 WheelCollider:
@@ -1968,7 +1968,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132515417}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1979,6 +1978,7 @@ Transform:
   - {fileID: 468588902}
   - {fileID: 1637954252}
   m_Father: {fileID: 4284743442665740364}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &133784748
 PrefabInstance:
@@ -4927,13 +4927,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279878892}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.00000008742278, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1297324343}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &279878894
 MeshRenderer:
@@ -9153,13 +9153,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468588901}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.39439088, y: 0.15307999, z: 0.7745827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 132515418}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &468588903
 WheelCollider:
@@ -15509,13 +15509,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827799651}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4284743442665740364}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &827799654
 SphereCollider:
@@ -19850,7 +19850,7 @@ MonoBehaviour:
   pedestrianPrefabs:
   - {fileID: 7501788059647666026, guid: bcc8c8f342f71a7439ac0579aa86f030, type: 3}
   - {fileID: 546282500}
-  numberOfPedestrians: 10
+  numberOfPedestrians: 21
   spawnRadius: 100
 --- !u!4 &1044269653
 Transform:
@@ -20673,13 +20673,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084769099}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1297324343}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1084769101
 MonoBehaviour:
@@ -23593,6 +23593,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!54 &1177197519
 Rigidbody:
@@ -24672,13 +24673,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222958619}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4284743442665740364}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1222958621
 MonoBehaviour:
@@ -25286,7 +25287,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252976946}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -25297,6 +25297,7 @@ Transform:
   - {fileID: 2842174}
   - {fileID: 1675518214}
   m_Father: {fileID: 1297324343}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1254833955
 GameObject:
@@ -26716,7 +26717,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297324342}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -36.3, y: 1.589, z: 38}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -26727,6 +26727,7 @@ Transform:
   - {fileID: 1331886394}
   - {fileID: 1084769100}
   m_Father: {fileID: 1404632577}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1297324344
 MonoBehaviour:
@@ -27048,10 +27049,8 @@ MonoBehaviour:
       type: {class: , ns: , asm: }
     - rid: 2352688029810294785
       type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688029810294786
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688029810294787
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -27060,17 +27059,14 @@ MonoBehaviour:
           methodName: Circulate
     - rid: 2352688040997027843
       type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
     - rid: 2352688040997027846
       type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
         IsRandomized: 0
     - rid: 2352688040997027847
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
     - rid: 2352688059787509762
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
     - rid: 2352688059787509777
       type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -27131,7 +27127,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688077484326914
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688077484326916
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -27189,7 +27184,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -27272,7 +27266,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -27371,6 +27364,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!54 &1297324348
 Rigidbody:
@@ -27835,13 +27829,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331886393}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.411, z: 0.893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1297324343}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1332723847 stripped
 GameObject:
@@ -31023,13 +31017,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516793139}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3772823, y: 0.18, z: -0.6200362}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1252976947}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!146 &1516793141
 WheelCollider:
@@ -33554,13 +33548,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637954251}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: 0.39145508, y: 0.15307999, z: 0.77458346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 132515418}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!146 &1637954253
 WheelCollider:
@@ -34476,7 +34470,7 @@ MonoBehaviour:
   locations: []
   numFreePos: 0
   interestAction: Stadium
-  actionIndicatorPrefab: {fileID: 8965237254751288106, guid: 505347656fe26994797ee6999bea12ba, type: 3}
+  actionIndicatorPrefab: {fileID: 8692842807210577670, guid: 18b1dc4dceba56a418aa0e1c232dd064, type: 3}
 --- !u!1 &1663973332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
@@ -34882,13 +34876,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675518213}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: 0.3772823, y: 0.18, z: 0.6049637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1252976947}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!146 &1675518215
 WheelCollider:
@@ -35206,13 +35200,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693670210}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
   m_LocalPosition: {x: 0.39145508, y: 0.15307999, z: -0.7503716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 132515418}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!146 &1693670212
 WheelCollider:
@@ -51287,12 +51281,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -51375,7 +51363,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -51453,6 +51440,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!65 &2696559845801710867
 BoxCollider:
@@ -52013,6 +52001,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!65 &2696559846325161651
 BoxCollider:
@@ -52152,6 +52141,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!114 &2696559847261602641
 MonoBehaviour:
@@ -52561,12 +52551,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -54374,12 +54358,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -54462,7 +54440,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -54540,6 +54517,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!54 &3312457258725849635
 Rigidbody:
@@ -55247,12 +55225,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -55335,7 +55307,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -55413,6 +55384,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!1 &3312457258731187513
 GameObject:
@@ -56534,12 +56506,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -56622,7 +56588,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -56700,6 +56665,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!4 &3312457258789997547
 Transform:
@@ -59573,12 +59539,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -59661,7 +59621,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -59739,6 +59698,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!1 &3312457259335194984
 GameObject:
@@ -60831,12 +60791,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -60919,7 +60873,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -60980,6 +60933,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!146 &3312457259611101506
 WheelCollider:
@@ -61931,12 +61885,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -62019,7 +61967,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -62097,6 +62044,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!146 &3312457259795170656
 WheelCollider:
@@ -63794,12 +63742,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -63882,7 +63824,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -63960,6 +63901,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!1001 &3622901704500969697
 PrefabInstance:
@@ -64118,13 +64060,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4279491712295774848}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0.00000008742278, z: 1.9106855e-15, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4284743442665740364}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4284743442665740364
 Transform:
@@ -64133,7 +64075,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4279233260380441852}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -40.54, y: 1.505, z: 13.7}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
@@ -64144,6 +64085,7 @@ Transform:
   - {fileID: 1222958620}
   - {fileID: 827799652}
   m_Father: {fileID: 1404632577}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4284743442665740365
 BoxCollider:
@@ -64268,10 +64210,8 @@ MonoBehaviour:
       type: {class: , ns: , asm: }
     - rid: 2352688109065076736
       type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688109065076737
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688109065076738
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -64284,7 +64224,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688109065076741
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688109065076743
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -64866,12 +64805,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -64954,7 +64887,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -65032,6 +64964,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!65 &5963189199545565908
 BoxCollider:
@@ -69391,12 +69324,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -69479,7 +69406,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -69557,6 +69483,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!146 &7118174905117749584
 WheelCollider:
@@ -71869,12 +71796,6 @@ MonoBehaviour:
           methodName: 
     - rid: 2352688095071567874
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-    - rid: 2352688095071567883
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: CarBehaviour
-          methodName: StepOn
     - rid: 2352688095071567884
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
@@ -71957,7 +71878,6 @@ MonoBehaviour:
         StatusFlags: -1
     - rid: 2352688128095158275
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
     - rid: 2352688128095158276
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
@@ -72035,6 +71955,7 @@ MonoBehaviour:
   maxGasoline: 100
   currentGasoline: 0
   FuelStation: {fileID: 1668247341}
+  seed: 0
   hearingHooter: 0
 --- !u!33 &7118174905736899397
 MeshFilter:
