@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: -4720535539113630595}
   - component: {fileID: -4398777225135326520}
   - component: {fileID: -1922757224603340836}
-  - component: {fileID: 3835416112509624188}
+  - component: {fileID: 4043970006561457976}
   m_Layer: 0
   m_Name: casual_Female_G
   m_TagString: Untagged
@@ -918,8 +918,12 @@ MonoBehaviour:
   range: 100
   centrePoint: {fileID: 5556656506850165741, guid: 1a2afbcf572de5242acc0ac27cd0d300, type: 3}
   currentZone: {fileID: 0}
-  currentLocation: {fileID: 0}
   currentAction: 
+  currentTarget: {fileID: 0}
+  runTo: {fileID: 0}
+  insideSupermarket: {fileID: 0}
+  outsideSupermarket: {fileID: 0}
+  hasFinishedShopping: 0
 --- !u!195 &-1922757224603340836
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -942,7 +946,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3835416112509624188
+--- !u!114 &4043970006561457976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -961,37 +965,127 @@ MonoBehaviour:
     identifier: 
   data:
     graphs:
-    - name: pedestrianFSMlv.1
-      id: 8ce37c02-7825-48ad-a3ed-d646eae2ec0f
+    - name: FSM
+      id: 880b89d4-aa72-4472-8965-27ed34eaea25
       graph:
-        rid: 2249593610050732032
+        rid: 2249593760004964353
       nodes:
-      - name: Roaming
-        id: 7abcbd10-b00e-40f8-87ad-cde74ce44e75
-        position: {x: 652, y: -237}
+      - name: RoamingState
+        id: ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
+        position: {x: 710, y: 252}
         node:
-          rid: 2249593610050732033
+          rid: 2249593760004964354
         references:
         - fieldName: Action
           value:
-            rid: 2249593610050732034
+            rid: 2249593760004964355
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 1cb3bf93-053a-4641-be01-6b173fb76bb7
-        - f2e2a9be-d348-454a-9396-126e2e1d1b8f
+        - 84e22c28-0099-4135-ab81-277a8a8bf0f8
+        - 9b428f3e-9854-47c3-9912-9f669385b3c1
         childIds:
-        - 46992341-93c6-4e87-bdb8-6f296fa0686f
-        - 305e09d8-d08c-48a0-89f0-60a3bf1ac9f6
+        - ce04bce5-a320-438e-ad1c-719b34543686
+        - 8e274b2e-0847-4934-94a6-2cd9a8b0a890
+      - name: NearCrosswalk
+        id: ce04bce5-a320-438e-ad1c-719b34543686
+        position: {x: 1044, y: 331}
+        node:
+          rid: 8944971535672672258
+        references:
+        - fieldName: Perception
+          value:
+            rid: 8944971559209533444
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
+        childIds:
+        - 6031abb3-5033-499b-9658-8946d6ebfe45
+      - name: WaitForGreenLight
+        id: 6031abb3-5033-499b-9658-8946d6ebfe45
+        position: {x: 1355, y: 315}
+        node:
+          rid: 8944971559209533440
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971559209533441
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - ce04bce5-a320-438e-ad1c-719b34543686
+        childIds:
+        - 486bd41f-8457-46f5-a1c2-24ceaebd436b
+      - name: CanCrossNow
+        id: 486bd41f-8457-46f5-a1c2-24ceaebd436b
+        position: {x: 1371, y: 90}
+        node:
+          rid: 8944971559209533442
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 6031abb3-5033-499b-9658-8946d6ebfe45
+        childIds:
+        - 47289928-ee84-4b3b-b095-98c28eb3dd03
+      - name: CrossingState
+        id: 47289928-ee84-4b3b-b095-98c28eb3dd03
+        position: {x: 1049, y: 52}
+        node:
+          rid: 8944971643323678744
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971643323678745
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 486bd41f-8457-46f5-a1c2-24ceaebd436b
+        childIds:
+        - 84e22c28-0099-4135-ab81-277a8a8bf0f8
+      - name: HasCrossed
+        id: 84e22c28-0099-4135-ab81-277a8a8bf0f8
+        position: {x: 752, y: 60}
+        node:
+          rid: 8944971643323678746
+        references:
+        - fieldName: Perception
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        - fieldName: Action
+          value:
+            rid: -2
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 47289928-ee84-4b3b-b095-98c28eb3dd03
+        childIds:
+        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
       - name: EnterInterestZone
-        id: 46992341-93c6-4e87-bdb8-6f296fa0686f
-        position: {x: 342, y: -116}
+        id: 8e274b2e-0847-4934-94a6-2cd9a8b0a890
+        position: {x: 371, y: 333}
         node:
-          rid: 2249593629493952515
+          rid: 8944971648215023616
         references:
         - fieldName: Perception
           value:
-            rid: 2249593719765073920
+            rid: 8944971648215023621
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         - fieldName: Action
@@ -1000,33 +1094,33 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 7abcbd10-b00e-40f8-87ad-cde74ce44e75
+        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
         childIds:
-        - 99a049f9-ddc5-42b9-9915-fd409827bef8
-      - name: inInterestZoneState
-        id: 99a049f9-ddc5-42b9-9915-fd409827bef8
-        position: {x: 420, y: 139}
+        - 4d9c67d6-bf5e-4644-888c-7336e59eac0f
+      - name: ActionsBT
+        id: 4d9c67d6-bf5e-4644-888c-7336e59eac0f
+        position: {x: 374, y: 652}
         node:
-          rid: 2249593646949859328
+          rid: 8944971648215023617
         references:
         - fieldName: Action
           value:
-            rid: 2249593646949859331
+            rid: 8944971648215023619
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 46992341-93c6-4e87-bdb8-6f296fa0686f
+        - 8e274b2e-0847-4934-94a6-2cd9a8b0a890
         childIds:
-        - 1cb3bf93-053a-4641-be01-6b173fb76bb7
-      - name: 
-        id: 1cb3bf93-053a-4641-be01-6b173fb76bb7
-        position: {x: 740, y: -5}
+        - 9b428f3e-9854-47c3-9912-9f669385b3c1
+      - name: FinishAction
+        id: 9b428f3e-9854-47c3-9912-9f669385b3c1
+        position: {x: 736, y: 583}
         node:
-          rid: 2249593760004964365
+          rid: 8944971648215023620
         references:
         - fieldName: Perception
           value:
-            rid: -2
+            rid: 8944971665975541766
           fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
             Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         - fieldName: Action
@@ -1035,347 +1129,246 @@ MonoBehaviour:
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - 99a049f9-ddc5-42b9-9915-fd409827bef8
+        - 4d9c67d6-bf5e-4644-888c-7336e59eac0f
         childIds:
-        - 7abcbd10-b00e-40f8-87ad-cde74ce44e75
-      - name: InTrafficLight
-        id: 305e09d8-d08c-48a0-89f0-60a3bf1ac9f6
-        position: {x: 910, y: -370}
-        node:
-          rid: 2249593810028855296
-        references:
-        - fieldName: Perception
-          value:
-            rid: 2249593810028855297
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 7abcbd10-b00e-40f8-87ad-cde74ce44e75
-        childIds:
-        - 9afb9d38-1762-4f6f-b6f9-217cf7875d32
-      - name: inTrafficLight
-        id: 9afb9d38-1762-4f6f-b6f9-217cf7875d32
-        position: {x: 1192, y: -191}
-        node:
-          rid: 2249593810028855298
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333212
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 305e09d8-d08c-48a0-89f0-60a3bf1ac9f6
-        childIds:
-        - f2e2a9be-d348-454a-9396-126e2e1d1b8f
-      - name: Green TrafficLight
-        id: f2e2a9be-d348-454a-9396-126e2e1d1b8f
-        position: {x: 1077, y: 11}
-        node:
-          rid: 8944971379418333213
-        references:
-        - fieldName: Perception
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Perceptions.Perception, BehaviourAPI.Core,
-            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        - fieldName: Action
-          value:
-            rid: -2
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 9afb9d38-1762-4f6f-b6f9-217cf7875d32
-        childIds:
-        - 7abcbd10-b00e-40f8-87ad-cde74ce44e75
-    - name: inInterestZone
-      id: 71bf9b3a-78c4-451c-a26f-e8f84c1fe5e4
+        - ac344cc9-7c00-4ec1-8312-3ec0c2dd75a1
+    - name: InterestZoneBT
+      id: 0ab7736a-eb71-4022-bb3e-3e5c1c61d51b
       graph:
-        rid: 2249593625698369536
+        rid: 8944971648215023699
       nodes:
-      - name: 
-        id: b8950ebe-1375-4959-b96d-cc721dd442bf
-        position: {x: 663, y: -4}
+      - name: ActionsBT
+        id: a9160585-48f7-49d4-9a25-84bf8a4bd889
+        position: {x: 424, y: 517}
         node:
-          rid: 8944971379418333185
+          rid: 8944971648215023703
         references: []
         parentIds: []
         childIds:
-        - 0b7e64fe-787e-4fb7-9448-32e1f9eb041c
-        - 4dd3cb44-256e-4604-9c4a-d05a716d1325
-      - name: can perform action?
-        id: 0b7e64fe-787e-4fb7-9448-32e1f9eb041c
-        position: {x: 30, y: 177}
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
+        - 51a866fb-e143-4282-a149-74935bdb8914
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+      - name: CoffeeShop Actions
+        id: 0ee1b75e-553e-4b5a-9ab1-74567422ee82
+        position: {x: -383, y: 893}
         node:
-          rid: 8944971379418333186
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333188
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - b8950ebe-1375-4959-b96d-cc721dd442bf
-        childIds: []
-      - name: Type of place
-        id: 4dd3cb44-256e-4604-9c4a-d05a716d1325
-        position: {x: 1384, y: 193}
-        node:
-          rid: 8944971379418333189
+          rid: 8944971648215023704
         references: []
         parentIds:
-        - b8950ebe-1375-4959-b96d-cc721dd442bf
+        - a9160585-48f7-49d4-9a25-84bf8a4bd889
         childIds:
-        - 0c4b670a-afe0-467f-bab6-258a23e8fee0
-        - f712446e-e11f-427f-97e5-097938850707
-        - b345202e-9909-4541-b403-4a81bc94c615
-      - name: CoffeeShop
-        id: 0c4b670a-afe0-467f-bab6-258a23e8fee0
-        position: {x: 272, y: 405}
+        - 00aeeee4-bd29-4a45-9ae1-dc7700163392
+        - fee7757a-a8ee-459b-986f-6ccae73aa884
+        - 6ece78a8-a1d2-4a7f-9eee-f5b268b97f21
+        - 99b5be57-e662-4070-a13b-af390ef9db9f
+      - name: IsInCoffeeShop
+        id: 00aeeee4-bd29-4a45-9ae1-dc7700163392
+        position: {x: -880, y: 1073}
         node:
-          rid: 8944971379418333190
+          rid: 8944971648215023705
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971648215023706
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
+        childIds: []
+      - name: SearchChair
+        id: fee7757a-a8ee-459b-986f-6ccae73aa884
+        position: {x: -569, y: 1089}
+        node:
+          rid: 8944971648215023707
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971648215023709
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
+        childIds: []
+      - name: MoveToChair
+        id: 6ece78a8-a1d2-4a7f-9eee-f5b268b97f21
+        position: {x: -273, y: 1081}
+        node:
+          rid: 8944971648215023710
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971648215023711
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
+        childIds: []
+      - name: DrinkCoffee
+        id: 99b5be57-e662-4070-a13b-af390ef9db9f
+        position: {x: 62, y: 1089}
+        node:
+          rid: 8944971648215023712
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971648215023713
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 0ee1b75e-553e-4b5a-9ab1-74567422ee82
+        childIds: []
+      - name: Park Actions
+        id: 51a866fb-e143-4282-a149-74935bdb8914
+        position: {x: 416, y: 1097}
+        node:
+          rid: 8944971665975541760
         references: []
         parentIds:
-        - 4dd3cb44-256e-4604-9c4a-d05a716d1325
+        - a9160585-48f7-49d4-9a25-84bf8a4bd889
         childIds:
-        - a106e5f1-c634-448c-9ebd-536841331e26
-        - e193d6de-dc6f-4c8f-96a2-d91bdecbda04
-        - 3a6eb24f-53ee-4b06-8555-8f3fd0237080
-        - a6fe4296-c22e-459b-874c-1269bf0e9984
-      - name: Park
-        id: f712446e-e11f-427f-97e5-097938850707
-        position: {x: 1392, y: 413}
+        - 6d0f9e12-b41c-41b2-954e-8eac47906562
+        - c1f73843-84a6-434f-85b1-c5dda3bc3eb7
+        - e51c9be5-637d-4bdd-9321-dcb17e37e4c6
+        - 1e5250f5-d74c-4f02-a157-bd069d34a5ff
+      - name: IsInPark
+        id: 6d0f9e12-b41c-41b2-954e-8eac47906562
+        position: {x: -99, y: 1343}
         node:
-          rid: 8944971379418333191
+          rid: 8944971665975541761
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971665975541762
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 51a866fb-e143-4282-a149-74935bdb8914
+        childIds: []
+      - name: Supermarket Actions
+        id: a4d79457-4896-4c72-8174-0e164d0eb397
+        position: {x: 1330, y: 907}
+        node:
+          rid: 8944971665975541763
         references: []
         parentIds:
-        - 4dd3cb44-256e-4604-9c4a-d05a716d1325
+        - a9160585-48f7-49d4-9a25-84bf8a4bd889
         childIds:
-        - 771ad5ba-4ea8-424b-8a27-16771b483d02
-        - 0326c6c9-cc68-4a3b-bb69-50248e99f90d
-        - 1cfab068-c392-454a-823d-b4f78c048fd0
-        - d26f47ea-f331-4b30-9109-36dd94a02ec6
-      - name: Supermarket
-        id: b345202e-9909-4541-b403-4a81bc94c615
-        position: {x: 2608, y: 383}
-        node:
-          rid: 8944971379418333193
-        references: []
-        parentIds:
-        - 4dd3cb44-256e-4604-9c4a-d05a716d1325
-        childIds:
-        - a2826b17-f6b1-4d8c-a1bd-5597879eec4c
-        - 5995a6e5-537e-4af6-81e7-4d7b5ee5b543
-        - de6cbcae-55b6-4b91-ad4e-3d7fa117a7e2
-        - cb894d60-746e-4197-90d9-89040d96c692
-      - name: EnterCoffeeShop
-        id: e193d6de-dc6f-4c8f-96a2-d91bdecbda04
-        position: {x: -159, y: 622}
-        node:
-          rid: 8944971379418333194
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333195
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 0c4b670a-afe0-467f-bab6-258a23e8fee0
-        childIds: []
-      - name: MoveToLocation
-        id: 3a6eb24f-53ee-4b06-8555-8f3fd0237080
-        position: {x: 264, y: 614}
-        node:
-          rid: 8944971379418333196
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333197
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 0c4b670a-afe0-467f-bab6-258a23e8fee0
-        childIds: []
-      - name: PerformActionBT
-        id: a6fe4296-c22e-459b-874c-1269bf0e9984
-        position: {x: 679, y: 630}
-        node:
-          rid: 8944971379418333198
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333199
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 0c4b670a-afe0-467f-bab6-258a23e8fee0
-        childIds: []
-      - name: 'EnterPark '
-        id: 0326c6c9-cc68-4a3b-bb69-50248e99f90d
-        position: {x: 1417, y: 686}
-        node:
-          rid: 8944971379418333200
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333201
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - f712446e-e11f-427f-97e5-097938850707
-        childIds: []
-      - name: MoveToLocation
-        id: 1cfab068-c392-454a-823d-b4f78c048fd0
-        position: {x: 1747, y: 686}
-        node:
-          rid: 8944971379418333202
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333203
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - f712446e-e11f-427f-97e5-097938850707
-        childIds: []
-      - name: PerformActionBT
-        id: d26f47ea-f331-4b30-9109-36dd94a02ec6
-        position: {x: 2028, y: 678}
-        node:
-          rid: 8944971379418333204
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333205
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - f712446e-e11f-427f-97e5-097938850707
-        childIds: []
-      - name: EnterSupermarket
-        id: 5995a6e5-537e-4af6-81e7-4d7b5ee5b543
-        position: {x: 2736, y: 694}
-        node:
-          rid: 8944971379418333206
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333207
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - b345202e-9909-4541-b403-4a81bc94c615
-        childIds: []
-      - name: MoveToLocation
-        id: de6cbcae-55b6-4b91-ad4e-3d7fa117a7e2
-        position: {x: 3036, y: 702}
-        node:
-          rid: 8944971379418333208
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333209
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - b345202e-9909-4541-b403-4a81bc94c615
-        childIds: []
-      - name: PerformActionBT
-        id: cb894d60-746e-4197-90d9-89040d96c692
-        position: {x: 3321, y: 702}
-        node:
-          rid: 8944971379418333210
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333211
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - b345202e-9909-4541-b403-4a81bc94c615
-        childIds: []
-      - name: is Coffee shop?
-        id: a106e5f1-c634-448c-9ebd-536841331e26
-        position: {x: -552, y: 638}
-        node:
-          rid: 8944971379418333215
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333217
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - 0c4b670a-afe0-467f-bab6-258a23e8fee0
-        childIds: []
-      - name: isInPark?
-        id: 771ad5ba-4ea8-424b-8a27-16771b483d02
-        position: {x: 1087, y: 697}
-        node:
-          rid: 8944971379418333218
-        references:
-        - fieldName: Action
-          value:
-            rid: 8944971379418333219
-          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-        parentIds:
-        - f712446e-e11f-427f-97e5-097938850707
-        childIds: []
+        - 8472269e-5048-4eeb-a65e-61cae569174a
+        - e19ba21e-892c-41e9-9315-59114b16b8a0
+        - 174f19ba-54f3-4c86-b236-211abd6aa00c
+        - 31a72d37-0547-4b20-a85f-d6ea2cce6728
+        - 69323057-7f3f-47d0-be23-b7f786e797e4
       - name: IsInSupermarket
-        id: a2826b17-f6b1-4d8c-a1bd-5597879eec4c
-        position: {x: 2452, y: 710}
+        id: 8472269e-5048-4eeb-a65e-61cae569174a
+        position: {x: 809, y: 1097}
         node:
-          rid: 8944971379418333220
+          rid: 8944971665975541764
         references:
         - fieldName: Action
           value:
-            rid: 8944971379418333221
+            rid: 8944971665975541765
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
         parentIds:
-        - b345202e-9909-4541-b403-4a81bc94c615
+        - a4d79457-4896-4c72-8174-0e164d0eb397
         childIds: []
-    - name: inTrafficLightBT
-      id: 433cd2e8-7b5c-4957-94f1-816d51010674
-      graph:
-        rid: 2249593810028855300
-      nodes:
-      - name: 
-        id: 6931552e-3185-4e93-86b1-22b50f837955
-        position: {x: 722, y: -503}
+      - name: SearchEntrance
+        id: c1f73843-84a6-434f-85b1-c5dda3bc3eb7
+        position: {x: 233, y: 1359}
         node:
-          rid: 8944971373364117506
-        references: []
-        parentIds: []
-        childIds:
-        - 16683207-ec3b-4784-9980-5c772e5b91ee
-      - name: inTrafficLight
-        id: 73aae985-8027-4899-a07f-613280bba425
-        position: {x: 169, y: -168}
-        node:
-          rid: 8944971373364117504
+          rid: 8944971670120300544
         references:
         - fieldName: Action
           value:
-            rid: 8944971373364117505
+            rid: 8944971670120300545
           fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-        parentIds: []
-        childIds: []
-      - name: 
-        id: 16683207-ec3b-4784-9980-5c772e5b91ee
-        position: {x: 721, y: -390}
-        node:
-          rid: 8944971373364117507
-        references: []
         parentIds:
-        - 6931552e-3185-4e93-86b1-22b50f837955
+        - 51a866fb-e143-4282-a149-74935bdb8914
+        childIds: []
+      - name: MoveToEntrance
+        id: e51c9be5-637d-4bdd-9321-dcb17e37e4c6
+        position: {x: 539, y: 1351}
+        node:
+          rid: 8944971670120300546
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971670120300547
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 51a866fb-e143-4282-a149-74935bdb8914
+        childIds: []
+      - name: Run and exercise
+        id: 1e5250f5-d74c-4f02-a157-bd069d34a5ff
+        position: {x: 853, y: 1359}
+        node:
+          rid: 8944971670120300548
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971670120300549
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - 51a866fb-e143-4282-a149-74935bdb8914
+        childIds: []
+      - name: SearchEntrance
+        id: e19ba21e-892c-41e9-9315-59114b16b8a0
+        position: {x: 1131, y: 1118}
+        node:
+          rid: 8944971670120300550
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971670120300551
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: MoveToEntrance
+        id: 174f19ba-54f3-4c86-b236-211abd6aa00c
+        position: {x: 1429, y: 1113}
+        node:
+          rid: 8944971670120300552
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971670120300553
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: Shopping
+        id: 31a72d37-0547-4b20-a85f-d6ea2cce6728
+        position: {x: 1699, y: 1126}
+        node:
+          rid: 8944971670120300554
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971670120300555
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
+        childIds: []
+      - name: FinishShopping
+        id: 69323057-7f3f-47d0-be23-b7f786e797e4
+        position: {x: 1969, y: 1134}
+        node:
+          rid: 8944971692167659522
+        references:
+        - fieldName: Action
+          value:
+            rid: 8944971692167659523
+          fieldType: BehaviourAPI.Core.Actions.Action, BehaviourAPI.Core, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        parentIds:
+        - a4d79457-4896-4c72-8174-0e164d0eb397
         childIds: []
     pushPerceptions: []
   references:
@@ -1383,35 +1376,84 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 2249593610050732032
+    - rid: 2249593760004964353
       type: {class: FSM, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data: 
-    - rid: 2249593610050732033
+    - rid: 2249593760004964354
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data: 
-    - rid: 2249593610050732034
+    - rid: 2249593760004964355
       type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         method:
           componentName: PedestrianBehaviour
           methodName: StartRoaming
-    - rid: 2249593625698369536
-      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 2249593629493952515
+    - rid: 8944971535672672258
       type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data:
         StatusFlags: -1
-    - rid: 2249593646949859328
+    - rid: 8944971559209533440
       type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
       data: 
-    - rid: 2249593646949859331
+    - rid: 8944971559209533441
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: PedestrianBehaviour
+          methodName: WaitUntilGreen
+    - rid: 8944971559209533442
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971559209533444
+      type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        init:
+          componentName: 
+          methodName: 
+        check:
+          componentName: PedestrianBehaviour
+          methodName: InCrosswalkArea
+        reset:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971643323678744
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 8944971643323678745
+      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        method:
+          componentName: PedestrianBehaviour
+          methodName: StartCrossing
+    - rid: 8944971643323678746
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971648215023616
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971648215023617
+      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data: 
+    - rid: 8944971648215023619
       type: {class: SubgraphAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         ExecuteOnLoop: 0
         InterruptOptions: 2
-        subgraphId: 71bf9b3a-78c4-451c-a26f-e8f84c1fe5e4
-    - rid: 2249593719765073920
+        subgraphId: 0ab7736a-eb71-4022-bb3e-3e5c1c61d51b
+    - rid: 8944971648215023620
+      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+      data:
+        StatusFlags: -1
+    - rid: 8944971648215023621
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         init:
@@ -1429,15 +1471,152 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 2249593760004964365
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+    - rid: 8944971648215023699
+      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8944971648215023703
+      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
-        StatusFlags: 6
-    - rid: 2249593810028855296
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
+        IsRandomized: 0
+    - rid: 8944971648215023704
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data:
-        StatusFlags: 0
-    - rid: 2249593810028855297
+        IsRandomized: 0
+    - rid: 8944971648215023705
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8944971648215023706
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: PedestrianBehaviour
+          methodName: IsInCoffeeShop
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971648215023707
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8944971648215023709
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: PedestrianBehaviour
+          methodName: SearchLocation
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971648215023710
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8944971648215023711
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: PedestrianBehaviour
+          methodName: MoveToLocation
+        update:
+          componentName: PedestrianBehaviour
+          methodName: PathStatus
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971648215023712
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8944971648215023713
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: PedestrianBehaviour
+          methodName: PerformActionBT
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971665975541760
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8944971665975541761
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8944971665975541762
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: PedestrianBehaviour
+          methodName: IsInPark
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971665975541763
+      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data:
+        IsRandomized: 0
+    - rid: 8944971665975541764
+      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
+      data: 
+    - rid: 8944971665975541765
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+      data:
+        start:
+          componentName: 
+          methodName: 
+        update:
+          componentName: PedestrianBehaviour
+          methodName: IsInSupermarket
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971665975541766
       type: {class: CustomPerception, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
         init:
@@ -1445,7 +1624,7 @@ MonoBehaviour:
           methodName: 
         check:
           componentName: PedestrianBehaviour
-          methodName: InTrafficLight
+          methodName: HasCompletedAction
         reset:
           componentName: 
           methodName: 
@@ -1455,177 +1634,153 @@ MonoBehaviour:
         unpause:
           componentName: 
           methodName: 
-    - rid: 2249593810028855298
-      type: {class: State, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data: 
-    - rid: 2249593810028855300
-      type: {class: BehaviourTree, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971373364117504
+    - rid: 8944971670120300544
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971373364117505
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971670120300545
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
-          methodName: CheckIfCanCrossStreet
-    - rid: 8944971373364117506
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 8944971373364117507
-      type: {class: LoopUntilNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        TargetStatus: 2
-        MaxIterations: -1
-    - rid: 8944971379418333185
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 8944971379418333186
+          methodName: SearchLocation
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971670120300546
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333188
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971670120300547
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: CheckIfCanPerformAction
-    - rid: 8944971379418333189
-      type: {class: SelectorNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 8944971379418333190
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 8944971379418333191
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 8944971379418333193
-      type: {class: SequencerNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data:
-        IsRandomized: 0
-    - rid: 8944971379418333194
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333195
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: EnterInterestZone
-    - rid: 8944971379418333196
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333197
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
+        start:
           componentName: PedestrianBehaviour
           methodName: MoveToLocation
-    - rid: 8944971379418333198
+        update:
+          componentName: PedestrianBehaviour
+          methodName: PathStatus
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971670120300548
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333199
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971670120300549
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
           methodName: PerformActionBT
-    - rid: 8944971379418333200
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971670120300550
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333201
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971670120300551
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
-          methodName: EnterInterestZone
-    - rid: 8944971379418333202
+          methodName: SearchLocation
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971670120300552
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333203
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971670120300553
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
           componentName: PedestrianBehaviour
           methodName: MoveToLocation
-    - rid: 8944971379418333204
+        update:
+          componentName: PedestrianBehaviour
+          methodName: PathStatus
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971670120300554
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333205
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971670120300555
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
           methodName: PerformActionBT
-    - rid: 8944971379418333206
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
+    - rid: 8944971692167659522
       type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
       data: 
-    - rid: 8944971379418333207
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
+    - rid: 8944971692167659523
+      type: {class: CustomAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
       data:
-        method:
+        start:
+          componentName: 
+          methodName: 
+        update:
           componentName: PedestrianBehaviour
-          methodName: EnterInterestZone
-    - rid: 8944971379418333208
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333209
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: MoveToLocation
-    - rid: 8944971379418333210
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333211
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: PerformActionBT
-    - rid: 8944971379418333212
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: StartCrossingStreet
-    - rid: 8944971379418333213
-      type: {class: StateTransition, ns: BehaviourAPI.StateMachines, asm: BehaviourAPI.StateMachines}
-      data:
-        StatusFlags: 0
-    - rid: 8944971379418333215
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333217
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: IsInCoffeeShop
-    - rid: 8944971379418333218
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333219
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: IsInPark
-    - rid: 8944971379418333220
-      type: {class: LeafNode, ns: BehaviourAPI.BehaviourTrees, asm: BehaviourAPI.BehaviourTrees}
-      data: 
-    - rid: 8944971379418333221
-      type: {class: SimpleAction, ns: BehaviourAPI.UnityToolkit.GUIDesigner.Framework, asm: BehaviourAPI.UnityToolkit.GUIDesigner.Framework}
-      data:
-        method:
-          componentName: PedestrianBehaviour
-          methodName: IsInSupermarket
+          methodName: FinishShoppingBT
+        stop:
+          componentName: 
+          methodName: 
+        pause:
+          componentName: 
+          methodName: 
+        unpause:
+          componentName: 
+          methodName: 
 --- !u!1 &6646269780412227657
 GameObject:
   m_ObjectHideFlags: 0
